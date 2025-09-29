@@ -1,3 +1,5 @@
 extends Node
 
-#here code
+
+func _ready() -> void:
+	pass
