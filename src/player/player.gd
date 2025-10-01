@@ -1,5 +1,6 @@
 class_name Player extends CharacterBody2D
 
+@onready var player_sprite : AnimatedSprite2D = $Visuals
 
 const SPEED : float = 500.0
 const JUMP_VELOCITY : float = -600.0
@@ -38,9 +39,16 @@ func handle_movement() -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+func handle_graphics() -> void:
+	if Input.is_action_pressed("move_left"):
+		player_sprite.flip_h = true
+	if Input.is_action_pressed("move_right"):
+		player_sprite.flip_h = false
 
+	
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
 	handle_jumping(delta)
 	handle_movement()
+	handle_graphics()
 	move_and_slide()
