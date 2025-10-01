@@ -35,4 +35,4 @@ position = Vector2(1547, 431)
 shape = SubResource("RectangleShape2D_n42af")
 
 [node name="AdaptationObstacle" parent="." instance=ExtResource("1_la7um")]
-position = Vector2(1410, 464)
+position = Vector2(1279, 545)

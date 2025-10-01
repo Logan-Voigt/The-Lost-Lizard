@@ -1,20 +1,53 @@
 extends Node2D
 
 @export var obstacle_data : ObstacleData
+@export var obstacle_hitbox : RectangleShape2D
 
+@onready var effect_area_collision: CollisionShape2D = $EffectArea/CollisionShape2D
 @onready var effect_area: Area2D = $EffectArea
+@onready var effect_staticbody_collision: CollisionShape2D = $EffectStaticbody/CollisionShape2D
+@onready var effect_staticbody: StaticBody2D = $EffectStaticbody
+
+const NONE : int = 0
+const STOP : int = 1
+const PUSH : int = 2
+const SLIDE : int = 3
+
+const PLAYER_LAYER : int = 1
 
 var player_is_colliding : bool
+var death_timer : float
+
+func kill_player() -> void:
+	GameState.set_adaptation_type(obstacle_data.damage_type)
+	EventBus.respawn_player.emit()
+
+
+func reset_obstacle() -> void:
+	effect_staticbody.collision_layer = 0
+
 
 func apply_matching_effects() -> void:
-	pass
+	match obstacle_data.matching_effect:
+		STOP:
+			effect_staticbody.collision_layer = PLAYER_LAYER
+		PUSH:
+			pass
+		SLIDE:
+			pass
+		_:
+			pass
 
 
-func apply_differing_effects() -> void:
+func apply_differing_effects(delta: float) -> void:
 	if obstacle_data.instant_death:
-		GameState.set_adaptation_type(obstacle_data.damage_type)
-		EventBus.respawn_player.emit()
-		print("dead")
+		kill_player()
+		return
+	if obstacle_data.death_timer_limit > 0.0:
+		death_timer += delta
+		if death_timer > obstacle_data.death_timer_limit:
+			kill_player()
+			return
 
 
 func apply_always_effects() -> void:
@@ -29,6 +62,11 @@ func _on_effect_area_body_entered(body: Node2D) -> void:
 func _on_effect_area_body_exited(body: Node2D) -> void:
 	if body is Player:
 		player_is_colliding = false
+		death_timer = 0.0
+
+
+func _on_type_changed() -> void:
+	reset_obstacle()
 
 
 func _physics_process(delta: float) -> void:
@@ -36,5 +74,11 @@ func _physics_process(delta: float) -> void:
 	if obstacle_data.damage_type == GameState.adaptation_type:
 		apply_matching_effects()
 	else:
-		apply_differing_effects()
+		apply_differing_effects(delta)
 	apply_always_effects()
+
+
+func _ready() -> void:
+	EventBus.type_changed.connect(_on_type_changed)
+	effect_area_collision.shape = obstacle_hitbox
+	effect_staticbody_collision.shape = obstacle_hitbox

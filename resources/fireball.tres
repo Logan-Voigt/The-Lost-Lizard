@@ -6,6 +6,9 @@
 script = ExtResource("1_6daih")
 damage_type = 1
 instant_death = true
-death_timer = 0.0
+death_timer_limit = 0.0
 destroyed_by_type = 4
+matching_effect = 1
+differing_effect = 0
+always_effect = 0
 metadata/_custom_type_script = "uid://bok5uxyimsk0t"

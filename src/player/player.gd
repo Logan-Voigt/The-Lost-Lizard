@@ -45,10 +45,18 @@ func handle_graphics() -> void:
 	if Input.is_action_pressed("move_right"):
 		player_sprite.flip_h = false
 
-	
+
+func _on_respawn() -> void:
+	queue_free()
+
+
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
 	handle_jumping(delta)
 	handle_movement()
 	handle_graphics()
 	move_and_slide()
+
+
+func _ready() -> void:
+	EventBus.respawn_player.connect(_on_respawn)
