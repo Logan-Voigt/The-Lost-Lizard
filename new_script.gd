@@ -8,4 +8,3 @@ func _process(delta):
 
 func _ready() -> void:
 	pass
-

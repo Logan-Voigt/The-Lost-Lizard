@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs38ofxnoud3q"]
+
+[ext_resource type="Texture2D" uid="uid://ovgdu0ut8s5j" path="res://icon.svg" id="1_ig7tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h2yge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ig7tw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Block" type="StaticBody2D" parent="Level"]
+position = Vector2(965, 660)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Block"]
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(947, 519)
+
+[node name="Hitbox" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Visuals" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_h2yge")
