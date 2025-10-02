@@ -7,3 +7,4 @@ class_name ObstacleData extends Resource
 @export_enum("none", "stop", "push", "slide") var matching_effect
 @export_enum("none", "stop", "push", "slide") var differing_effect
 @export_enum("none", "stop", "push", "slide") var always_effect
+@export var main_image : CompressedTexture2D

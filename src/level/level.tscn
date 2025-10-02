@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://fouj2uquchlx"]
+[gd_scene load_steps=6 format=3 uid="uid://fouj2uquchlx"]
 
 [ext_resource type="PackedScene" uid="uid://d1ga81q12atc" path="res://src/level/adaptation_obstacle.tscn" id="1_la7um"]
+[ext_resource type="Shape2D" uid="uid://cmdln5ejmulsr" path="res://resources/hitboxes/64x256_hitbox.tres" id="2_af42n"]
+[ext_resource type="Texture2D" uid="uid://co7a4ttgamjr0" path="res://assets/environment/vents/cave_vent .png" id="2_xv147"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(1000, 100)
@@ -36,3 +38,5 @@ shape = SubResource("RectangleShape2D_n42af")
 
 [node name="AdaptationObstacle" parent="." instance=ExtResource("1_la7um")]
 position = Vector2(1279, 545)
+obstacle_hitbox = ExtResource("2_af42n")
+secondary_image = ExtResource("2_xv147")

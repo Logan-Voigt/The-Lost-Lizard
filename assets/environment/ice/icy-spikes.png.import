@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b00vyixxncp1w"
-path="res://.godot/imported/ice-gyser.png-e42fe6b73719e3818c731d75898200cf.ctex"
+uid="uid://c6pbl41jtpgv5"
+path="res://.godot/imported/icy-spikes.png-33ae1834add77fe566657c1adb5388a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/ice/ice-gyser.png"
-dest_files=["res://.godot/imported/ice-gyser.png-e42fe6b73719e3818c731d75898200cf.ctex"]
+source_file="res://assets/environment/ice/icy-spikes.png"
+dest_files=["res://.godot/imported/icy-spikes.png-33ae1834add77fe566657c1adb5388a4.ctex"]
 
 [params]
 

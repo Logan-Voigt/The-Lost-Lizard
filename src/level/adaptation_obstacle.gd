@@ -2,11 +2,14 @@ extends Node2D
 
 @export var obstacle_data : ObstacleData
 @export var obstacle_hitbox : RectangleShape2D
-
+@export var secondary_image : CompressedTexture2D
 @onready var effect_area_collision: CollisionShape2D = $EffectArea/CollisionShape2D
 @onready var effect_area: Area2D = $EffectArea
 @onready var effect_staticbody_collision: CollisionShape2D = $EffectStaticbody/CollisionShape2D
 @onready var effect_staticbody: StaticBody2D = $EffectStaticbody
+
+@onready var main_texture: AnimatedSprite2D = $Main_Texture
+@onready var secondary_texture: Sprite2D = $Secondary_Texture
 
 const NONE : int = 0
 const STOP : int = 1
@@ -82,3 +85,7 @@ func _ready() -> void:
 	EventBus.type_changed.connect(_on_type_changed)
 	effect_area_collision.shape = obstacle_hitbox
 	effect_staticbody_collision.shape = obstacle_hitbox
+	
+	main_texture.sprite_frames.add_frame("default", obstacle_data.main_image)
+	secondary_texture.texture = secondary_image
+	
