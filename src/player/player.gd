@@ -11,14 +11,20 @@ var stored_jump : bool = false
 var stored_jump_timer : float = 0.0
 
 var being_pushed : bool 
+var external_forces : Array[Vector2]
 
-func apply_gravity(delta: float) -> void:
-	if not is_on_floor() and not being_pushed:
+func add_external_force(force : Vector2) -> void:
+	external_forces.append(force)
+
+
+func apply_forces(delta: float) -> void:
+	if not is_on_floor():
 		if velocity.y < 0 and Input.is_action_pressed("move_jump"):
 			velocity += get_gravity() * delta 
 		else:
 			velocity += get_gravity() * delta * GRAVITY_MULTIPLIER 
-
+	while not external_forces.is_empty():
+		velocity += external_forces.pop_front()
 
 func handle_jumping(delta: float) -> void:
 	# stored_jump allows you to press jump a little bit early but have it still count
@@ -52,7 +58,7 @@ func _on_respawn() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	apply_gravity(delta)
+	apply_forces(delta)
 	handle_jumping(delta)
 	handle_movement()
 	handle_graphics()
