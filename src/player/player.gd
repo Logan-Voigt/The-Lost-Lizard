@@ -10,8 +10,10 @@ const STORED_JUMP_MAX_TIME : float = 0.5
 var stored_jump : bool = false
 var stored_jump_timer : float = 0.0
 
+var being_pushed : bool 
+
 func apply_gravity(delta: float) -> void:
-	if not is_on_floor():
+	if not is_on_floor() and not being_pushed:
 		if velocity.y < 0 and Input.is_action_pressed("move_jump"):
 			velocity += get_gravity() * delta 
 		else:
@@ -44,7 +46,6 @@ func handle_graphics() -> void:
 		player_sprite.flip_h = true
 	if Input.is_action_pressed("move_right"):
 		player_sprite.flip_h = false
-
 
 func _on_respawn() -> void:
 	queue_free()

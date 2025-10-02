@@ -60,7 +60,8 @@ obstacle_hitbox = ExtResource("2_af42n")
 secondary_image = ExtResource("2_xv147")
 
 [node name="Icy Vent" parent="." instance=ExtResource("1_la7um")]
-position = Vector2(986, 260)
+position = Vector2(645, 206)
+rotation = 1.5708
 obstacle_data = ExtResource("7_ob0n7")
 obstacle_hitbox = ExtResource("2_af42n")
 secondary_image = ExtResource("2_xv147")
@@ -92,3 +93,9 @@ flip_h = true
 [node name="CaveTileTallNoGrass" type="Sprite2D" parent="."]
 position = Vector2(968, 649)
 texture = ExtResource("10_k5trb")
+
+[node name="Icy Vent2" parent="." instance=ExtResource("1_la7um")]
+position = Vector2(1658, 662)
+obstacle_data = ExtResource("7_ob0n7")
+obstacle_hitbox = ExtResource("2_af42n")
+secondary_image = ExtResource("2_xv147")
