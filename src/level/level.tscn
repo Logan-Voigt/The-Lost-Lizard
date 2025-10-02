@@ -1,6 +1,19 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=4 format=3 uid="uid://fouj2uquchlx"]
 
 [ext_resource type="PackedScene" uid="uid://d1ga81q12atc" path="res://src/level/adaptation_obstacle.tscn" id="1_la7um"]
+=======
+[gd_scene load_steps=11 format=3 uid="uid://fouj2uquchlx"]
+
+[ext_resource type="PackedScene" uid="uid://d1ga81q12atc" path="res://src/level/adaptation_obstacle.tscn" id="1_la7um"]
+[ext_resource type="Shape2D" uid="uid://cmdln5ejmulsr" path="res://resources/hitboxes/64x256_hitbox.tres" id="2_af42n"]
+[ext_resource type="Resource" uid="uid://bbrdtcuxotbsl" path="res://resources/obstacles/fire_vent.tres" id="2_mpbj7"]
+[ext_resource type="Texture2D" uid="uid://co7a4ttgamjr0" path="res://assets/environment/vents/cave_vent .png" id="2_xv147"]
+[ext_resource type="Resource" uid="uid://ix4xufgcjw4u" path="res://resources/obstacles/icy_vent.tres" id="5_em31m"]
+[ext_resource type="Resource" uid="uid://df2vcbead677s" path="res://resources/obstacles/icy_spikes.tres" id="6_5vox1"]
+[ext_resource type="Resource" uid="uid://3goerk443s6q" path="res://resources/obstacles/fire_floor.tres" id="7_ob0n7"]
+[ext_resource type="Shape2D" uid="uid://dn7d5d3uqkobx" path="res://resources/hitboxes/128x64_hitbox.tres" id="7_p6v4a"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(1000, 100)
@@ -34,5 +47,29 @@ position = Vector2(1547, 431)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Block4"]
 shape = SubResource("RectangleShape2D_n42af")
 
+<<<<<<< Updated upstream
 [node name="AdaptationObstacle" parent="." instance=ExtResource("1_la7um")]
 position = Vector2(1279, 545)
+=======
+[node name="AdaptationObstacle4" parent="." instance=ExtResource("1_la7um")]
+position = Vector2(1037, 259)
+obstacle_data = ExtResource("5_em31m")
+obstacle_hitbox = ExtResource("2_af42n")
+secondary_image = ExtResource("2_xv147")
+
+[node name="AdaptationObstacle3" parent="." instance=ExtResource("1_la7um")]
+position = Vector2(231, 260)
+obstacle_data = ExtResource("2_mpbj7")
+obstacle_hitbox = ExtResource("2_af42n")
+secondary_image = ExtResource("2_xv147")
+
+[node name="AdaptationObstacle2" parent="." instance=ExtResource("1_la7um")]
+position = Vector2(1267, 609)
+obstacle_data = ExtResource("6_5vox1")
+obstacle_hitbox = ExtResource("7_p6v4a")
+
+[node name="AdaptationObstacle" parent="." instance=ExtResource("1_la7um")]
+position = Vector2(627, 260)
+obstacle_data = ExtResource("7_ob0n7")
+obstacle_hitbox = ExtResource("7_p6v4a")
+>>>>>>> Stashed changes

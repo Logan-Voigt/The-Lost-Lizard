@@ -8,6 +8,13 @@ extends Node2D
 @onready var effect_staticbody_collision: CollisionShape2D = $EffectStaticbody/CollisionShape2D
 @onready var effect_staticbody: StaticBody2D = $EffectStaticbody
 
+<<<<<<< Updated upstream
+=======
+@onready var main_texture: AnimatedSprite2D = $Main_Texture
+@onready var secondary_texture: Sprite2D = $Secondary_Texture
+var frames : SpriteFrames = SpriteFrames.new()
+
+>>>>>>> Stashed changes
 const NONE : int = 0
 const STOP : int = 1
 const PUSH : int = 2
@@ -27,7 +34,9 @@ func reset_obstacle() -> void:
 	effect_staticbody.collision_layer = 0
 
 
-func apply_matching_effects() -> void:
+func apply_matching_effects(delta : float) -> void:
+	if obstacle_data.kill_no_matter:
+		apply_differing_effects(delta)
 	match obstacle_data.matching_effect:
 		STOP:
 			effect_staticbody.collision_layer = PLAYER_LAYER
@@ -70,9 +79,10 @@ func _on_type_changed() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
 	if not player_is_colliding: return
 	if obstacle_data.damage_type == GameState.adaptation_type:
-		apply_matching_effects()
+		apply_matching_effects(delta)
 	else:
 		apply_differing_effects(delta)
 	apply_always_effects()
@@ -82,3 +92,13 @@ func _ready() -> void:
 	EventBus.type_changed.connect(_on_type_changed)
 	effect_area_collision.shape = obstacle_hitbox
 	effect_staticbody_collision.shape = obstacle_hitbox
+<<<<<<< Updated upstream
+=======
+	effect_area_collision.position.y -= obstacle_hitbox.size.y / 2
+	effect_staticbody_collision.position.y -= obstacle_hitbox.size.y / 2
+	frames.add_animation("default")
+	frames.add_frame("default", obstacle_data.main_image)
+	main_texture.sprite_frames = frames
+	secondary_texture.texture = secondary_image
+	
+>>>>>>> Stashed changes

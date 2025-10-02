@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ObstacleData" load_steps=3 format=3 uid="uid://df2vcbead677s"]
+
+[ext_resource type="Script" uid="uid://bok5uxyimsk0t" path="res://resources/obstacle_data.gd" id="1_k5ay6"]
+[ext_resource type="Texture2D" uid="uid://c6pbl41jtpgv5" path="res://assets/environment/ice/icy-spikes.png" id="1_r4vfp"]
+
+[resource]
+script = ExtResource("1_k5ay6")
+damage_type = 2
+instant_death = true
+kill_no_matter = true
+death_timer_limit = 0.0
+destroyed_by_type = 4
+matching_effect = 0
+differing_effect = 0
+always_effect = 0
+main_image = ExtResource("1_r4vfp")
+metadata/_custom_type_script = "uid://bok5uxyimsk0t"

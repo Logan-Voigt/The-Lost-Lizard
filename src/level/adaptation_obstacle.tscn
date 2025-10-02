@@ -1,25 +1,57 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=4 format=3 uid="uid://d1ga81q12atc"]
 
 [ext_resource type="Script" uid="uid://dlcrd4eaa65s5" path="res://src/level/adaptation_obstacle.gd" id="1_mvvav"]
 [ext_resource type="Resource" uid="uid://b5f07rjwmpcqu" path="res://resources/fireball.tres" id="2_pw5ec"]
 [ext_resource type="Shape2D" uid="uid://bm73nevxjsv6e" path="res://resources/128x128_hitbox.tres" id="3_uatf8"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://d1ga81q12atc"]
+
+[ext_resource type="Script" uid="uid://dlcrd4eaa65s5" path="res://src/level/adaptation_obstacle.gd" id="1_mvvav"]
+[ext_resource type="Texture2D" uid="uid://vbcg2k5f61q1" path="res://assets/environment/fire/Fire-Vent.png" id="2_4idj4"]
+[ext_resource type="Script" uid="uid://bok5uxyimsk0t" path="res://resources/obstacle_data.gd" id="3_tc3r5"]
+[ext_resource type="Shape2D" uid="uid://bm73nevxjsv6e" path="res://resources/hitboxes/128x128_hitbox.tres" id="3_uatf8"]
+
+[sub_resource type="Resource" id="Resource_07t00"]
+script = ExtResource("3_tc3r5")
+damage_type = 1
+instant_death = true
+kill_no_matter = false
+death_timer_limit = 0.0
+destroyed_by_type = 4
+matching_effect = 0
+differing_effect = 0
+always_effect = 0
+main_image = ExtResource("2_4idj4")
+metadata/_custom_type_script = "uid://bok5uxyimsk0t"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uatf8"]
+>>>>>>> Stashed changes
 
 [node name="AdaptationObstacle" type="Node2D"]
 script = ExtResource("1_mvvav")
-obstacle_data = ExtResource("2_pw5ec")
+obstacle_data = SubResource("Resource_07t00")
 obstacle_hitbox = ExtResource("3_uatf8")
 
 [node name="EffectArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea"]
-shape = ExtResource("3_uatf8")
 
 [node name="EffectStaticbody" type="StaticBody2D" parent="."]
 collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EffectStaticbody"]
-shape = ExtResource("3_uatf8")
 
+<<<<<<< Updated upstream
+=======
+[node name="Main_Texture" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -128)
+sprite_frames = SubResource("SpriteFrames_uatf8")
+
+[node name="Secondary_Texture" type="Sprite2D" parent="."]
+position = Vector2(0, -128)
+
+>>>>>>> Stashed changes
 [connection signal="body_entered" from="EffectArea" to="." method="_on_effect_area_body_entered"]
 [connection signal="body_exited" from="EffectArea" to="." method="_on_effect_area_body_exited"]
