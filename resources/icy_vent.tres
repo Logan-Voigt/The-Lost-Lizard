@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ObstacleData" load_steps=3 format=3 uid="uid://ix4xufgcjw4u"]
+
+[ext_resource type="Script" uid="uid://bok5uxyimsk0t" path="res://resources/obstacle_data.gd" id="1_48wra"]
+[ext_resource type="Texture2D" uid="uid://cdd5eqgesoewl" path="res://assets/environment/ice/icy-vent.png" id="1_b60y6"]
+
+[resource]
+script = ExtResource("1_48wra")
+damage_type = 2
+instant_death = false
+death_timer_limit = 0.0
+destroyed_by_type = 4
+matching_effect = 2
+differing_effect = 0
+always_effect = 0
+main_image = ExtResource("1_b60y6")
+metadata/_custom_type_script = "uid://bok5uxyimsk0t"
