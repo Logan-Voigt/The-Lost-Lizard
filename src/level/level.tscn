@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://fouj2uquchlx"]
+[gd_scene load_steps=11 format=3 uid="uid://fouj2uquchlx"]
 
 [ext_resource type="PackedScene" uid="uid://d1ga81q12atc" path="res://src/level/adaptation_obstacle.tscn" id="1_la7um"]
 [ext_resource type="Shape2D" uid="uid://cmdln5ejmulsr" path="res://resources/hitboxes/64x256_hitbox.tres" id="2_af42n"]
+[ext_resource type="Resource" uid="uid://3goerk443s6q" path="res://resources/obstacles/fire_floor.tres" id="2_mpbj7"]
 [ext_resource type="Texture2D" uid="uid://co7a4ttgamjr0" path="res://assets/environment/vents/cave_vent .png" id="2_xv147"]
+[ext_resource type="Shape2D" uid="uid://dn7d5d3uqkobx" path="res://resources/hitboxes/128x64_hitbox.tres" id="3_mpbj7"]
+[ext_resource type="Resource" uid="uid://df2vcbead677s" path="res://resources/obstacles/icy_spikes.tres" id="4_em31m"]
+[ext_resource type="Resource" uid="uid://crr43tlcohfwc" path="res://resources/obstacles/fire_vent.tres" id="5_5vox1"]
+[ext_resource type="Resource" uid="uid://ix4xufgcjw4u" path="res://resources/obstacles/icy_vent.tres" id="7_ob0n7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(1000, 100)
@@ -36,7 +41,24 @@ position = Vector2(1547, 431)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Block4"]
 shape = SubResource("RectangleShape2D_n42af")
 
-[node name="AdaptationObstacle" parent="." instance=ExtResource("1_la7um")]
-position = Vector2(1279, 545)
+[node name="Fire Floor" parent="." instance=ExtResource("1_la7um")]
+position = Vector2(1286, 611)
+obstacle_data = ExtResource("2_mpbj7")
+obstacle_hitbox = ExtResource("3_mpbj7")
+
+[node name="Icy Spikes" parent="." instance=ExtResource("1_la7um")]
+position = Vector2(346, 258)
+obstacle_data = ExtResource("4_em31m")
+obstacle_hitbox = ExtResource("3_mpbj7")
+
+[node name="Fire Vent" parent="." instance=ExtResource("1_la7um")]
+position = Vector2(659, 258)
+obstacle_data = ExtResource("5_5vox1")
+obstacle_hitbox = ExtResource("2_af42n")
+secondary_image = ExtResource("2_xv147")
+
+[node name="Icy Vent" parent="." instance=ExtResource("1_la7um")]
+position = Vector2(986, 260)
+obstacle_data = ExtResource("7_ob0n7")
 obstacle_hitbox = ExtResource("2_af42n")
 secondary_image = ExtResource("2_xv147")

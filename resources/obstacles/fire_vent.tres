@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ObstacleData" load_steps=3 format=3 uid="uid://crr43tlcohfwc"]
+
+[ext_resource type="Script" uid="uid://bok5uxyimsk0t" path="res://resources/obstacle_data.gd" id="1_epmg6"]
+[ext_resource type="Texture2D" uid="uid://vbcg2k5f61q1" path="res://assets/environment/fire/Fire-Vent.png" id="1_ofntu"]
+
+[resource]
+script = ExtResource("1_epmg6")
+damage_type = 1
+instant_death = true
+kill_no_matter = false
+death_timer_limit = 0.0
+destroyed_by_type = 4
+matching_effect = 0
+differing_effect = 0
+always_effect = 0
+main_image = ExtResource("1_ofntu")
+metadata/_custom_type_script = "uid://bok5uxyimsk0t"
