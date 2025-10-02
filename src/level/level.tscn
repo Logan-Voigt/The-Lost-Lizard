@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://fouj2uquchlx"]
+[gd_scene load_steps=13 format=3 uid="uid://fouj2uquchlx"]
 
 [ext_resource type="PackedScene" uid="uid://d1ga81q12atc" path="res://src/level/adaptation_obstacle.tscn" id="1_la7um"]
 [ext_resource type="Shape2D" uid="uid://cmdln5ejmulsr" path="res://resources/hitboxes/64x256_hitbox.tres" id="2_af42n"]
@@ -8,6 +8,8 @@
 [ext_resource type="Resource" uid="uid://df2vcbead677s" path="res://resources/obstacles/icy_spikes.tres" id="4_em31m"]
 [ext_resource type="Resource" uid="uid://crr43tlcohfwc" path="res://resources/obstacles/fire_vent.tres" id="5_5vox1"]
 [ext_resource type="Resource" uid="uid://ix4xufgcjw4u" path="res://resources/obstacles/icy_vent.tres" id="7_ob0n7"]
+[ext_resource type="Texture2D" uid="uid://bi62nlomx3kh7" path="res://assets/environment/building_blocks/Cave_tile_tall.png" id="10_5suky"]
+[ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="10_k5trb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(1000, 100)
@@ -52,7 +54,7 @@ obstacle_data = ExtResource("4_em31m")
 obstacle_hitbox = ExtResource("3_mpbj7")
 
 [node name="Fire Vent" parent="." instance=ExtResource("1_la7um")]
-position = Vector2(659, 258)
+position = Vector2(482, 608)
 obstacle_data = ExtResource("5_5vox1")
 obstacle_hitbox = ExtResource("2_af42n")
 secondary_image = ExtResource("2_xv147")
@@ -62,3 +64,31 @@ position = Vector2(986, 260)
 obstacle_data = ExtResource("7_ob0n7")
 obstacle_hitbox = ExtResource("2_af42n")
 secondary_image = ExtResource("2_xv147")
+
+[node name="CaveTileTall3" type="Sprite2D" parent="."]
+position = Vector2(713, 650)
+texture = ExtResource("10_5suky")
+flip_h = true
+
+[node name="CaveTileTall4" type="Sprite2D" parent="."]
+position = Vector2(457, 651)
+texture = ExtResource("10_5suky")
+flip_h = true
+
+[node name="CaveTileTallNoGrass2" type="Sprite2D" parent="."]
+position = Vector2(585, 650)
+texture = ExtResource("10_k5trb")
+flip_h = true
+
+[node name="CaveTileTall" type="Sprite2D" parent="."]
+position = Vector2(1096, 649)
+texture = ExtResource("10_5suky")
+
+[node name="CaveTileTall2" type="Sprite2D" parent="."]
+position = Vector2(840, 650)
+texture = ExtResource("10_5suky")
+flip_h = true
+
+[node name="CaveTileTallNoGrass" type="Sprite2D" parent="."]
+position = Vector2(968, 649)
+texture = ExtResource("10_k5trb")
