@@ -58,9 +58,9 @@ func _on_respawn() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	handle_movement()
 	apply_forces(delta)
 	handle_jumping(delta)
-	handle_movement()
 	handle_graphics()
 	move_and_slide()
 
