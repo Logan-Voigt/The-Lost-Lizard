@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=11 format=3 uid="uid://fouj2uquchlx"]
+=======
+[gd_scene load_steps=16 format=3 uid="uid://fouj2uquchlx"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://d1ga81q12atc" path="res://src/level/adaptation_obstacle.tscn" id="1_la7um"]
 [ext_resource type="Shape2D" uid="uid://cmdln5ejmulsr" path="res://resources/hitboxes/64x256_hitbox.tres" id="2_af42n"]
@@ -8,6 +12,14 @@
 [ext_resource type="Resource" uid="uid://df2vcbead677s" path="res://resources/obstacles/icy_spikes.tres" id="4_em31m"]
 [ext_resource type="Resource" uid="uid://crr43tlcohfwc" path="res://resources/obstacles/fire_vent.tres" id="5_5vox1"]
 [ext_resource type="Resource" uid="uid://ix4xufgcjw4u" path="res://resources/obstacles/icy_vent.tres" id="7_ob0n7"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Texture2D" uid="uid://berm451jbpwfh" path="res://assets/environment/vents/grass_vent.png" id="9_dw4ol"]
+[ext_resource type="Texture2D" uid="uid://bi62nlomx3kh7" path="res://assets/environment/building_blocks/Cave_tile_tall.png" id="10_5suky"]
+[ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="10_k5trb"]
+[ext_resource type="Texture2D" uid="uid://0n4igyosu4in" path="res://assets/environment/building_blocks/grass_tile_tall_no_rocks.png" id="11_q0oqu"]
+[ext_resource type="Texture2D" uid="uid://6ueomyk3ef0n" path="res://assets/environment/building_blocks/grass_tile_tall.png" id="12_dw4ol"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(1000, 100)
@@ -61,4 +73,70 @@ secondary_image = ExtResource("2_xv147")
 position = Vector2(986, 260)
 obstacle_data = ExtResource("7_ob0n7")
 obstacle_hitbox = ExtResource("2_af42n")
+<<<<<<< Updated upstream
 secondary_image = ExtResource("2_xv147")
+=======
+secondary_image = ExtResource("9_dw4ol")
+
+[node name="CaveTileTall3" type="Sprite2D" parent="."]
+position = Vector2(713, 650)
+texture = ExtResource("10_5suky")
+flip_h = true
+
+[node name="CaveTileTall4" type="Sprite2D" parent="."]
+position = Vector2(457, 651)
+texture = ExtResource("10_5suky")
+flip_h = true
+
+[node name="CaveTileTallNoGrass2" type="Sprite2D" parent="."]
+position = Vector2(585, 650)
+texture = ExtResource("10_k5trb")
+flip_h = true
+
+[node name="CaveTileTall" type="Sprite2D" parent="."]
+position = Vector2(1096, 649)
+texture = ExtResource("10_5suky")
+
+[node name="CaveTileTall2" type="Sprite2D" parent="."]
+position = Vector2(840, 650)
+texture = ExtResource("10_5suky")
+flip_h = true
+
+[node name="CaveTileTallNoGrass" type="Sprite2D" parent="."]
+position = Vector2(968, 649)
+texture = ExtResource("10_k5trb")
+
+[node name="GrassTileTallNoRocks" type="Sprite2D" parent="."]
+position = Vector2(216, 299)
+texture = ExtResource("11_q0oqu")
+
+[node name="GrassTileTall" type="Sprite2D" parent="."]
+position = Vector2(342, 298)
+texture = ExtResource("12_dw4ol")
+
+[node name="GrassTileTallNoRocks2" type="Sprite2D" parent="."]
+position = Vector2(470, 298)
+texture = ExtResource("11_q0oqu")
+
+[node name="GrassTileTall2" type="Sprite2D" parent="."]
+position = Vector2(598, 297)
+texture = ExtResource("12_dw4ol")
+flip_h = true
+
+[node name="GrassTileTall3" type="Sprite2D" parent="."]
+position = Vector2(726, 297)
+texture = ExtResource("12_dw4ol")
+
+[node name="GrassTileTallNoRocks3" type="Sprite2D" parent="."]
+position = Vector2(854, 297)
+texture = ExtResource("11_q0oqu")
+flip_h = true
+
+[node name="GrassTileTallNoRocks4" type="Sprite2D" parent="."]
+position = Vector2(979, 297)
+texture = ExtResource("11_q0oqu")
+
+[node name="GrassTileTallNoRocks5" type="Sprite2D" parent="."]
+position = Vector2(1107, 297)
+texture = ExtResource("11_q0oqu")
+>>>>>>> Stashed changes
