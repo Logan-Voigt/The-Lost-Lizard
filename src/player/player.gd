@@ -3,8 +3,9 @@ class_name Player extends CharacterBody2D
 @onready var player_sprite : AnimatedSprite2D = $Visuals
 
 const SPEED : float = 500.0
-const JUMP_VELOCITY : float = -600.0
-const GRAVITY_MULTIPLIER : float = 3
+const JUMP_VELOCITY : float = -700.0
+const GRAVITY_MULTIPLIER : float = 4
+const JUMPING_GRAVITY_MULTIPLIER : float = 2
 const STORED_JUMP_MAX_TIME : float = 0.5
 
 var stored_jump : bool = false
@@ -20,7 +21,7 @@ func add_external_force(force : Vector2) -> void:
 func apply_forces(delta: float) -> void:
 	if not is_on_floor():
 		if velocity.y < 0 and Input.is_action_pressed("move_jump"):
-			velocity += get_gravity() * delta 
+			velocity += get_gravity() * delta * JUMPING_GRAVITY_MULTIPLIER
 		else:
 			velocity += get_gravity() * delta * GRAVITY_MULTIPLIER 
 	while not external_forces.is_empty():

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://savtvvo51hj1" path="res://assets/environment/fire/floor-fire.png" id="2_s0ke4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ratnr"]
-size = Vector2(128, 64)
+size = Vector2(100, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3nuoq"]
 animations = [{
@@ -19,12 +19,14 @@ animations = [{
 }]
 
 [node name="FireFloor" type="Node2D"]
+z_index = 1
 script = ExtResource("1_x0p5s")
 obstacle_data = ExtResource("2_ratnr")
 
 [node name="EffectArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea"]
+position = Vector2(-1, -16)
 shape = SubResource("RectangleShape2D_ratnr")
 
 [node name="EffectStaticbody" type="StaticBody2D" parent="."]
@@ -32,6 +34,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EffectStaticbody"]
+position = Vector2(-1, -16)
 shape = SubResource("RectangleShape2D_ratnr")
 
 [node name="Main_Texture" type="AnimatedSprite2D" parent="."]

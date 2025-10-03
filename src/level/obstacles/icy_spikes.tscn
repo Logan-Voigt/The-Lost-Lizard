@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c6pbl41jtpgv5" path="res://assets/environment/ice/icy-spikes.png" id="3_o64jj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b2fa"]
-size = Vector2(128, 64)
+size = Vector2(105, 56)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6vw2l"]
 animations = [{
@@ -25,6 +25,7 @@ obstacle_data = ExtResource("2_6ojra")
 [node name="EffectArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea"]
+position = Vector2(4, -26)
 shape = SubResource("RectangleShape2D_7b2fa")
 
 [node name="EffectStaticbody" type="StaticBody2D" parent="."]
@@ -32,6 +33,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EffectStaticbody"]
+position = Vector2(4, -26)
 shape = SubResource("RectangleShape2D_7b2fa")
 
 [node name="Main_Texture" type="AnimatedSprite2D" parent="."]

@@ -1,85 +1,45 @@
-[gd_scene load_steps=9 format=3 uid="uid://fouj2uquchlx"]
+[gd_scene load_steps=8 format=4 uid="uid://fouj2uquchlx"]
 
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="1_5suky"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="2_p6v4a"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="3_p6v4a"]
 [ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="4_w7y1s"]
-[ext_resource type="Texture2D" uid="uid://bi62nlomx3kh7" path="res://assets/environment/building_blocks/Cave_tile_tall.png" id="10_5suky"]
 [ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="10_k5trb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
-size = Vector2(1000, 100)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7y1s"]
+texture = ExtResource("10_k5trb")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -38.0165, 64, -38.0165, 64, 64, -64, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n42af"]
-size = Vector2(100, 100)
+[sub_resource type="TileSet" id="TileSet_5vox1"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/4 = SubResource("TileSetAtlasSource_w7y1s")
 
 [node name="Level" type="Node2D"]
 
-[node name="Block" type="StaticBody2D" parent="."]
-position = Vector2(965, 660)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]
-shape = SubResource("RectangleShape2D_ig7tw")
-
-[node name="Block2" type="StaticBody2D" parent="."]
-position = Vector2(1415, 559)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block2"]
-shape = SubResource("RectangleShape2D_n42af")
-
-[node name="Block3" type="StaticBody2D" parent="."]
-position = Vector2(654, 311)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block3"]
-shape = SubResource("RectangleShape2D_ig7tw")
-
-[node name="Block4" type="StaticBody2D" parent="."]
-position = Vector2(1547, 431)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block4"]
-shape = SubResource("RectangleShape2D_n42af")
-
 [node name="FireFloor" parent="." instance=ExtResource("1_5suky")]
-position = Vector2(1261, 610)
+position = Vector2(945, 283)
 
 [node name="IcySpikes" parent="." instance=ExtResource("2_p6v4a")]
-position = Vector2(323, 261)
+position = Vector2(320, 287)
+
+[node name="IcySpikes2" parent="." instance=ExtResource("2_p6v4a")]
+position = Vector2(212, 667)
 
 [node name="FireVent" parent="." instance=ExtResource("3_p6v4a")]
-position = Vector2(564, 612)
+position = Vector2(506, 669)
 
 [node name="IcyVent" parent="." instance=ExtResource("4_w7y1s")]
-position = Vector2(1682, 677)
+position = Vector2(1249, 666)
 
 [node name="IcyVent2" parent="." instance=ExtResource("4_w7y1s")]
-position = Vector2(633, 234)
+position = Vector2(570, 270)
 rotation = 1.5322
 scale = Vector2(1, 1)
 
-[node name="CaveTileTall3" type="Sprite2D" parent="."]
-position = Vector2(713, 650)
-texture = ExtResource("10_5suky")
-flip_h = true
-
-[node name="CaveTileTall4" type="Sprite2D" parent="."]
-position = Vector2(457, 651)
-texture = ExtResource("10_5suky")
-flip_h = true
-
-[node name="CaveTileTallNoGrass2" type="Sprite2D" parent="."]
-position = Vector2(585, 650)
-texture = ExtResource("10_k5trb")
-flip_h = true
-
-[node name="CaveTileTall" type="Sprite2D" parent="."]
-position = Vector2(1096, 649)
-texture = ExtResource("10_5suky")
-
-[node name="CaveTileTall2" type="Sprite2D" parent="."]
-position = Vector2(840, 650)
-texture = ExtResource("10_5suky")
-flip_h = true
-
-[node name="CaveTileTallNoGrass" type="Sprite2D" parent="."]
-position = Vector2(968, 649)
-texture = ExtResource("10_k5trb")
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 2
+tile_map_data = PackedByteArray("AAAAAAUABAAAAAAAAAABAAUABAAAAAAAAAACAAUABAAAAAAAAAADAAUABAAAAAAAAAAEAAUABAAAAAAAAAAFAAUABAAAAAAAAAAGAAUABAAAAAAAAAAHAAUABAAAAAAAAAAIAAUABAAAAAAAAAAJAAUABAAAAAAAAAAKAAUABAAAAAAAAAABAAIABAAAAAAAAAACAAIABAAAAAAAAAADAAIABAAAAAAAAAAEAAIABAAAAAAAAAAFAAIABAAAAAAAAAAGAAIABAAAAAAAAAAHAAIABAAAAAAAAAAIAAIABAAAAAAAAAD//wMABAAAAAAAAAD//wQABAAAAAAAAAD//wUABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_5vox1")
