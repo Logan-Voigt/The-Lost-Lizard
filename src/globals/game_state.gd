@@ -66,7 +66,7 @@ func set_player_location(location : Vector2) -> void:
 func setup_wait_state(function_to_call_on_completion : Callable = start_playing, wait_time : float = -1.0) -> void:
 	change_state(PLAYER_WAIT)
 	time_to_wait = wait_time
-	function_call_after_wait = respawn_player
+	function_call_after_wait = function_to_call_on_completion
 
 
 func exit_wait_state() -> void:
