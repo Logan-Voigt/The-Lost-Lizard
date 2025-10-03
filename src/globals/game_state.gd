@@ -1,6 +1,7 @@
 extends Node
 
 @onready var player_scene : PackedScene = load("res://src/player/player.tscn")
+@onready var levels : Array[PackedScene] = [load("res://src/level/level.tscn")]
 
 const START_SCREEN : int = 0
 const PAUSE_MENU : int = 1
@@ -62,6 +63,13 @@ func start_playing():
 	change_state(PLAYING)
 
 
+func _on_start_game() -> void:
+	var level : Node2D = levels[0].instantiate()
+	get_tree().root.get_node("Main").add_child(level)
+	start_playing()
+	respawn_player()
+
+
 func _on_player_respawn() -> void:
 	setup_wait_state(respawn_player, RESPAWN_TIME)
 
@@ -75,5 +83,6 @@ func _physics_process(delta: float) -> void:
 
 func _ready() -> void:
 	EventBus.respawn_player.connect(_on_player_respawn)
-	current_state = PLAYING
+	EventBus.start_game.connect(_on_start_game)
+	current_state = START_SCREEN
 	adaptation_type = PLAIN
