@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ObstacleData" load_steps=2 format=3 uid="uid://blovqxox423bg"]
+
+[ext_resource type="Script" uid="uid://bok5uxyimsk0t" path="res://resources/obstacle_data.gd" id="1_lpl3m"]
+
+[resource]
+script = ExtResource("1_lpl3m")
+damage_type = 2
+instant_death = false
+kill_no_matter = false
+death_timer_limit = 0.0
+pushing_power = 600
+destroyed_by_type = 4
+matching_effect = 2
+differing_effect = 0
+always_effect = 0
+metadata/_custom_type_script = "uid://bok5uxyimsk0t"
