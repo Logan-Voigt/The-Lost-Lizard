@@ -97,13 +97,3 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	EventBus.type_changed.connect(_on_type_changed)
 	
-	effect_area_collision.shape = obstacle_hitbox
-	effect_staticbody_collision.shape = obstacle_hitbox
-	effect_area_collision.position.y -= obstacle_hitbox.size.y / 2
-	effect_staticbody_collision.position.y -= obstacle_hitbox.size.y / 2
-	
-	frames.add_animation("default")
-	frames.add_frame("default", obstacle_data.main_image)
-	main_texture.sprite_frames = frames
-	secondary_texture.texture = secondary_image
-	

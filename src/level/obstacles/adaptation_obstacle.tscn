@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1ga81q12atc"]
 
-[ext_resource type="Script" uid="uid://dlcrd4eaa65s5" path="res://src/level/adaptation_obstacle.gd" id="1_mvvav"]
+[ext_resource type="Script" uid="uid://dlcrd4eaa65s5" path="res://src/level/obstacles/adaptation_obstacle.gd" id="1_mvvav"]
 [ext_resource type="Shape2D" uid="uid://bm73nevxjsv6e" path="res://resources/hitboxes/128x128_hitbox.tres" id="2_pw5ec"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uatf8"]

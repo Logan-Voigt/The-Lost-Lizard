@@ -28,3 +28,6 @@ shape = SubResource("RectangleShape2D_0xm2m")
 [node name="Visuals" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -65)
 sprite_frames = SubResource("SpriteFrames_h2yge")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(2, 2)
