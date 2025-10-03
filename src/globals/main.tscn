@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs38ofxnoud3q"]
+[gd_scene load_steps=4 format=3 uid="uid://cs38ofxnoud3q"]
 
 [ext_resource type="PackedScene" uid="uid://o3b3mx0y2584" path="res://src/menus/title_screen.tscn" id="1_gtg6f"]
 [ext_resource type="Script" uid="uid://cgwreuckvw1cs" path="res://src/globals/main.gd" id="1_srjgd"]
+[ext_resource type="Script" uid="uid://crdymhu1481r7" path="res://src/player/main_camera.gd" id="3_gtg6f"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_srjgd")
 
 [node name="TitleScreen" parent="." instance=ExtResource("1_gtg6f")]
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2(960, 539)
+script = ExtResource("3_gtg6f")

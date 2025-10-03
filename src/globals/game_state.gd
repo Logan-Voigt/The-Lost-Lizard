@@ -19,7 +19,7 @@ const RESPAWN_TIME : float = 0.5
 var current_state : int
 var adaptation_type : int
 var player_location : Vector2
-var level_respawn_location : Vector2 = Vector2(947, 519) # should be set by the current level
+var level_respawn_location : Vector2 = Vector2(947, 519) #TODO: should be set by the current level
 var respawn_egg : Node2D
 
 var wait_timer : float
@@ -28,6 +28,10 @@ var function_call_after_wait : Callable
 
 func is_playing() -> bool:
 	return current_state == PLAYING
+
+
+func is_in_game() -> bool:
+	return current_state == PLAYING or current_state == PLAYER_WAIT or current_state == PAUSE_MENU
 
 
 func get_adaptation_type() -> int:
@@ -89,7 +93,7 @@ func _input(event: InputEvent) -> void:
 		if current_state == PLAYING:
 			change_state(START_SCREEN)
 			EventBus.exit_to_menu.emit()
-	if event.is_action_pressed("set_egg"):
+	if event.is_action_pressed("set_egg") and is_playing():
 		if respawn_egg:
 			respawn_egg.queue_free()
 		respawn_egg = egg_scene.instantiate()
