@@ -38,13 +38,11 @@ position = Vector2(1249, 666)
 [node name="IcyVent2" parent="." instance=ExtResource("4_w7y1s")]
 position = Vector2(570, 270)
 rotation = 1.57668
-scale = Vector2(1, 1)
 obstacle_data = ExtResource("5_w7y1s")
 
 [node name="IcyVent3" parent="." instance=ExtResource("4_w7y1s")]
 position = Vector2(568, 203)
 rotation = 1.57668
-scale = Vector2(1, 1)
 obstacle_data = ExtResource("5_w7y1s")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
