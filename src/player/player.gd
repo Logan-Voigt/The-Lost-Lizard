@@ -30,7 +30,7 @@ func apply_forces(delta: float) -> void:
 func handle_jumping(delta: float) -> void:
 	# stored_jump allows you to press jump a little bit early but have it still count
 	if not is_on_floor():
-		player_sprite.play("default")
+		player_sprite.play("jump")
 	if Input.is_action_just_pressed("move_jump") and not is_on_floor():
 		stored_jump = true
 		stored_jump_timer = 0.0
