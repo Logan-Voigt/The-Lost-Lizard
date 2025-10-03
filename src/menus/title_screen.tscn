@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://o3b3mx0y2584"]
+[gd_scene load_steps=4 format=3 uid="uid://o3b3mx0y2584"]
 
 [ext_resource type="Script" uid="uid://c6wevukb25fjy" path="res://src/menus/title_screen.gd" id="1_r6esh"]
-[ext_resource type="Texture2D" uid="uid://bpln7vkvxyb24" path="res://assets/player-sprite.png" id="2_hkxjn"]
+
+[sub_resource type="Gradient" id="Gradient_ok4yg"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r6esh"]
+gradient = SubResource("Gradient_ok4yg")
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_r6esh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(959.25, 539.75)
-scale = Vector2(7.50586, 4.21289)
-texture = ExtResource("2_hkxjn")
+position = Vector2(958.5, 538)
+scale = Vector2(29.9531, 16.8125)
+texture = SubResource("GradientTexture2D_r6esh")
 
 [node name="StartButton" type="Button" parent="."]
 offset_left = 816.0
