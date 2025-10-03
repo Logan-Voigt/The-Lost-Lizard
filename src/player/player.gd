@@ -58,6 +58,7 @@ func handle_graphics() -> void:
 	if Input.is_action_pressed("move_right"):
 		player_sprite.flip_h = false
 
+
 func _on_delete_self() -> void:
 	queue_free()
 
@@ -68,6 +69,7 @@ func _physics_process(delta: float) -> void:
 	handle_jumping(delta)
 	handle_graphics()
 	move_and_slide()
+	GameState.set_player_location(global_position)
 
 
 func _ready() -> void:

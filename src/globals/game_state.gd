@@ -1,6 +1,7 @@
 extends Node
 
 @onready var player_scene : PackedScene = load("res://src/player/player.tscn")
+@onready var egg_scene : PackedScene = load("res://src/player/respawn_egg.tscn")
 @onready var levels : Array[PackedScene] = [load("res://src/level/level.tscn")]
 
 const START_SCREEN : int = 0
@@ -17,7 +18,9 @@ const RESPAWN_TIME : float = 0.5
 
 var current_state : int
 var adaptation_type : int
-var respawn_location : Vector2 = Vector2(947, 519)
+var player_location : Vector2
+var level_respawn_location : Vector2 = Vector2(947, 519) # should be set by the current level
+var respawn_egg : Node2D
 
 var wait_timer : float
 var time_to_wait : float = -1.0
@@ -44,8 +47,16 @@ func change_state(state : int) -> void:
 func respawn_player() -> void:
 	var new_player : Player = player_scene.instantiate()
 	get_tree().root.get_node("Main").add_child(new_player)
-	new_player.position = respawn_location
+	if respawn_egg:
+		new_player.global_position = respawn_egg.global_position
+		respawn_egg.queue_free()
+	else:
+		new_player.global_position = level_respawn_location
 	start_playing()
+
+
+func set_player_location(location : Vector2) -> void:
+	player_location = location
 
 
 func setup_wait_state(function_to_call_on_completion : Callable = start_playing, wait_time : float = -1.0) -> void:
@@ -78,7 +89,12 @@ func _input(event: InputEvent) -> void:
 		if current_state == PLAYING:
 			change_state(START_SCREEN)
 			EventBus.exit_to_menu.emit()
-
+	if event.is_action_pressed("set_egg"):
+		if respawn_egg:
+			respawn_egg.queue_free()
+		respawn_egg = egg_scene.instantiate()
+		get_tree().root.get_node("Main").add_child(respawn_egg)
+		respawn_egg.global_position = player_location
 
 func _physics_process(delta: float) -> void:
 	if current_state == PLAYER_WAIT and time_to_wait > 0:

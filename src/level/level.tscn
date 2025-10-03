@@ -15,16 +15,14 @@ texture_region_size = Vector2i(128, 128)
 
 [sub_resource type="TileSet" id="TileSet_5vox1"]
 tile_size = Vector2i(128, 128)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/4 = SubResource("TileSetAtlasSource_w7y1s")
 
 [node name="Level" type="Node2D"]
 
 [node name="FireFloor" parent="." instance=ExtResource("1_5suky")]
 position = Vector2(987, 283)
-
-[node name="IcySpikes" parent="." instance=ExtResource("2_p6v4a")]
-position = Vector2(320, 287)
 
 [node name="IcySpikes2" parent="." instance=ExtResource("2_p6v4a")]
 position = Vector2(212, 667)
@@ -34,6 +32,9 @@ position = Vector2(65, 674)
 
 [node name="IcyVent" parent="." instance=ExtResource("4_w7y1s")]
 position = Vector2(1249, 666)
+
+[node name="IcyVent4" parent="." instance=ExtResource("4_w7y1s")]
+position = Vector2(268, 284)
 
 [node name="IcyVent2" parent="." instance=ExtResource("4_w7y1s")]
 position = Vector2(570, 270)
@@ -47,5 +48,5 @@ obstacle_data = ExtResource("5_w7y1s")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AAAAAAUABAAAAAAAAAABAAUABAAAAAAAAAACAAUABAAAAAAAAAADAAUABAAAAAAAAAAEAAUABAAAAAAAAAAFAAUABAAAAAAAAAAGAAUABAAAAAAAAAAHAAUABAAAAAAAAAAIAAUABAAAAAAAAAAJAAUABAAAAAAAAAAKAAUABAAAAAAAAAABAAIABAAAAAAAAAACAAIABAAAAAAAAAADAAIABAAAAAAAAAAEAAIABAAAAAAAAAAFAAIABAAAAAAAAAAGAAIABAAAAAAAAAAHAAIABAAAAAAAAAAIAAIABAAAAAAAAAD//wMABAAAAAAAAAD//wQABAAAAAAAAAD//wUABAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAUABAAAAAAAAAABAAUABAAAAAAAAAACAAUABAAAAAAAAAADAAUABAAAAAAAAAAEAAUABAAAAAAAAAAFAAUABAAAAAAAAAAGAAUABAAAAAAAAAAHAAUABAAAAAAAAAAIAAUABAAAAAAAAAAJAAUABAAAAAAAAAAKAAUABAAAAAAAAAABAAIABAAAAAAAAAACAAIABAAAAAAAAAADAAIABAAAAAAAAAAEAAIABAAAAAAAAAAFAAIABAAAAAAAAAAGAAIABAAAAAAAAAAHAAIABAAAAAAAAAAIAAIABAAAAAAAAAD//wMABAAAAAAAAAD//wQABAAAAAAAAAD//wUABAAAAAAAAAADAAAABAAAAAAAAAAEAAAABAAAAAAAAAAFAAAABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_5vox1")
