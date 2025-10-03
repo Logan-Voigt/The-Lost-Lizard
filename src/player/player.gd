@@ -29,6 +29,8 @@ func apply_forces(delta: float) -> void:
 
 func handle_jumping(delta: float) -> void:
 	# stored_jump allows you to press jump a little bit early but have it still count
+	if not is_on_floor():
+		player_sprite.play("default")
 	if Input.is_action_just_pressed("move_jump") and not is_on_floor():
 		stored_jump = true
 		stored_jump_timer = 0.0
@@ -44,8 +46,10 @@ func handle_jumping(delta: float) -> void:
 func handle_movement() -> void:
 	var direction : float = Input.get_axis("move_left", "move_right")
 	if direction:
+		player_sprite.play("walking")
 		velocity.x = direction * SPEED
 	else:
+		player_sprite.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 func handle_graphics() -> void:
