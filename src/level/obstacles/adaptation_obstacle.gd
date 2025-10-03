@@ -1,8 +1,6 @@
 extends Node2D
 
 @export var obstacle_data : ObstacleData
-@export var obstacle_hitbox : RectangleShape2D
-@export var secondary_image : CompressedTexture2D
 @onready var effect_area_collision: CollisionShape2D = $EffectArea/CollisionShape2D
 @onready var effect_area: Area2D = $EffectArea
 @onready var effect_staticbody_collision: CollisionShape2D = $EffectStaticbody/CollisionShape2D

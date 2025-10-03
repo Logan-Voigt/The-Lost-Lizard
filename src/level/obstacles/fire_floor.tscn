@@ -28,6 +28,8 @@ obstacle_data = ExtResource("2_ratnr")
 shape = SubResource("RectangleShape2D_ratnr")
 
 [node name="EffectStaticbody" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EffectStaticbody"]
 shape = SubResource("RectangleShape2D_ratnr")
