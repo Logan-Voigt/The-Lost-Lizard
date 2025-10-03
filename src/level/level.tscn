@@ -1,23 +1,47 @@
-[gd_scene load_steps=9 format=4 uid="uid://fouj2uquchlx"]
+[gd_scene load_steps=15 format=4 uid="uid://fouj2uquchlx"]
 
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="1_5suky"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="2_p6v4a"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="3_p6v4a"]
 [ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="4_w7y1s"]
 [ext_resource type="Resource" uid="uid://blovqxox423bg" path="res://resources/obstacles/strong_icy_vent.tres" id="5_w7y1s"]
+[ext_resource type="Texture2D" uid="uid://bi62nlomx3kh7" path="res://assets/environment/building_blocks/Cave_tile_tall.png" id="6_5vox1"]
+[ext_resource type="Texture2D" uid="uid://5ftnsp366d6n" path="res://assets/environment/building_blocks/grass_tile_tall.png" id="7_p6v4a"]
+[ext_resource type="Texture2D" uid="uid://bd11tobpdakfu" path="res://assets/environment/building_blocks/grass_tile_tall_no_rocks.png" id="8_5suky"]
 [ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="10_k5trb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ob0n7"]
+texture = ExtResource("6_5vox1")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -38.4, 64, -38.4, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5trb"]
+texture = ExtResource("7_p6v4a")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -38.4, 64, -38.4, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0oqu"]
+texture = ExtResource("8_5suky")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -38.4, 64, -38.4, 64, 64, -64, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7y1s"]
 texture = ExtResource("10_k5trb")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -38.0165, 64, -38.0165, 64, 64, -64, 64)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -38.4, 64, -38.4, 64, 64, -64, 64)
 
 [sub_resource type="TileSet" id="TileSet_5vox1"]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 sources/4 = SubResource("TileSetAtlasSource_w7y1s")
+sources/0 = SubResource("TileSetAtlasSource_ob0n7")
+sources/1 = SubResource("TileSetAtlasSource_k5trb")
+sources/2 = SubResource("TileSetAtlasSource_q0oqu")
 
 [node name="Level" type="Node2D"]
 
@@ -48,5 +72,5 @@ obstacle_data = ExtResource("5_w7y1s")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AAAAAAUABAAAAAAAAAABAAUABAAAAAAAAAACAAUABAAAAAAAAAADAAUABAAAAAAAAAAEAAUABAAAAAAAAAAFAAUABAAAAAAAAAAGAAUABAAAAAAAAAAHAAUABAAAAAAAAAAIAAUABAAAAAAAAAAJAAUABAAAAAAAAAAKAAUABAAAAAAAAAABAAIABAAAAAAAAAACAAIABAAAAAAAAAADAAIABAAAAAAAAAAEAAIABAAAAAAAAAAFAAIABAAAAAAAAAAGAAIABAAAAAAAAAAHAAIABAAAAAAAAAAIAAIABAAAAAAAAAD//wMABAAAAAAAAAD//wQABAAAAAAAAAD//wUABAAAAAAAAAADAAAABAAAAAAAAAAEAAAABAAAAAAAAAAFAAAABAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAUABAAAAAAAAAABAAUABAAAAAAAAAACAAUABAAAAAAAAAADAAUABAAAAAAAAAAEAAUABAAAAAAAAAAFAAUABAAAAAAAAAAGAAUABAAAAAAAAAAHAAUABAAAAAAAAAAIAAUAAgAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAgAAAAAAAAABAAIABAAAAAAAAAACAAIABAAAAAAAAAADAAIABAAAAAAAAAAEAAIABAAAAAAAAAAFAAIABAAAAAAAAAAGAAIABAAAAAAAAAAHAAIABAAAAAAAAAAIAAIABAAAAAAAAAD//wMABAAAAAAAAAD//wQABAAAAAAAAAD//wUABAAAAAAAAAADAAAABAAAAAAAAAAEAAAABAAAAAAAAAAFAAAABAAAAAAAAAALAAUAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_5vox1")
