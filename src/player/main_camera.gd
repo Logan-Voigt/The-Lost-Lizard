@@ -1,8 +1,12 @@
-extends Camera2D
+class_name MainCamera extends Camera2D
 
 const CAMERA_DIMENTIONS : Vector2 = Vector2(1920, 1080)
 # TODO: set from level data
-var camera_limits : Vector4 = Vector4(-120, -500, 1900, 760)
+var camera_limits : Vector4
+
+func set_camera_limits(limits : Vector4) -> void:
+	camera_limits = limits
+
 
 func _process(_delta: float) -> void:
 	if not GameState.is_in_game():
