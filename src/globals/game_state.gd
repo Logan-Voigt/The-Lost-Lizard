@@ -45,6 +45,7 @@ func respawn_player() -> void:
 	var new_player : Player = player_scene.instantiate()
 	get_tree().root.get_node("Main").add_child(new_player)
 	new_player.position = respawn_location
+	start_playing()
 
 
 func setup_wait_state(function_to_call_on_completion : Callable = start_playing, wait_time : float = -1.0) -> void:
@@ -64,14 +65,19 @@ func start_playing():
 
 
 func _on_start_game() -> void:
-	var level : Node2D = levels[0].instantiate()
-	get_tree().root.get_node("Main").add_child(level)
 	start_playing()
 	respawn_player()
 
 
 func _on_player_respawn() -> void:
 	setup_wait_state(respawn_player, RESPAWN_TIME)
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("exit"):
+		if current_state == PLAYING:
+			change_state(START_SCREEN)
+			EventBus.exit_to_menu.emit()
 
 
 func _physics_process(delta: float) -> void:
