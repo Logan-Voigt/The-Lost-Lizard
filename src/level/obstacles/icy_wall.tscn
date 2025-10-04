@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://tp3ybpbwcvmp"]
+
+[ext_resource type="Script" uid="uid://dlcrd4eaa65s5" path="res://src/level/obstacles/adaptation_obstacle.gd" id="1_8qfks"]
+[ext_resource type="Texture2D" uid="uid://c8mi0t763fngj" path="res://assets/environment/ice/icy_wall.png" id="2_l75n3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xysco"]
+size = Vector2(49, 206)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gh03b"]
+size = Vector2(78, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56dje"]
+size = Vector2(48, 206)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plbtg"]
+size = Vector2(78, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uatf8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l75n3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="icy_wall" type="Node2D"]
+script = ExtResource("1_8qfks")
+
+[node name="EffectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea"]
+position = Vector2(1.5, -104)
+shape = SubResource("RectangleShape2D_xysco")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EffectArea"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_gh03b")
+
+[node name="EffectStaticbody" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectStaticbody"]
+position = Vector2(2, -104)
+shape = SubResource("RectangleShape2D_56dje")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EffectStaticbody"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_plbtg")
+
+[node name="Main_Texture" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, -129)
+sprite_frames = SubResource("SpriteFrames_uatf8")
+
+[node name="Secondary_Texture" type="Sprite2D" parent="."]
+position = Vector2(0, -128)
+
+[connection signal="body_entered" from="EffectArea" to="." method="_on_effect_area_body_entered"]
+[connection signal="body_exited" from="EffectArea" to="." method="_on_effect_area_body_exited"]
