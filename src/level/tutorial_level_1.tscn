@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://dblnnd68t3gys"]
+[gd_scene load_steps=7 format=4 uid="uid://c2yhwiu4lg52u"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_dgc67"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_v17rn"]
 [ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_mhyc3"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="4_vpekx"]
 [ext_resource type="Texture2D" uid="uid://berm451jbpwfh" path="res://assets/environment/vents/grass_vent.png" id="5_sjwdp"]
-[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_v17rn"]
+[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_v17rn"]
 
 [node name="TutorialLevel_1" type="Node2D"]
 script = ExtResource("1_dgc67")
@@ -14,6 +14,7 @@ level_spawn = Vector2(400, 900)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
+position = Vector2(0, 56)
 tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAJAAcAAgAAAAAAAAAKAAcAAgAAAAAAAAALAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAA=")
 tile_set = ExtResource("2_v17rn")
 
@@ -23,12 +24,12 @@ position = Vector2(960, 540)
 texture = ExtResource("3_mhyc3")
 
 [node name="FireVent" parent="." instance=ExtResource("4_vpekx")]
-position = Vector2(930, 930)
+position = Vector2(930, 986)
 
 [node name="Secondary_Texture" parent="FireVent" index="3"]
 texture = ExtResource("5_sjwdp")
 
 [node name="NestGoal" parent="." instance=ExtResource("6_v17rn")]
-position = Vector2(1721, 862)
+position = Vector2(1721, 918)
 
 [editable path="FireVent"]

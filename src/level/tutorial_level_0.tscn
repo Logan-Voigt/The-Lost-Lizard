@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=4 uid="uid://cn5ymoi4ahlkc"]
+[gd_scene load_steps=6 format=4 uid="uid://c3khuqq7wfcpq"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_7tw55"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_dnmu3"]
 [ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_uekti"]
-[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_nhpje"]
+[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_nhpje"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b16lm"]
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
 
 [node name="TutorialLevel_0" type="Node2D"]
 script = ExtResource("1_7tw55")
@@ -12,6 +17,7 @@ level_spawn = Vector2(400, 900)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
+position = Vector2(0, 56)
 tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAJAAcAAgAAAAAAAAAKAAcAAgAAAAAAAAALAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAA=")
 tile_set = ExtResource("2_dnmu3")
 
@@ -21,4 +27,13 @@ position = Vector2(960, 540)
 texture = ExtResource("3_uekti")
 
 [node name="NestGoal" parent="." instance=ExtResource("6_nhpje")]
-position = Vector2(1721, 862)
+position = Vector2(1721, 918)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1559.0
+offset_top = 715.0
+offset_right = 1875.0
+offset_bottom = 852.0
+text = "press \"E\" to
+spawn an egg"
+label_settings = SubResource("LabelSettings_b16lm")

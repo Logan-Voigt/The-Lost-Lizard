@@ -14,6 +14,11 @@ var stored_jump_timer : float = 0.0
 var is_sliding : bool
 var external_forces : Array[Vector2]
 
+const PLAIN : int = 0
+const FIRE : int = 1
+const ICE : int = 2
+const TOXIC : int = 3
+
 func add_external_force(force : Vector2) -> void:
 	external_forces.append(force)
 
@@ -30,7 +35,10 @@ func apply_forces(delta: float) -> void:
 func handle_jumping(delta: float) -> void:
 	# stored_jump allows you to press jump a little bit early but have it still count
 	if not is_on_floor():
-		player_sprite.play("jump")
+		if GameState.get_adaptation_type() == ICE:
+			player_sprite.play("icy_jump")
+		else:
+			player_sprite.play("jump")
 	if Input.is_action_just_pressed("move_jump") and not is_on_floor():
 		stored_jump = true
 		stored_jump_timer = 0.0
@@ -46,10 +54,16 @@ func handle_jumping(delta: float) -> void:
 func handle_movement() -> void:
 	var direction : float = Input.get_axis("move_left", "move_right")
 	if direction:
-		player_sprite.play("walking")
 		velocity.x = direction * SPEED
+		if GameState.get_adaptation_type() == ICE:
+			player_sprite.play("icy_walking")
+		else:
+			player_sprite.play("walking")
 	else:
-		player_sprite.play("idle")
+		if GameState.get_adaptation_type() == ICE:
+			player_sprite.play("icy_idle")
+		else:
+			player_sprite.play("idle")
 		if is_sliding or not is_on_floor():
 			handle_sliding()
 		else:
