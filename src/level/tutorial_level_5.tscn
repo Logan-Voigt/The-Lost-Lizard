@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="6_g0s62"]
 [ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="7_ktllg"]
 [ext_resource type="PackedScene" uid="uid://cdfitb1vcfv3w" path="res://src/level/obstacles/icy_floor.tscn" id="8_cmvd7"]
-[ext_resource type="PackedScene" path="res://src/level/obstacles/fire_wall.tscn" id="9_xahn7"]
+[ext_resource type="PackedScene" uid="uid://7yil56a2cuvf" path="res://src/level/obstacles/fire_wall.tscn" id="9_xahn7"]
 
 [node name="TutorialLevel_5" type="Node2D"]
 script = ExtResource("1_ghmle")
