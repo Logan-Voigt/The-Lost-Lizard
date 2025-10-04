@@ -3,6 +3,7 @@ extends Node
 @onready var player_scene : PackedScene = load("res://src/player/player.tscn")
 @onready var egg_scene : PackedScene = load("res://src/player/respawn_egg.tscn")
 @onready var levels : Array[PackedScene] = [
+	load("res://src/level/tutorial_level_0.tscn"),
 	load("res://src/level/tutorial_level_1.tscn"), 
 	load("res://src/level/tutorial_level_2.tscn"), 
 	load("res://src/level/tutorial_level_3.tscn"), 
@@ -87,6 +88,7 @@ func start_playing():
 
 
 func _on_start_game() -> void:
+	adaptation_type = PLAIN
 	start_playing()
 	call_deferred("respawn_player")
 

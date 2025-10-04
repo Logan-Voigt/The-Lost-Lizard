@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2ialea5ytqmr"]
 
 [ext_resource type="Script" uid="uid://d0ifg4oc6y2jd" path="res://src/player/respawn_egg.gd" id="1_h1yn4"]
-[ext_resource type="Texture2D" uid="uid://c3kfsvnr4uiv" path="res://assets/respawn_egg.png" id="2_28rpf"]
+[ext_resource type="Texture2D" uid="uid://c3kfsvnr4uiv" path="res://assets/player/respawn_egg.png" id="2_28rpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gs0v5"]
 size = Vector2(36, 60)

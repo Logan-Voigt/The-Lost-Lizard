@@ -7,6 +7,7 @@ extends Node2D
 @onready var effect_staticbody: StaticBody2D = $EffectStaticbody
 @onready var main_texture: AnimatedSprite2D = $Main_Texture
 @onready var secondary_texture: Sprite2D = $Secondary_Texture
+@onready var death_sound: AudioStreamPlayer2D = $DeathSound
 var frames : SpriteFrames = SpriteFrames.new()
 
 const NONE : int = 0
@@ -23,6 +24,7 @@ var player : Player
 var death_timer : float
 
 func kill_player() -> void:
+	death_sound.play(randf_range(0.0, 0.2))
 	GameState.set_adaptation_type(obstacle_data.damage_type)
 	EventBus.respawn_player.emit()
 

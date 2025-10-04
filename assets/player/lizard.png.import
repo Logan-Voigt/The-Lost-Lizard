@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3kfsvnr4uiv"
-path="res://.godot/imported/respawn_egg.png-2ea06c48f299e5761311c1e3f03b41e0.ctex"
+uid="uid://q43n07q0658o"
+path="res://.godot/imported/lizard.png-cb784c6986c0a6cb9e0cfaa4b24890cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/respawn_egg.png"
-dest_files=["res://.godot/imported/respawn_egg.png-2ea06c48f299e5761311c1e3f03b41e0.ctex"]
+source_file="res://assets/player/lizard.png"
+dest_files=["res://.godot/imported/lizard.png-cb784c6986c0a6cb9e0cfaa4b24890cc.ctex"]
 
 [params]
 
