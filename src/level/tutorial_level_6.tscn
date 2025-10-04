@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_ys8wr"]
 [ext_resource type="AudioStream" uid="uid://bw11xagw122hi" path="res://sounds/voice lines/tutorial 7.mp3" id="2_0p7hl"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_pvcfr"]
-[ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_0p7hl"]
+[ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/backgrounds/background_grasslands.png" id="3_0p7hl"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_y78vp"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="8_f4d81"]
 [ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="10_mkm0x"]

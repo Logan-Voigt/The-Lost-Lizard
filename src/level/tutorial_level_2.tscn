@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_s87a0"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_1bfs5"]
 [ext_resource type="AudioStream" uid="uid://dp1niacj22osr" path="res://sounds/voice lines/tutorial 3.mp3" id="2_3jouc"]
-[ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_3jouc"]
+[ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/backgrounds/background_grasslands.png" id="3_3jouc"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="4_tx0xl"]
 [ext_resource type="Texture2D" uid="uid://berm451jbpwfh" path="res://assets/environment/vents/grass_vent.png" id="5_o7h0c"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_he26y"]

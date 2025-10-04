@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_1qfoq"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_d8e51"]
-[ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_ep5ml"]
-[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_3uiav"]
+[ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/backgrounds/background_grasslands.png" id="3_ep5ml"]
+[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_3uiav"]
 [ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="6_qpvnk"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="7_mxp22"]
 [ext_resource type="PackedScene" uid="uid://7yil56a2cuvf" path="res://src/level/obstacles/fire_wall.tscn" id="8_1qfoq"]

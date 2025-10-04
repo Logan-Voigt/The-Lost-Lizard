@@ -9,7 +9,8 @@ extends Node
 	load("res://src/level/tutorial_level_3.tscn"), 
 	load("res://src/level/tutorial_level_4.tscn"), 
 	load("res://src/level/tutorial_level_5.tscn"),
-	load("res://src/level/tutorial_level_6.tscn")]
+	load("res://src/level/tutorial_level_6.tscn"),
+	load("res://src/level/level_1.tscn")]
 
 const START_SCREEN : int = 0
 const PAUSE_MENU : int = 1
