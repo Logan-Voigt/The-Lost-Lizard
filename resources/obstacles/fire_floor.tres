@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ObstacleData" load_steps=3 format=3 uid="uid://3goerk443s6q"]
+[gd_resource type="Resource" script_class="ObstacleData" load_steps=2 format=3 uid="uid://3goerk443s6q"]
 
 [ext_resource type="Script" uid="uid://bok5uxyimsk0t" path="res://resources/obstacle_data.gd" id="1_hohnk"]
-[ext_resource type="Texture2D" uid="uid://savtvvo51hj1" path="res://assets/environment/fire/floor-fire.png" id="1_s47j1"]
 
 [resource]
 script = ExtResource("1_hohnk")
 damage_type = 1
 instant_death = true
+kill_no_matter = false
 death_timer_limit = 0.0
+pushing_power = 0
 destroyed_by_type = 4
 matching_effect = 0
 differing_effect = 0
 always_effect = 0
-main_image = ExtResource("1_s47j1")
 metadata/_custom_type_script = "uid://bok5uxyimsk0t"
