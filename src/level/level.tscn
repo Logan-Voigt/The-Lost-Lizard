@@ -9,7 +9,7 @@
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="6_w7y1s"]
 [ext_resource type="PackedScene" uid="uid://cdfitb1vcfv3w" path="res://src/level/obstacles/icy_floor.tscn" id="7_ob0n7"]
 [ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="9_p6v4a"]
-[ext_resource type="Texture2D" uid="uid://c8mi0t763fngj" path="res://assets/environment/ice/icy_wall.png" id="10_5suky"]
+[ext_resource type="PackedScene" uid="uid://tp3ybpbwcvmp" path="res://src/level/obstacles/icy_wall.tscn" id="10_5suky"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_5vox1")
@@ -78,7 +78,5 @@ z_index = -1
 position = Vector2(840, 222)
 texture = ExtResource("9_p6v4a")
 
-[node name="IcyWall" type="Sprite2D" parent="."]
-position = Vector2(862, 533)
-texture = ExtResource("10_5suky")
-flip_h = true
+[node name="icy_wall" parent="." instance=ExtResource("10_5suky")]
+position = Vector2(1085, 674)
