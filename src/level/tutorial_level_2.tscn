@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://ck2nck2ctnrrg"]
+[gd_scene load_steps=8 format=4 uid="uid://diejhwjhy84qk"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_s87a0"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_1bfs5"]
 [ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_3jouc"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="4_tx0xl"]
 [ext_resource type="Texture2D" uid="uid://berm451jbpwfh" path="res://assets/environment/vents/grass_vent.png" id="5_o7h0c"]
-[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_he26y"]
+[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_he26y"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="7_1bfs5"]
 
 [node name="TutorialLevel_2" type="Node2D"]
@@ -15,6 +15,7 @@ level_spawn = Vector2(400, 900)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
+position = Vector2(0, 56)
 tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAJAAcAAgAAAAAAAAAKAAcAAgAAAAAAAAALAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAA=")
 tile_set = ExtResource("2_1bfs5")
 
@@ -24,15 +25,15 @@ position = Vector2(960, 540)
 texture = ExtResource("3_3jouc")
 
 [node name="FireVent" parent="." instance=ExtResource("4_tx0xl")]
-position = Vector2(1259, 930)
+position = Vector2(1259, 986)
 
 [node name="Secondary_Texture" parent="FireVent" index="3"]
 texture = ExtResource("5_o7h0c")
 
 [node name="NestGoal" parent="." instance=ExtResource("6_he26y")]
-position = Vector2(1721, 862)
+position = Vector2(1721, 918)
 
 [node name="IcySpikes" parent="." instance=ExtResource("7_1bfs5")]
-position = Vector2(837, 933)
+position = Vector2(837, 989)
 
 [editable path="FireVent"]

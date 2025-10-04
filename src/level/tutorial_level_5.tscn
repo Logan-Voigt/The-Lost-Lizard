@@ -1,14 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://6lc7fkjwmxby"]
+[gd_scene load_steps=10 format=4 uid="uid://dycqmrwlf5ecw"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_ghmle"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_cmvd7"]
 [ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_xahn7"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="4_3ned3"]
-[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="5_gcvcx"]
+[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="5_gcvcx"]
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="6_g0s62"]
 [ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="7_ktllg"]
 [ext_resource type="PackedScene" uid="uid://cdfitb1vcfv3w" path="res://src/level/obstacles/icy_floor.tscn" id="8_cmvd7"]
-[ext_resource type="PackedScene" uid="uid://b7u5eoh7ar0mv" path="res://src/level/obstacles/fire_wall.tscn" id="9_xahn7"]
+[ext_resource type="PackedScene" path="res://src/level/obstacles/fire_wall.tscn" id="9_xahn7"]
 
 [node name="TutorialLevel_5" type="Node2D"]
 script = ExtResource("1_ghmle")
@@ -17,6 +17,7 @@ level_spawn = Vector2(200, 900)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
+position = Vector2(0, 56)
 tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAJAAcAAgAAAAAAAAAKAAcAAgAAAAAAAAALAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAHAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAANAAQAAQAAAAAAAAAOAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAA=")
 tile_set = ExtResource("2_cmvd7")
 
@@ -26,34 +27,34 @@ position = Vector2(960, 540)
 texture = ExtResource("3_xahn7")
 
 [node name="IcySpikes" parent="." instance=ExtResource("4_3ned3")]
-position = Vector2(1149, 933)
+position = Vector2(1149, 989)
 
 [node name="IcySpikes2" parent="." instance=ExtResource("4_3ned3")]
-position = Vector2(780, 933)
+position = Vector2(780, 989)
 
 [node name="NestGoal" parent="." instance=ExtResource("5_gcvcx")]
-position = Vector2(1800, 479)
+position = Vector2(1800, 535)
 
 [node name="FireFloor" parent="." instance=ExtResource("6_g0s62")]
-position = Vector2(1538, 928)
+position = Vector2(1538, 984)
 
 [node name="IcyVent" parent="." instance=ExtResource("7_ktllg")]
-position = Vector2(381, 926)
+position = Vector2(381, 982)
 
 [node name="IcyFloor" parent="." instance=ExtResource("8_cmvd7")]
-position = Vector2(575, 528)
+position = Vector2(575, 584)
 
 [node name="IcyFloor2" parent="." instance=ExtResource("8_cmvd7")]
-position = Vector2(959, 528)
+position = Vector2(959, 584)
 
 [node name="IcyFloor3" parent="." instance=ExtResource("8_cmvd7")]
-position = Vector2(1343, 528)
+position = Vector2(1343, 584)
 
 [node name="FireWall" parent="." instance=ExtResource("9_xahn7")]
-position = Vector2(769, 405)
+position = Vector2(769, 461)
 
 [node name="FireWall2" parent="." instance=ExtResource("9_xahn7")]
-position = Vector2(1147, 405)
+position = Vector2(1147, 461)
 
 [node name="FireWall3" parent="." instance=ExtResource("9_xahn7")]
-position = Vector2(1532, 405)
+position = Vector2(1532, 461)

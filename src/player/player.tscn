@@ -1,13 +1,64 @@
-[gd_scene load_steps=21 format=3 uid="uid://csutreqqsgur"]
+[gd_scene load_steps=36 format=3 uid="uid://csutreqqsgur"]
 
 [ext_resource type="Script" uid="uid://hp01iv1kclsc" path="res://src/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://q43n07q0658o" path="res://assets/player/lizard.png" id="2_rxibo"]
 [ext_resource type="Texture2D" uid="uid://wdmyvqgpnhhn" path="res://assets/player/idle_lizard.png" id="3_244u8"]
+[ext_resource type="Texture2D" uid="uid://vx8yrmsh8awc" path="res://assets/player/icy_lizard_walking.png" id="3_jiejy"]
+[ext_resource type="Texture2D" uid="uid://bhsegjxe1yr18" path="res://assets/player/icy_lizard_idle.png" id="3_o822w"]
 [ext_resource type="Texture2D" uid="uid://cgpqw3y25drtp" path="res://assets/player/walking_lizard.png" id="4_5f2sf"]
 [ext_resource type="Texture2D" uid="uid://b78v5s4nah7ux" path="res://assets/player/lizard_jumping.png" id="4_jiejy"]
+[ext_resource type="Texture2D" uid="uid://cxvm6u887bs1d" path="res://assets/player/icy_lizard_jumping.png" id="4_x42xx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(130, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwi60"]
+atlas = ExtResource("3_o822w")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o04tx"]
+atlas = ExtResource("3_o822w")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2873"]
+atlas = ExtResource("3_o822w")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpt0q"]
+atlas = ExtResource("3_o822w")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwsmr"]
+atlas = ExtResource("3_jiejy")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcdrv"]
+atlas = ExtResource("3_jiejy")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hja65"]
+atlas = ExtResource("3_jiejy")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5shm8"]
+atlas = ExtResource("3_jiejy")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5efpn"]
+atlas = ExtResource("3_jiejy")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uy46"]
+atlas = ExtResource("3_jiejy")
+region = Rect2(2560, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k60ra"]
+atlas = ExtResource("3_jiejy")
+region = Rect2(3072, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4vah"]
+atlas = ExtResource("3_jiejy")
+region = Rect2(3584, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jiejy"]
 atlas = ExtResource("3_244u8")
@@ -70,6 +121,60 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwi60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o04tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2873")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpt0q")
+}],
+"loop": true,
+"name": &"icy_idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x42xx")
+}],
+"loop": true,
+"name": &"icy_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwsmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcdrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hja65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5shm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5efpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uy46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k60ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4vah")
+}],
+"loop": true,
+"name": &"icy_walking",
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -144,4 +249,4 @@ texture_filter = 1
 position = Vector2(0, -100)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_h2yge")
-animation = &"walking"
+animation = &"icy_jump"

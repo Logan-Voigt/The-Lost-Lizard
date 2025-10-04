@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://c4ty4rphnh4d3"]
+[gd_scene load_steps=11 format=4 uid="uid://d027c41rys4jm"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_ys8wr"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_pvcfr"]
 [ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_0p7hl"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="4_f4d81"]
 [ext_resource type="Texture2D" uid="uid://berm451jbpwfh" path="res://assets/environment/vents/grass_vent.png" id="5_mkm0x"]
-[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_y78vp"]
+[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_y78vp"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="8_f4d81"]
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="9_mkm0x"]
+[ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="10_mkm0x"]
 [ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="10_y78vp"]
 
 [node name="TutorialLevel_6" type="Node2D"]
@@ -17,6 +18,7 @@ level_spawn = Vector2(950, 900)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
+position = Vector2(0, 62)
 tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAJAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAALAAYAAQAAAAAAAAAKAAcAAgAAAAAAAAA=")
 tile_set = ExtResource("2_pvcfr")
 
@@ -26,24 +28,32 @@ position = Vector2(960, 540)
 texture = ExtResource("3_0p7hl")
 
 [node name="FireVent" parent="." instance=ExtResource("4_f4d81")]
-position = Vector2(1117, 930)
+position = Vector2(1117, 992)
 
 [node name="Secondary_Texture" parent="FireVent" index="3"]
 texture = ExtResource("5_mkm0x")
 
 [node name="NestGoal" parent="." instance=ExtResource("6_y78vp")]
-position = Vector2(82, 863)
+position = Vector2(82, 925)
 
 [node name="IcySpikes" parent="." instance=ExtResource("8_f4d81")]
-position = Vector2(1727, 924)
+position = Vector2(1727, 986)
 
 [node name="IcySpikes2" parent="." instance=ExtResource("8_f4d81")]
-position = Vector2(267, 924)
+position = Vector2(267, 986)
 
 [node name="FireFloor" parent="." instance=ExtResource("9_mkm0x")]
-position = Vector2(773, 926)
+position = Vector2(773, 988)
 
 [node name="icy_wall" parent="." instance=ExtResource("10_y78vp")]
-position = Vector2(515, 927)
+position = Vector2(515, 989)
+
+[node name="CaveTileTallNoGrass2" type="Sprite2D" parent="."]
+position = Vector2(1472, 1017)
+texture = ExtResource("10_mkm0x")
+
+[node name="CaveTileTallNoGrass" type="Sprite2D" parent="."]
+position = Vector2(1472, 973)
+texture = ExtResource("10_mkm0x")
 
 [editable path="FireVent"]
