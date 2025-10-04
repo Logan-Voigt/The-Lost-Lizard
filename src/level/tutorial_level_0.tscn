@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://c3khuqq7wfcpq"]
+[gd_scene load_steps=9 format=4 uid="uid://c3khuqq7wfcpq"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_7tw55"]
+[ext_resource type="AudioStream" uid="uid://bq1upuamlx5eg" path="res://sounds/voice lines/tutorial 1.mp3" id="2_7tw55"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_dnmu3"]
 [ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_uekti"]
 [ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="5_hd6qb"]
@@ -16,6 +17,10 @@ size = Vector2(565, 200)
 script = ExtResource("1_7tw55")
 level_max = Vector2(1920, 1080)
 level_spawn = Vector2(400, 900)
+tutorial_audio_offset = 1.0
+
+[node name="TutorialVoice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_7tw55")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
