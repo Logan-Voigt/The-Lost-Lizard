@@ -1,17 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://ghjyu24i2aqy"]
+[gd_scene load_steps=11 format=3 uid="uid://ghjyu24i2aqy"]
 
 [ext_resource type="Script" uid="uid://dlcrd4eaa65s5" path="res://src/level/obstacles/adaptation_obstacle.gd" id="1_x0p5s"]
 [ext_resource type="Resource" uid="uid://3goerk443s6q" path="res://resources/obstacles/fire_floor.tres" id="2_ratnr"]
-[ext_resource type="Texture2D" uid="uid://savtvvo51hj1" path="res://assets/environment/fire/floor-fire.png" id="2_s0ke4"]
+[ext_resource type="Texture2D" uid="uid://dw5fdklgicm2r" path="res://assets/environment/fire/fire-floor.png" id="3_s0ke4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ratnr"]
 size = Vector2(100, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ratnr"]
+atlas = ExtResource("3_s0ke4")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nuoq"]
+atlas = ExtResource("3_s0ke4")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnn0k"]
+atlas = ExtResource("3_s0ke4")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1kpf"]
+atlas = ExtResource("3_s0ke4")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47s4l"]
+atlas = ExtResource("3_s0ke4")
+region = Rect2(1024, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3nuoq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_s0ke4")
+"texture": SubResource("AtlasTexture_ratnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nuoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnn0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1kpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47s4l")
 }],
 "loop": true,
 "name": &"default",

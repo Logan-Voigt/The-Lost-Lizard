@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://fouj2uquchlx"]
+[gd_scene load_steps=10 format=4 uid="uid://fouj2uquchlx"]
 
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="1_5suky"]
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_5vox1"]

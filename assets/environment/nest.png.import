@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sdw2psi5b7uh"
-path="res://.godot/imported/fire-vent.png-968332528e0f3276d6b091f149309997.ctex"
+uid="uid://jovthykutyg8"
+path="res://.godot/imported/nest.png-421b7203e10007f18040f0b4c289bda9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/fire/fire-vent.png"
-dest_files=["res://.godot/imported/fire-vent.png-968332528e0f3276d6b091f149309997.ctex"]
+source_file="res://assets/environment/nest.png"
+dest_files=["res://.godot/imported/nest.png-421b7203e10007f18040f0b4c289bda9.ctex"]
 
 [params]
 
