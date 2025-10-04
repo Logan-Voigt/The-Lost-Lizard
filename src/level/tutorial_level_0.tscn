@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=4 uid="uid://c3khuqq7wfcpq"]
+[gd_scene load_steps=8 format=4 uid="uid://c3khuqq7wfcpq"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_7tw55"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_dnmu3"]
 [ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_uekti"]
-[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_nhpje"]
+[ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="5_hd6qb"]
+[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_nhpje"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_b16lm"]
-font_size = 48
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd6qb"]
+size = Vector2(1200, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tw55"]
+size = Vector2(565, 200)
 
 [node name="TutorialLevel_0" type="Node2D"]
 script = ExtResource("1_7tw55")
@@ -29,11 +31,29 @@ texture = ExtResource("3_uekti")
 [node name="NestGoal" parent="." instance=ExtResource("6_nhpje")]
 position = Vector2(1721, 918)
 
-[node name="Label" type="Label" parent="."]
+[node name="EForEgg" parent="." instance=ExtResource("5_hd6qb")]
 offset_left = 1559.0
-offset_top = 715.0
+offset_top = 734.0
 offset_right = 1875.0
-offset_bottom = 852.0
-text = "press \"E\" to
-spawn an egg"
-label_settings = SubResource("LabelSettings_b16lm")
+offset_bottom = 871.0
+
+[node name="Area2D" type="Area2D" parent="EForEgg"]
+position = Vector2(2, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EForEgg/Area2D"]
+position = Vector2(-240, 127)
+shape = SubResource("RectangleShape2D_hd6qb")
+
+[node name="TutorialLabel" parent="." instance=ExtResource("5_hd6qb")]
+offset_left = 157.0
+offset_top = 725.0
+offset_right = 473.0
+offset_bottom = 862.0
+text = "[outline_size=20][font_size=40]press [b] A [/b] and [b] D [/b]
+to move[/font_size][/outline_size]"
+
+[node name="Area2D" type="Area2D" parent="TutorialLabel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialLabel/Area2D"]
+position = Vector2(222.5, 154)
+shape = SubResource("RectangleShape2D_7tw55")

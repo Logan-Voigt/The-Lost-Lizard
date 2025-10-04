@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://xbudkosp0k78"]
+
+[ext_resource type="Script" uid="uid://dybtaybf0wc8d" path="res://src/level/tutorial_label.gd" id="1_on5xc"]
+
+[node name="TutorialLabel" type="RichTextLabel"]
+offset_right = 316.0
+offset_bottom = 137.0
+bbcode_enabled = true
+text = "[outline_size=20][font_size=40]press [b] E [/b] to
+spawn an egg[/font_size][/outline_size]"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_on5xc")
