@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dlcrd4eaa65s5" path="res://src/level/obstacles/adaptation_obstacle.gd" id="1_wi6at"]
 [ext_resource type="Resource" uid="uid://ctar066hgbvka" path="res://resources/obstacles/icy_floor.tres" id="2_hhhu1"]
 [ext_resource type="Texture2D" uid="uid://ch4bmp3gbt832" path="res://assets/environment/ice/icy_floor.png" id="3_hhhu1"]
-[ext_resource type="Script" path="res://src/level/obstacles/icy_floor.gd" id="4_p7moe"]
+[ext_resource type="Script" uid="uid://cj3ucggauiaih" path="res://src/level/obstacles/icy_floor.gd" id="4_p7moe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hhhu1"]
 size = Vector2(128, 32)
