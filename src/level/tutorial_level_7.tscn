@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="8_3hamc"]
 [ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="10_2ye4j"]
 
-[node name="TutorialLevel_6" type="Node2D"]
+[node name="TutorialLevel_7" type="Node2D"]
 script = ExtResource("1_1qfoq")
 level_max = Vector2(1920, 1080)
 level_spawn = Vector2(1000, 900)
