@@ -15,6 +15,7 @@ const START_SCREEN : int = 0
 const PAUSE_MENU : int = 1
 const PLAYER_WAIT : int = 2
 const PLAYING : int = 3
+const WIN_SCREEN : int = 4
 
 const PLAIN : int = 0
 const FIRE : int = 1
@@ -103,9 +104,8 @@ func _on_player_respawn() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit"):
-		if current_state == PLAYING:
-			change_state(START_SCREEN)
-			EventBus.exit_to_menu.emit()
+		change_state(START_SCREEN)
+		EventBus.exit_to_menu.emit()
 	if event.is_action_pressed("set_egg") and is_playing():
 		if respawn_egg:
 			respawn_egg.queue_free()

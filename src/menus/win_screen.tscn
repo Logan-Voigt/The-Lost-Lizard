@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ags0jdfamtg"]
+
+[ext_resource type="Script" uid="uid://dxhjth1sxwujt" path="res://src/menus/win_screen.gd" id="1_xbcte"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xbcte"]
+size = Vector2(1920, 1080)
+
+[node name="WinScreen" type="Node2D"]
+script = ExtResource("1_xbcte")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = SubResource("PlaceholderTexture2D_xbcte")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1912.0
+offset_bottom = 1067.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=100]well done, you won![/font_size]"
+horizontal_alignment = 1
+vertical_alignment = 1
