@@ -1,16 +1,67 @@
-[gd_scene load_steps=36 format=3 uid="uid://csutreqqsgur"]
+[gd_scene load_steps=51 format=3 uid="uid://csutreqqsgur"]
 
 [ext_resource type="Script" uid="uid://hp01iv1kclsc" path="res://src/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://q43n07q0658o" path="res://assets/player/lizard.png" id="2_rxibo"]
 [ext_resource type="Texture2D" uid="uid://wdmyvqgpnhhn" path="res://assets/player/idle_lizard.png" id="3_244u8"]
 [ext_resource type="Texture2D" uid="uid://vx8yrmsh8awc" path="res://assets/player/icy_lizard_walking.png" id="3_jiejy"]
+[ext_resource type="Texture2D" uid="uid://d0rvs5688b3pj" path="res://assets/player/fire_lizard_walking.png" id="3_l271a"]
 [ext_resource type="Texture2D" uid="uid://bhsegjxe1yr18" path="res://assets/player/icy_lizard_idle.png" id="3_o822w"]
+[ext_resource type="Texture2D" uid="uid://dh3nqaa1oo8kd" path="res://assets/player/fire_lizard_idle.png" id="3_ylhto"]
 [ext_resource type="Texture2D" uid="uid://cgpqw3y25drtp" path="res://assets/player/walking_lizard.png" id="4_5f2sf"]
+[ext_resource type="Texture2D" uid="uid://yojcsn6q63m3" path="res://assets/player/fire_lizard_jumping.png" id="4_cwolq"]
 [ext_resource type="Texture2D" uid="uid://b78v5s4nah7ux" path="res://assets/player/lizard_jumping.png" id="4_jiejy"]
 [ext_resource type="Texture2D" uid="uid://cxvm6u887bs1d" path="res://assets/player/icy_lizard_jumping.png" id="4_x42xx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(130, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsylq"]
+atlas = ExtResource("3_ylhto")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utg71"]
+atlas = ExtResource("3_ylhto")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0c71"]
+atlas = ExtResource("3_ylhto")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpqwn"]
+atlas = ExtResource("3_ylhto")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcxbk"]
+atlas = ExtResource("3_l271a")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6grl"]
+atlas = ExtResource("3_l271a")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7e1q"]
+atlas = ExtResource("3_l271a")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmpm3"]
+atlas = ExtResource("3_l271a")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0enb"]
+atlas = ExtResource("3_l271a")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phdu6"]
+atlas = ExtResource("3_l271a")
+region = Rect2(2560, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ptlo"]
+atlas = ExtResource("3_l271a")
+region = Rect2(3072, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evlgt"]
+atlas = ExtResource("3_l271a")
+region = Rect2(3584, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vwi60"]
 atlas = ExtResource("3_o822w")
@@ -121,6 +172,60 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsylq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utg71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0c71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpqwn")
+}],
+"loop": true,
+"name": &"fire_idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cwolq")
+}],
+"loop": true,
+"name": &"fire_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcxbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6grl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7e1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmpm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0enb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phdu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ptlo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evlgt")
+}],
+"loop": true,
+"name": &"fire_walking",
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -249,4 +354,4 @@ texture_filter = 1
 position = Vector2(0, -100)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_h2yge")
-animation = &"icy_jump"
+animation = &"fire_jump"
