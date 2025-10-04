@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_dnmu3"]
 [ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_uekti"]
 [ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="5_hd6qb"]
-[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_nhpje"]
+[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_nhpje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd6qb"]
 size = Vector2(1200, 200)
