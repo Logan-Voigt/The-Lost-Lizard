@@ -7,6 +7,7 @@ const JUMP_VELOCITY : float = -700.0
 const GRAVITY_MULTIPLIER : float = 4
 const JUMPING_GRAVITY_MULTIPLIER : float = 2
 const STORED_JUMP_MAX_TIME : float = 0.5
+const SLIDE_AMOUNT : float = 10
 
 var stored_jump : bool = false
 var stored_jump_timer : float = 0.0
@@ -49,7 +50,7 @@ func handle_movement() -> void:
 		velocity.x = direction * SPEED
 	else:
 		player_sprite.play("idle")
-		if is_sliding:
+		if is_sliding or not is_on_floor():
 			handle_sliding()
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -57,11 +58,7 @@ func handle_movement() -> void:
 
 func handle_sliding() -> void:
 	is_sliding = false
-	if abs(velocity.x) < 1:
-		if player_sprite.flip_h:
-			velocity.x = -500
-		else:
-			velocity.x = 500
+	velocity.x = move_toward(velocity.x, 0, SLIDE_AMOUNT)
 
 
 func handle_graphics() -> void:
