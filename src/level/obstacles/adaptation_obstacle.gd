@@ -19,7 +19,6 @@ const PLAYER_LAYER : int = 1
 var pushing_x : int 
 var pushing_y : int 
 var player : Player 
-var pushing_player : bool
 
 var death_timer : float
 
@@ -32,20 +31,20 @@ func reset_obstacle() -> void:
 	effect_staticbody.collision_layer = 0
 
 
-func apply_matching_effects(delta) -> void:
-	if obstacle_data.kill_no_matter:
-		apply_differing_effects(delta)
-	match obstacle_data.matching_effect:
+func match_the_effect(type_of_effect : int) -> void:
+	match type_of_effect:
 		STOP:
 			effect_staticbody.collision_layer = PLAYER_LAYER
 		PUSH:
-			pushing_player = true
-			player.being_pushed = pushing_player
 			player.add_external_force(transform.y * -obstacle_data.pushing_power)
 		SLIDE:
-			pass
+			player.is_sliding = true
 		_:
 			pass
+
+
+func apply_matching_effects() -> void:
+	match_the_effect(obstacle_data.matching_effect)
 
 
 func apply_differing_effects(delta: float) -> void:
@@ -57,11 +56,14 @@ func apply_differing_effects(delta: float) -> void:
 		if death_timer > obstacle_data.death_timer_limit:
 			kill_player()
 			return
+	match_the_effect(obstacle_data.differing_effect)
 
 
 func apply_always_effects() -> void:
-	pass
-
+	if obstacle_data.kill_no_matter:
+		kill_player()
+		return
+	match_the_effect(obstacle_data.always_effect)
 
 func _on_effect_area_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -69,9 +71,6 @@ func _on_effect_area_body_entered(body: Node2D) -> void:
 
 
 func _on_effect_area_body_exited(body: Node2D) -> void:
-	if pushing_player:
-		pushing_player = false
-		player.being_pushed = false
 	if body is Player:
 		death_timer = 0.0
 		player = null
@@ -86,7 +85,7 @@ func _on_type_changed() -> void:
 func _physics_process(delta: float) -> void:
 	if not player: return
 	if obstacle_data.damage_type == GameState.adaptation_type:
-		apply_matching_effects(delta)
+		apply_matching_effects()
 	else:
 		apply_differing_effects(delta)
 	apply_always_effects()

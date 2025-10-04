@@ -1,26 +1,18 @@
 [gd_scene load_steps=10 format=4 uid="uid://fouj2uquchlx"]
 
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="1_5suky"]
+[ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_5vox1"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="2_p6v4a"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="3_p6v4a"]
 [ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="4_w7y1s"]
 [ext_resource type="Resource" uid="uid://blovqxox423bg" path="res://resources/obstacles/strong_icy_vent.tres" id="5_w7y1s"]
-[ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="7_5vox1"]
-[ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="10_k5trb"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7y1s"]
-texture = ExtResource("10_k5trb")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -38.0165, 64, -38.0165, 64, 64, -64, 64)
-
-[sub_resource type="TileSet" id="TileSet_5vox1"]
-tile_size = Vector2i(128, 128)
-physics_layer_0/collision_layer = 3
-physics_layer_0/collision_mask = 3
-sources/4 = SubResource("TileSetAtlasSource_w7y1s")
+[ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="6_w7y1s"]
+[ext_resource type="PackedScene" uid="uid://cdfitb1vcfv3w" path="res://src/level/obstacles/icy_floor.tscn" id="7_ob0n7"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_5vox1")
+level_min = Vector2(-120, -500)
+level_max = Vector2(1900, 760)
 
 [node name="FireFloor" parent="." instance=ExtResource("1_5suky")]
 position = Vector2(987, 283)
@@ -47,12 +39,34 @@ position = Vector2(568, 203)
 rotation = 1.57668
 obstacle_data = ExtResource("5_w7y1s")
 
+[node name="IcyFloor" parent="." instance=ExtResource("7_ob0n7")]
+position = Vector2(1546, 658)
+
+[node name="IcyFloor2" parent="." instance=ExtResource("7_ob0n7")]
+position = Vector2(1088, 273)
+
+[node name="IcyFloor3" parent="." instance=ExtResource("7_ob0n7")]
+position = Vector2(960, 273)
+
+[node name="IcyFloor4" parent="." instance=ExtResource("7_ob0n7")]
+position = Vector2(832, 272)
+
+[node name="IcyFloor5" parent="." instance=ExtResource("7_ob0n7")]
+position = Vector2(704, 272)
+
+[node name="IcyFloor6" parent="." instance=ExtResource("7_ob0n7")]
+position = Vector2(576, 272)
+
+[node name="IcyFloor7" parent="." instance=ExtResource("7_ob0n7")]
+position = Vector2(448, 272)
+
+[node name="IcyFloor8" parent="." instance=ExtResource("7_ob0n7")]
+position = Vector2(320, 272)
+
+[node name="IcyFloor9" parent="." instance=ExtResource("7_ob0n7")]
+position = Vector2(192, 272)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AAAAAAUABAAAAAAAAAABAAUABAAAAAAAAAACAAUABAAAAAAAAAADAAUABAAAAAAAAAAEAAUABAAAAAAAAAAFAAUABAAAAAAAAAAGAAUABAAAAAAAAAAHAAUABAAAAAAAAAAIAAUABAAAAAAAAAAJAAUABAAAAAAAAAAKAAUABAAAAAAAAAABAAIABAAAAAAAAAACAAIABAAAAAAAAAADAAIABAAAAAAAAAAEAAIABAAAAAAAAAAFAAIABAAAAAAAAAAGAAIABAAAAAAAAAAHAAIABAAAAAAAAAAIAAIABAAAAAAAAAD//wMABAAAAAAAAAD//wQABAAAAAAAAAD//wUABAAAAAAAAAADAAAABAAAAAAAAAAEAAAABAAAAAAAAAAFAAAABAAAAAAAAAA=")
-tile_set = SubResource("TileSet_5vox1")
-
-[node name="Pixil-frame-0(31)" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(833, 222)
-texture = ExtResource("7_5vox1")
+tile_map_data = PackedByteArray("AAAAAAUABAAAAAAAAAABAAUABAAAAAAAAAACAAUABAAAAAAAAAADAAUABAAAAAAAAAAEAAUABAAAAAAAAAAFAAUABAAAAAAAAAAGAAUABAAAAAAAAAAHAAUABAAAAAAAAAAIAAUAAgAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAgAAAAAAAAABAAIABAAAAAAAAAACAAIABAAAAAAAAAADAAIABAAAAAAAAAAEAAIABAAAAAAAAAAFAAIABAAAAAAAAAAGAAIABAAAAAAAAAAHAAIABAAAAAAAAAAIAAIABAAAAAAAAAD//wMABAAAAAAAAAD//wQABAAAAAAAAAD//wUABAAAAAAAAAADAAAABAAAAAAAAAAEAAAABAAAAAAAAAAFAAAABAAAAAAAAAALAAUAAgAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAQABAAAAAAAAAAOAAMABAAAAAAAAAAOAAIABAAAAAAAAAA=")
+tile_set = ExtResource("6_w7y1s")

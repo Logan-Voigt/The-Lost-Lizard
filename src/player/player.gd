@@ -10,8 +10,7 @@ const STORED_JUMP_MAX_TIME : float = 0.5
 
 var stored_jump : bool = false
 var stored_jump_timer : float = 0.0
-
-var being_pushed : bool 
+var is_sliding : bool
 var external_forces : Array[Vector2]
 
 func add_external_force(force : Vector2) -> void:
@@ -30,7 +29,7 @@ func apply_forces(delta: float) -> void:
 func handle_jumping(delta: float) -> void:
 	# stored_jump allows you to press jump a little bit early but have it still count
 	if not is_on_floor():
-		player_sprite.play("default")
+		player_sprite.play("jump")
 	if Input.is_action_just_pressed("move_jump") and not is_on_floor():
 		stored_jump = true
 		stored_jump_timer = 0.0
@@ -50,7 +49,20 @@ func handle_movement() -> void:
 		velocity.x = direction * SPEED
 	else:
 		player_sprite.play("idle")
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if is_sliding:
+			handle_sliding()
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+
+
+func handle_sliding() -> void:
+	is_sliding = false
+	if abs(velocity.x) < 1:
+		if player_sprite.flip_h:
+			velocity.x = -500
+		else:
+			velocity.x = 500
+
 
 func handle_graphics() -> void:
 	if Input.is_action_pressed("move_left"):

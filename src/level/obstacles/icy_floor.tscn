@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdfitb1vcfv3w"]
+
+[ext_resource type="Script" uid="uid://dlcrd4eaa65s5" path="res://src/level/obstacles/adaptation_obstacle.gd" id="1_wi6at"]
+[ext_resource type="Texture2D" uid="uid://ble0ai6dv6oxu" path="res://assets/environment/building_blocks/desert_tile.png" id="2_2ja2v"]
+[ext_resource type="Resource" uid="uid://ctar066hgbvka" path="res://resources/obstacles/icy_floor.tres" id="2_hhhu1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhhu1"]
+size = Vector2(128, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7moe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ja2v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="IcyFloor" type="Node2D"]
+z_index = 3
+script = ExtResource("1_wi6at")
+obstacle_data = ExtResource("2_hhhu1")
+
+[node name="EffectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea"]
+shape = SubResource("RectangleShape2D_hhhu1")
+
+[node name="EffectStaticbody" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectStaticbody"]
+shape = SubResource("RectangleShape2D_hhhu1")
+
+[node name="Main_Texture" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -25)
+sprite_frames = SubResource("SpriteFrames_p7moe")
+
+[node name="Secondary_Texture" type="Sprite2D" parent="."]
+position = Vector2(0, -128)
+
+[connection signal="body_entered" from="EffectArea" to="." method="_on_effect_area_body_entered"]
+[connection signal="body_exited" from="EffectArea" to="." method="_on_effect_area_body_exited"]

@@ -1,0 +1,39 @@
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://56dmgab1ecny"]
+
+[ext_resource type="Texture2D" uid="uid://bi62nlomx3kh7" path="res://assets/environment/building_blocks/Cave_tile_tall.png" id="1_3etl4"]
+[ext_resource type="Texture2D" uid="uid://5ftnsp366d6n" path="res://assets/environment/building_blocks/grass_tile_tall.png" id="2_p6rkh"]
+[ext_resource type="Texture2D" uid="uid://bd11tobpdakfu" path="res://assets/environment/building_blocks/grass_tile_tall_no_rocks.png" id="3_mvu1m"]
+[ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="4_732n2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ob0n7"]
+texture = ExtResource("1_3etl4")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -38.4, 64, -38.4, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5trb"]
+texture = ExtResource("2_p6rkh")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -38.4, 64, -38.4, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0oqu"]
+texture = ExtResource("3_mvu1m")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -38.4, 64, -38.4, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7y1s"]
+texture = ExtResource("4_732n2")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -38.4, 64, -38.4, 64, 64, -64, 64)
+
+[resource]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/4 = SubResource("TileSetAtlasSource_w7y1s")
+sources/0 = SubResource("TileSetAtlasSource_ob0n7")
+sources/1 = SubResource("TileSetAtlasSource_k5trb")
+sources/2 = SubResource("TileSetAtlasSource_q0oqu")

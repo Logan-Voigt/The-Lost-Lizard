@@ -1,6 +1,8 @@
 extends Node2D
 
-var current_level : Node2D
+@onready var main_camera: MainCamera = $MainCamera
+
+var current_level : Level
 
 func _on_delete_level() -> void:
 	if current_level:
@@ -9,6 +11,7 @@ func _on_delete_level() -> void:
 
 func _on_game_start() -> void:
 	current_level = GameState.levels[0].instantiate()
+	main_camera.set_camera_limits(current_level.get_level_boarders())
 	add_child(current_level)
 
 
