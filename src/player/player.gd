@@ -37,6 +37,8 @@ func handle_jumping(delta: float) -> void:
 	if not is_on_floor():
 		if GameState.get_adaptation_type() == ICE:
 			player_sprite.play("icy_jump")
+		elif GameState.get_adaptation_type() == FIRE:
+			player_sprite.play("fire_jump")
 		else:
 			player_sprite.play("jump")
 	if Input.is_action_just_pressed("move_jump") and not is_on_floor():
@@ -57,11 +59,15 @@ func handle_movement() -> void:
 		velocity.x = direction * SPEED
 		if GameState.get_adaptation_type() == ICE:
 			player_sprite.play("icy_walking")
+		elif GameState.get_adaptation_type() == FIRE:
+			player_sprite.play("fire_walking")
 		else:
 			player_sprite.play("walking")
 	else:
 		if GameState.get_adaptation_type() == ICE:
 			player_sprite.play("icy_idle")
+		elif GameState.get_adaptation_type() == FIRE:
+			player_sprite.play("fire_idle")
 		else:
 			player_sprite.play("idle")
 		if is_sliding or not is_on_floor():
