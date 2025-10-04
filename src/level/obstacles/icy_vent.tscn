@@ -20,6 +20,7 @@ animations = [{
 }]
 
 [node name="IcyVent" type="Node2D"]
+z_index = -2
 script = ExtResource("1_x6yig")
 obstacle_data = ExtResource("2_m2sbs")
 

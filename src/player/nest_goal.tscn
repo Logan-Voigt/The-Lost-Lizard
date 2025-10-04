@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8ukqebiwob5k"]
+
+[ext_resource type="Script" uid="uid://bb7hda1306saj" path="res://src/player/nest_goal.gd" id="1_6p2lh"]
+[ext_resource type="Texture2D" uid="uid://jovthykutyg8" path="res://assets/environment/nest.png" id="1_o73on"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6p2lh"]
+size = Vector2(26, 20)
+
+[node name="NestGoal" type="Node2D"]
+script = ExtResource("1_6p2lh")
+
+[node name="EggZone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EggZone"]
+position = Vector2(0, 54)
+shape = SubResource("RectangleShape2D_6p2lh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o73on")
+
+[connection signal="body_entered" from="EggZone" to="." method="_on_egg_zone_body_entered"]

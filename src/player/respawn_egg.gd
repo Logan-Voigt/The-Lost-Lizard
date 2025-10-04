@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name RespawnEgg extends CharacterBody2D
 
 const PLAYER_AND_GROUND_LAYER : int  = 3
 const JUST_GROUND_LAYER : int = 2

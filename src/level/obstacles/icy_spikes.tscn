@@ -19,6 +19,7 @@ animations = [{
 }]
 
 [node name="IcySpikes" type="Node2D"]
+z_index = -2
 script = ExtResource("1_r36cl")
 obstacle_data = ExtResource("2_6ojra")
 

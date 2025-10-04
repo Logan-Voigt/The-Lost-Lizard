@@ -51,7 +51,7 @@ animations = [{
 }]
 
 [node name="FireFloor" type="Node2D"]
-z_index = 1
+z_index = -2
 script = ExtResource("1_x0p5s")
 obstacle_data = ExtResource("2_ratnr")
 

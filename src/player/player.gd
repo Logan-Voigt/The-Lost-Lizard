@@ -3,7 +3,7 @@ class_name Player extends CharacterBody2D
 @onready var player_sprite : AnimatedSprite2D = $Visuals
 
 const SPEED : float = 500.0
-const JUMP_VELOCITY : float = -700.0
+const JUMP_VELOCITY : float = -680.0
 const GRAVITY_MULTIPLIER : float = 4
 const JUMPING_GRAVITY_MULTIPLIER : float = 2
 const STORED_JUMP_MAX_TIME : float = 0.5

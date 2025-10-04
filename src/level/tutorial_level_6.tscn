@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=4 uid="uid://c4ty4rphnh4d3"]
+
+[ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_ys8wr"]
+[ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_pvcfr"]
+[ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_0p7hl"]
+[ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="4_f4d81"]
+[ext_resource type="Texture2D" uid="uid://berm451jbpwfh" path="res://assets/environment/vents/grass_vent.png" id="5_mkm0x"]
+[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_y78vp"]
+
+[node name="TutorialLevel_6" type="Node2D"]
+script = ExtResource("1_ys8wr")
+level_max = Vector2(1920, 1080)
+level_spawn = Vector2(400, 900)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 2
+tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAJAAcAAgAAAAAAAAAKAAcABAAAAAAAADALAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAYAAQAAAAAAAAA=")
+tile_set = ExtResource("2_pvcfr")
+
+[node name="BackgroundGrasslands" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(960, 540)
+texture = ExtResource("3_0p7hl")
+
+[node name="FireVent" parent="." instance=ExtResource("4_f4d81")]
+position = Vector2(930, 930)
+
+[node name="Secondary_Texture" parent="FireVent" index="3"]
+texture = ExtResource("5_mkm0x")
+
+[node name="NestGoal" parent="." instance=ExtResource("6_y78vp")]
+position = Vector2(1721, 862)
+
+[editable path="FireVent"]

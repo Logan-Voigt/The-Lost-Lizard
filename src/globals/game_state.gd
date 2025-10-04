@@ -2,7 +2,13 @@ extends Node
 
 @onready var player_scene : PackedScene = load("res://src/player/player.tscn")
 @onready var egg_scene : PackedScene = load("res://src/player/respawn_egg.tscn")
-@onready var levels : Array[PackedScene] = [load("res://src/level/level.tscn")]
+@onready var levels : Array[PackedScene] = [
+	load("res://src/level/tutorial_level_1.tscn"), 
+	load("res://src/level/tutorial_level_2.tscn"), 
+	load("res://src/level/tutorial_level_3.tscn"), 
+	load("res://src/level/tutorial_level_4.tscn"), 
+	load("res://src/level/tutorial_level_5.tscn"),
+	load("res://src/level/tutorial_level_6.tscn")]
 
 const START_SCREEN : int = 0
 const PAUSE_MENU : int = 1
@@ -16,10 +22,11 @@ const TOXIC : int = 3
 
 const RESPAWN_TIME : float = 0.5
 
+var current_level : int
 var current_state : int
 var adaptation_type : int
 var player_location : Vector2
-var level_respawn_location : Vector2 = Vector2(947, 519) #TODO: should be set by the current level
+var level_respawn_location : Vector2 = Vector2(947, 519)
 var respawn_egg : Node2D
 
 var wait_timer : float
@@ -81,7 +88,11 @@ func start_playing():
 
 func _on_start_game() -> void:
 	start_playing()
-	respawn_player()
+	call_deferred("respawn_player")
+
+
+func _on_start_level(_number : int) -> void:
+	adaptation_type = PLAIN
 
 
 func _on_player_respawn() -> void:
@@ -110,5 +121,6 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	EventBus.respawn_player.connect(_on_player_respawn)
 	EventBus.start_game.connect(_on_start_game)
+	EventBus.start_level.connect(_on_start_level)
 	current_state = START_SCREEN
 	adaptation_type = PLAIN

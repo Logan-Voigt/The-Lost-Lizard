@@ -1,7 +1,6 @@
 class_name MainCamera extends Camera2D
 
 const CAMERA_DIMENTIONS : Vector2 = Vector2(1920, 1080)
-# TODO: set from level data
 var camera_limits : Vector4
 
 func set_camera_limits(limits : Vector4) -> void:

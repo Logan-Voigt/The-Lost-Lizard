@@ -9,12 +9,13 @@
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="6_w7y1s"]
 [ext_resource type="PackedScene" uid="uid://cdfitb1vcfv3w" path="res://src/level/obstacles/icy_floor.tscn" id="7_ob0n7"]
 [ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="9_p6v4a"]
-[ext_resource type="PackedScene" uid="uid://tp3ybpbwcvmp" path="res://src/level/obstacles/icy_wall.tscn" id="10_5suky"]
+[ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="10_5suky"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_5vox1")
 level_min = Vector2(-120, -500)
 level_max = Vector2(1900, 760)
+level_spawn = Vector2(600, 600)
 
 [node name="FireFloor" parent="." instance=ExtResource("1_5suky")]
 position = Vector2(987, 283)
@@ -74,7 +75,7 @@ tile_map_data = PackedByteArray("AAAAAAUABAAAAAAAAAABAAUABAAAAAAAAAACAAUABAAAAAA
 tile_set = ExtResource("6_w7y1s")
 
 [node name="BackgroundGrasslands" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -3
 position = Vector2(840, 222)
 texture = ExtResource("9_p6v4a")
 

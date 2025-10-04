@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://tp3ybpbwcvmp"]
+[gd_scene load_steps=9 format=3 uid="uid://dijhacptwhqfb"]
 
 [ext_resource type="Script" uid="uid://dlcrd4eaa65s5" path="res://src/level/obstacles/adaptation_obstacle.gd" id="1_8qfks"]
 [ext_resource type="Texture2D" uid="uid://c8mi0t763fngj" path="res://assets/environment/ice/icy_wall.png" id="2_l75n3"]
@@ -28,6 +28,7 @@ animations = [{
 }]
 
 [node name="icy_wall" type="Node2D"]
+z_index = -2
 script = ExtResource("1_8qfks")
 obstacle_data = ExtResource("2_xysco")
 
