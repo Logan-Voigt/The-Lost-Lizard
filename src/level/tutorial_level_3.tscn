@@ -1,18 +1,27 @@
-[gd_scene load_steps=9 format=4 uid="uid://dj353jon6potb"]
+[gd_scene load_steps=12 format=4 uid="uid://dj353jon6potb"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_uq2p4"]
+[ext_resource type="AudioStream" uid="uid://0f6q2trsukkt" path="res://sounds/voice lines/tutorial 4.mp3" id="2_ums4i"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_x27bx"]
 [ext_resource type="Texture2D" uid="uid://cf83vnn0dhla4" path="res://assets/environment/background_grasslands.png" id="3_ums4i"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="4_s4gs3"]
 [ext_resource type="Texture2D" uid="uid://berm451jbpwfh" path="res://assets/environment/vents/grass_vent.png" id="5_e1cot"]
-[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_b6dkn"]
+[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_b6dkn"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="7_2euk5"]
 [ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="7_x27bx"]
+[ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="10_s4gs3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1cot"]
+size = Vector2(300, 200)
 
 [node name="TutorialLevel_3" type="Node2D"]
 script = ExtResource("1_uq2p4")
 level_max = Vector2(1920, 1080)
 level_spawn = Vector2(400, 900)
+tutorial_audio_offset = 0.83
+
+[node name="TutorialVoice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ums4i")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
@@ -39,5 +48,18 @@ position = Vector2(1263, 984)
 
 [node name="NestGoal" parent="." instance=ExtResource("6_b6dkn")]
 position = Vector2(1721, 918)
+
+[node name="TutorialLabel" parent="." instance=ExtResource("10_s4gs3")]
+offset_left = 1119.0
+offset_top = 626.0
+offset_right = 1435.0
+offset_bottom = 763.0
+text = "[outline_size=20][font_size=40]only ice lizards can pass on[/font_size][/outline_size]"
+
+[node name="Area2D" type="Area2D" parent="TutorialLabel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialLabel/Area2D"]
+position = Vector2(-35, 250)
+shape = SubResource("RectangleShape2D_e1cot")
 
 [editable path="FireVent"]
