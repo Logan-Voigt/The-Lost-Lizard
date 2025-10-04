@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var main_camera: MainCamera = $MainCamera
+@onready var music_player: AudioStreamPlayer2D = $MusicPlayer
 
 var current_level : Level
 
@@ -10,6 +11,7 @@ func _on_delete_level() -> void:
 
 
 func _on_game_start() -> void:
+	music_player.play()
 	GameState.current_level = 0
 	current_level = GameState.levels[GameState.current_level].instantiate()
 	GameState.level_respawn_location = current_level.level_spawn
@@ -19,7 +21,8 @@ func _on_game_start() -> void:
 
 func _on_start_level(number : int) -> void:
 	if number >= GameState.levels.size():
-		print("You Win") # TODO add win screen
+		EventBus.exit_to_menu.emit()
+		GameState.change_state(GameState.WIN_SCREEN)
 		return
 	_on_delete_level()
 	GameState.current_level = number
