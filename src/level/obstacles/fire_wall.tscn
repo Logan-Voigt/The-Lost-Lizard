@@ -1,18 +1,43 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7u5eoh7ar0mv"]
+[gd_scene load_steps=11 format=3 uid="uid://7yil56a2cuvf"]
 
 [ext_resource type="Script" uid="uid://dlcrd4eaa65s5" path="res://src/level/obstacles/adaptation_obstacle.gd" id="1_5lbno"]
-[ext_resource type="Resource" uid="uid://bibpy78iehr7y" path="res://resources/obstacles/fire_wall.tres" id="2_piw4r"]
-[ext_resource type="Texture2D" uid="uid://ovgdu0ut8s5j" path="res://assets/icon.svg" id="3_mn0ct"]
+[ext_resource type="Resource" path="res://resources/obstacles/fire_wall.tres" id="2_piw4r"]
+[ext_resource type="Texture2D" uid="uid://dabwu2pckbbh" path="res://assets/environment/fire/fire_wall.png" id="3_mn0ct"]
 [ext_resource type="AudioStream" uid="uid://btp0cw7577gey" path="res://sounds/fire_death.mp3" id="4_mn0ct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6awj"]
 size = Vector2(200, 200)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn0ct"]
+atlas = ExtResource("3_mn0ct")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6awj"]
+atlas = ExtResource("3_mn0ct")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lsuq"]
+atlas = ExtResource("3_mn0ct")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf4mx"]
+atlas = ExtResource("3_mn0ct")
+region = Rect2(1536, 0, 512, 512)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7lsuq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_mn0ct")
+"texture": SubResource("AtlasTexture_mn0ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6awj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lsuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf4mx")
 }],
 "loop": true,
 "name": &"default",
@@ -36,9 +61,11 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_s6awj")
 
 [node name="Main_Texture" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(-1, -1)
-scale = Vector2(1.6, 1.6)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_7lsuq")
+frame_progress = 0.543525
 
 [node name="Secondary_Texture" type="Sprite2D" parent="."]
 
