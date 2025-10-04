@@ -8,6 +8,7 @@ const GRAVITY_MULTIPLIER : float = 4
 const JUMPING_GRAVITY_MULTIPLIER : float = 2
 const STORED_JUMP_MAX_TIME : float = 0.5
 const SLIDE_AMOUNT : float = 10
+const MAX_VELOCITY : Vector2 = Vector2(600, 1200)
 
 var stored_jump : bool = false
 var stored_jump_timer : float = 0.0
@@ -88,6 +89,10 @@ func handle_graphics() -> void:
 		player_sprite.flip_h = false
 
 
+func limit_velocity() -> void:
+	velocity = velocity.clamp(-MAX_VELOCITY, MAX_VELOCITY)
+
+
 func _on_delete_self() -> void:
 	queue_free()
 
@@ -96,6 +101,7 @@ func _physics_process(delta: float) -> void:
 	handle_movement()
 	apply_forces(delta)
 	handle_jumping(delta)
+	limit_velocity()
 	handle_graphics()
 	move_and_slide()
 	GameState.set_player_location(global_position)
