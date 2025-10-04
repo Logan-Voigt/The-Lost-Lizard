@@ -11,6 +11,6 @@ func _process(_delta: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
-	start_button.disabled
+	start_button.disabled = true
 	GameState.change_state(GameState.PLAYING)
 	EventBus.start_game.emit()
