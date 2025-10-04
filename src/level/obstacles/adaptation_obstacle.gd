@@ -94,4 +94,5 @@ func _physics_process(delta: float) -> void:
 
 func _ready() -> void:
 	EventBus.type_changed.connect(_on_type_changed)
+	main_texture.play("default")
 	
