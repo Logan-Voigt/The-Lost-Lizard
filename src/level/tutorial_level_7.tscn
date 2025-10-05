@@ -109,3 +109,11 @@ text = "[outline_size=20][font_size=40]press [b] R [/b] if you get stuck[/font_s
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialLabel/Area2D"]
 position = Vector2(709, 330)
 shape = SubResource("RectangleShape2D_l3thp")
+
+[node name="Level Number" parent="." instance=ExtResource("13_cxxtp")]
+z_index = 11
+offset_left = 791.0
+offset_top = 2.0
+offset_right = 1107.0
+offset_bottom = 139.0
+text = "[outline_size=20][font_size=40]Tutorial 8[/font_size][/outline_size]"

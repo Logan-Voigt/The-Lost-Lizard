@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=4 uid="uid://d027c41rys4jm"]
+[gd_scene load_steps=16 format=4 uid="uid://d027c41rys4jm"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_ys8wr"]
 [ext_resource type="AudioStream" uid="uid://bw11xagw122hi" path="res://sounds/voice lines/tutorial 7.mp3" id="2_0p7hl"]
+[ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="2_hu2ej"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_pvcfr"]
 [ext_resource type="Texture2D" uid="uid://cqd0lekdklm0q" path="res://assets/environment/backgrounds/forest_background/pixil-layer-0.png" id="4_85m7y"]
 [ext_resource type="Texture2D" uid="uid://dko8bqhvjwy1k" path="res://assets/environment/backgrounds/forest-layer-0.png" id="4_mkm0x"]
@@ -20,6 +21,14 @@ script = ExtResource("1_ys8wr")
 level_max = Vector2(1920, 1080)
 level_spawn = Vector2(950, 900)
 tutorial_audio_offset = 0.76
+
+[node name="Level Number" parent="." instance=ExtResource("2_hu2ej")]
+z_index = 11
+offset_left = 791.0
+offset_top = 2.0
+offset_right = 1107.0
+offset_bottom = 139.0
+text = "[outline_size=20][font_size=40]Tutorial 7[/font_size][/outline_size]"
 
 [node name="TutorialVoice" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_0p7hl")
