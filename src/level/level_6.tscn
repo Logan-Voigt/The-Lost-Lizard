@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dekirmo56c15c"]
+[gd_scene load_steps=13 format=4 uid="uid://dekirmo56c15c"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_pw67f"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_7c26v"]
@@ -7,19 +7,24 @@
 [ext_resource type="Texture2D" uid="uid://dmddn1jm3qsvm" path="res://assets/environment/backgrounds/cave-layer-1.png" id="5_lpjpt"]
 [ext_resource type="Texture2D" uid="uid://b3msx3d04834u" path="res://assets/environment/backgrounds/cave-layer-2.png" id="6_a3c2j"]
 [ext_resource type="Texture2D" uid="uid://djn8rlmxv4eue" path="res://assets/environment/backgrounds/cave-layer-3.png" id="7_quw8u"]
+[ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="8_lpjpt"]
+[ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="9_a3c2j"]
+[ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="10_quw8u"]
+[ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="11_uhgyi"]
+[ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="12_a3c2j"]
 
 [node name="Level_6" type="Node2D"]
 script = ExtResource("1_pw67f")
 level_max = Vector2(1920, 1080)
-level_spawn = Vector2(1090, 180)
+level_spawn = Vector2(125, 550)
 
 [node name="NestGoal" parent="." instance=ExtResource("2_7c26v")]
-position = Vector2(987, 925)
+position = Vector2(66, 925)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
 position = Vector2(0, 62)
-tile_map_data = PackedByteArray("AAAAAAcABAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcABAAAAAAAAAAGAAcABAAAAAAAAAAHAAcABAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAcABAAAAAAAAAALAAcABAAAAAAAAAD/////BAAAAAAAAAAPAP//BAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcABAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcABAAAAAAAAAAGAAcABAAAAAAAAAAHAAcABAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAcABAAAAAAAAAALAAcABAAAAAAAAAD/////BAAAAAAAAAAPAP//BAAAAAAAAAAAAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQABAAAAAAAAAAGAAQAAAAAAAAAAAAFAAQABAAAAAAAAAAJAAQABAAAAAAAAAAKAAQAAAAAAAAAAAAMAAQABAAAAAAAAAALAAQABAAAAAAAAAABAAQABAAAAAAAAAACAAQABAAAAAAAAAAOAAUABAAAAAAAAAANAAYABAAAAAAAAAAOAAYABAAAAAAAAAAIAAQABAAAAAAAAAA=")
 tile_set = ExtResource("3_qsnly")
 
 [node name="BackgroundCave" type="Sprite2D" parent="."]
@@ -35,3 +40,50 @@ texture = ExtResource("6_a3c2j")
 
 [node name="Sprite2D" type="Sprite2D" parent="BackgroundCave/Sprite2D/Sprite2D"]
 texture = ExtResource("7_quw8u")
+
+[node name="IcySpikes" parent="." instance=ExtResource("8_lpjpt")]
+position = Vector2(909, 989)
+
+[node name="IcySpikes2" parent="." instance=ExtResource("8_lpjpt")]
+position = Vector2(990, 989)
+
+[node name="Main_Texture" parent="IcySpikes2" index="2"]
+position = Vector2(1, -128)
+flip_h = true
+
+[node name="IcySpikes3" parent="." instance=ExtResource("8_lpjpt")]
+position = Vector2(1051, 989)
+
+[node name="FireVent" parent="." instance=ExtResource("9_a3c2j")]
+position = Vector2(840, 700)
+rotation = -3.14159
+
+[node name="icy_wall" parent="." instance=ExtResource("10_quw8u")]
+position = Vector2(885, 643)
+rotation = 1.5708
+
+[node name="FireFloor" parent="." instance=ExtResource("11_uhgyi")]
+position = Vector2(489, 601)
+
+[node name="icy_wall2" parent="." instance=ExtResource("10_quw8u")]
+position = Vector2(399, 984)
+
+[node name="CaveTileTallNoGrass" type="Sprite2D" parent="."]
+position = Vector2(1728, 954)
+texture = ExtResource("12_a3c2j")
+
+[node name="CaveTileTallNoGrass2" type="Sprite2D" parent="."]
+position = Vector2(1856, 964)
+texture = ExtResource("12_a3c2j")
+
+[node name="CaveTileTallNoGrass3" type="Sprite2D" parent="."]
+position = Vector2(1858, 845)
+texture = ExtResource("12_a3c2j")
+
+[node name="icy_wall3" parent="." instance=ExtResource("10_quw8u")]
+position = Vector2(1493, 997)
+
+[node name="IcySpikes4" parent="." instance=ExtResource("8_lpjpt")]
+position = Vector2(1422, 983)
+
+[editable path="IcySpikes2"]
