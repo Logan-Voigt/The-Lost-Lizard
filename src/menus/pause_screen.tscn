@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://bokxqr4nxvvrx"]
+
+[ext_resource type="Script" uid="uid://b2xvy63sxne3m" path="res://src/menus/pause_screen.gd" id="1_6fbpk"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_haqr2"]
+
+[sub_resource type="Gradient" id="Gradient_6fbpk"]
+colors = PackedColorArray(0, 0, 0, 0.494118, 0, 0, 0, 0.494118)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j0vtf"]
+gradient = SubResource("Gradient_6fbpk")
+
+[sub_resource type="Gradient" id="Gradient_j0vtf"]
+colors = PackedColorArray(0, 0, 0, 0.247059, 0, 0, 0, 0.247059)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_trbl1"]
+gradient = SubResource("Gradient_j0vtf")
+
+[node name="PauseScreen" type="Node2D"]
+script = ExtResource("1_6fbpk")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(942, 523.5)
+scale = Vector2(350, 315.5)
+mesh = SubResource("CapsuleMesh_haqr2")
+texture = SubResource("GradientTexture1D_j0vtf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 807.0
+offset_top = 278.0
+offset_right = 1087.0
+offset_bottom = 370.0
+bbcode_enabled = true
+text = "[outline_size=20][font_size=40]Game Paused[/font_size]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Main_Menu" type="Button" parent="."]
+offset_left = 877.0
+offset_top = 383.0
+offset_right = 1011.0
+offset_bottom = 436.0
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Restart_Level" type="Button" parent="."]
+offset_left = 877.0
+offset_top = 533.0
+offset_right = 1011.0
+offset_bottom = 586.0
+text = "Restart Level"
+metadata/_edit_use_anchors_ = true
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 877.0
+offset_top = 683.0
+offset_right = 1011.0
+offset_bottom = 736.0
+text = "Continue"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(975, 559)
+scale = Vector2(8.61719, 1306)
+texture = SubResource("GradientTexture1D_trbl1")
+
+[connection signal="pressed" from="Main_Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Restart_Level" to="." method="_on_restart_level_pressed"]
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

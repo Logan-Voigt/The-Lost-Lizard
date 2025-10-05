@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://cs38ofxnoud3q"]
+[gd_scene load_steps=11 format=3 uid="uid://cs38ofxnoud3q"]
 
 [ext_resource type="PackedScene" uid="uid://o3b3mx0y2584" path="res://src/menus/title_screen.tscn" id="1_gtg6f"]
 [ext_resource type="Script" uid="uid://cgwreuckvw1cs" path="res://src/globals/main.gd" id="1_srjgd"]
 [ext_resource type="Script" uid="uid://crdymhu1481r7" path="res://src/player/main_camera.gd" id="3_gtg6f"]
 [ext_resource type="PackedScene" uid="uid://d2ags0jdfamtg" path="res://src/menus/win_screen.tscn" id="4_phl76"]
 [ext_resource type="AudioStream" uid="uid://ol6mg17gxw64" path="res://sounds/tutorial_sfx.mp3" id="4_srjgd"]
-[ext_resource type="PackedScene" uid="uid://dlap7tbtfwx1u" path="res://src/menus/level_select_screen.tscn" id="4_weie5"]
+[ext_resource type="PackedScene" uid="uid://rtat0yaiq0ge" path="res://src/menus/level_select_screen.tscn" id="4_weie5"]
+[ext_resource type="PackedScene" uid="uid://bokxqr4nxvvrx" path="res://src/menus/pause_screen.tscn" id="5_3p8ds"]
 [ext_resource type="AudioStream" uid="uid://cayejxy5trim1" path="res://sounds/level_sfx.mp3" id="7_ahik8"]
 
 [sub_resource type="Gradient" id="Gradient_ahik8"]
@@ -25,6 +26,11 @@ visible = false
 
 [node name="LevelSelectScreen" parent="." instance=ExtResource("4_weie5")]
 visible = false
+
+[node name="PauseScreen" parent="." instance=ExtResource("5_3p8ds")]
+visible = false
+z_index = 10
+position = Vector2(2, 63)
 
 [node name="MainCamera" type="Camera2D" parent="."]
 position = Vector2(960, 539)
