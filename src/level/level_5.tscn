@@ -53,7 +53,7 @@ texture = ExtResource("7_u1ni1")
 
 [node name="FireWall" parent="." instance=ExtResource("8_pden0")]
 z_index = 2
-position = Vector2(1291, 833)
+position = Vector2(1257, 814)
 
 [node name="Main_Texture" parent="FireWall" index="2"]
 rotation = 2.63196
