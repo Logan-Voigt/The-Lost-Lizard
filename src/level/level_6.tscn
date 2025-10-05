@@ -1,7 +1,4 @@
-
-[gd_scene load_steps=13 format=4 uid="uid://dekirmo56c15c"]
-
-
+[gd_scene load_steps=15 format=4 uid="uid://dekirmo56c15c"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_pw67f"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_7c26v"]
@@ -16,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="10_quw8u"]
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="11_uhgyi"]
 [ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="12_a3c2j"]
+[ext_resource type="Texture2D" uid="uid://bi62nlomx3kh7" path="res://assets/environment/building_blocks/Cave_tile_tall.png" id="14_uhgyi"]
 
 [node name="Level_6" type="Node2D"]
 script = ExtResource("1_pw67f")
@@ -97,5 +95,13 @@ position = Vector2(1493, 997)
 
 [node name="IcySpikes4" parent="." instance=ExtResource("8_lpjpt")]
 position = Vector2(1422, 983)
+
+[node name="CaveTileTall" type="Sprite2D" parent="."]
+position = Vector2(1728, 962)
+texture = ExtResource("14_uhgyi")
+
+[node name="CaveTileTallNoGrass4" type="Sprite2D" parent="."]
+position = Vector2(1857, 836)
+texture = ExtResource("12_a3c2j")
 
 [editable path="IcySpikes2"]
