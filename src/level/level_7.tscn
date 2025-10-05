@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://b0im2li2j7puo"]
+[gd_scene load_steps=8 format=4 uid="uid://bkiskalvy1hy0"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_ljrn7"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_4fm2i"]

@@ -1,30 +1,131 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2ags0jdfamtg"]
+[gd_scene load_steps=7 format=3 uid="uid://d2ags0jdfamtg"]
 
 [ext_resource type="Script" uid="uid://dxhjth1sxwujt" path="res://src/menus/win_screen.gd" id="1_xbcte"]
 [ext_resource type="AudioStream" uid="uid://cmopse2wufo64" path="res://sounds/voice lines/congrats.mp3" id="2_bdod1"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xbcte"]
-size = Vector2(1920, 1080)
+[ext_resource type="Texture2D" uid="uid://ijjlyft7gbfg" path="res://assets/environment/backgrounds/cave-layer-0.png" id="2_yd0je"]
+[ext_resource type="Texture2D" uid="uid://dmddn1jm3qsvm" path="res://assets/environment/backgrounds/cave-layer-1.png" id="3_fev38"]
+[ext_resource type="Texture2D" uid="uid://b3msx3d04834u" path="res://assets/environment/backgrounds/cave-layer-2.png" id="4_jyl7n"]
+[ext_resource type="Texture2D" uid="uid://djn8rlmxv4eue" path="res://assets/environment/backgrounds/cave-layer-3.png" id="5_t0vnc"]
 
 [node name="WinScreen" type="Node2D"]
 script = ExtResource("1_xbcte")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="cave bakcground" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = SubResource("PlaceholderTexture2D_xbcte")
+texture = ExtResource("2_yd0je")
+
+[node name="Sprite2D" type="Sprite2D" parent="cave bakcground"]
+texture = ExtResource("3_fev38")
+
+[node name="Sprite2D2" type="Sprite2D" parent="cave bakcground/Sprite2D"]
+texture = ExtResource("4_jyl7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="cave bakcground/Sprite2D/Sprite2D2"]
+texture = ExtResource("5_t0vnc")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1912.0
-offset_bottom = 1067.0
+offset_left = -3.0
+offset_top = -326.0
+offset_right = 1909.0
+offset_bottom = 741.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size=100]well done, you won![/font_size]"
+text = "[font_size=100]Congrats lil lizard
+  you've made it home [/font_size]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="win_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_bdod1")
+
+[node name="programmers" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -575.0
+offset_right = 1337.0
+offset_bottom = 1067.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=75]Programers[/font_size]
+[font_size=35]
+Ashpacattack
+Logan Voigt[/font_size]"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Level design" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 575.0
+offset_right = 2487.0
+offset_bottom = 1067.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=75]Level Design[/font_size]
+[font_size=35]
+Ashpacattack
+Logan Voigt[/font_size]"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Art" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = 250.0
+offset_right = 1662.0
+offset_bottom = 1317.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=75]Art[/font_size]
+[font_size=35]
+Logan Voigt
+Copper Meril[/font_size]"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="voice acting" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 250.0
+offset_top = 250.0
+offset_right = 2162.0
+offset_bottom = 1317.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=75]Voice acting[/font_size]
+[font_size=35]
+Mia Alves[/font_size]"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Back to main menu" type="Button" parent="."]
+offset_left = 749.0
+offset_top = 434.0
+offset_right = 944.0
+offset_bottom = 488.0
+scale = Vector2(2, 2)
+text = "Back to main menu
+"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="pressed" from="Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
