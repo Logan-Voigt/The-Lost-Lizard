@@ -25,6 +25,9 @@ level_max = Vector2(1920, 1080)
 level_spawn = Vector2(400, 900)
 tutorial_audio_offset = 2.0
 
+[node name="TutorialVoice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3jouc")
+
 [node name="Level Number" parent="." instance=ExtResource("9_tx0xl")]
 z_index = 11
 offset_left = 791.0
@@ -32,9 +35,6 @@ offset_top = 2.0
 offset_right = 1107.0
 offset_bottom = 139.0
 text = "[outline_size=20][font_size=40]Tutorial 3[/font_size][/outline_size]"
-
-[node name="TutorialVoice" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_3jouc")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
