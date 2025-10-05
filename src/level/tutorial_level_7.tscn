@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bdxojmn534m8p"]
+[gd_scene load_steps=20 format=4 uid="uid://bdxojmn534m8p"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_1qfoq"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_d8e51"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dko8bqhvjwy1k" path="res://assets/environment/backgrounds/forest-layer-0.png" id="4_d8e51"]
 [ext_resource type="Texture2D" uid="uid://cqd0lekdklm0q" path="res://assets/environment/backgrounds/forest_background/pixil-layer-0.png" id="5_3hamc"]
 [ext_resource type="Texture2D" uid="uid://bc0eqw71gkomd" path="res://assets/environment/backgrounds/forest-layer-1.png" id="5_ep5ml"]
+[ext_resource type="Texture2D" uid="uid://br7obeqbqqrt0" path="res://assets/sam.png" id="6_2ye4j"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_3uiav"]
 [ext_resource type="Texture2D" uid="uid://dptmnp652sq43" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_cxxtp"]
 [ext_resource type="Texture2D" uid="uid://chv4jue6ty4np" path="res://assets/environment/backgrounds/forest_background/pixil-layer-1.png" id="6_lawiq"]
@@ -60,6 +61,10 @@ tile_set = ExtResource("2_d8e51")
 z_index = -3
 position = Vector2(960, 541)
 texture = ExtResource("5_3hamc")
+
+[node name="Sam" type="Sprite2D" parent="Backgroundforest"]
+position = Vector2(-9, 409)
+texture = ExtResource("6_2ye4j")
 
 [node name="Sprite2D" type="Sprite2D" parent="Backgroundforest"]
 texture = ExtResource("6_lawiq")

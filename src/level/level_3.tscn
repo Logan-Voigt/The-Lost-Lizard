@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://5htphaphud1q"]
+[gd_scene load_steps=15 format=4 uid="uid://5htphaphud1q"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_rr1o5"]
 [ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="2_78q1l"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="9_pnesq"]
 [ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="12_i23sl"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="13_xy7ee"]
+[ext_resource type="Texture2D" uid="uid://br7obeqbqqrt0" path="res://assets/sam.png" id="14_a8smp"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="14_vvga8"]
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="16_8q3gl"]
 
@@ -72,3 +73,9 @@ texture = ExtResource("9_pnesq")
 [node name="CaveTileTallNoGrass" type="Sprite2D" parent="."]
 position = Vector2(1472, 973)
 texture = ExtResource("9_pnesq")
+
+[node name="Sam" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(13, 966)
+rotation = -0.319395
+texture = ExtResource("14_a8smp")
