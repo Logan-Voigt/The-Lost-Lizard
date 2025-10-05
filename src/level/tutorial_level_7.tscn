@@ -27,22 +27,22 @@ tutorial_audio_offset = 1.24
 stream = ExtResource("2_ep5ml")
 
 [node name="CaveTileTallNoGrass2" type="Sprite2D" parent="."]
-z_index = 1000
+z_index = 5
 position = Vector2(1472, 1017)
 texture = ExtResource("10_2ye4j")
 
 [node name="CaveTileTallNoGrass" type="Sprite2D" parent="."]
-z_index = 1000
+z_index = 5
 position = Vector2(1472, 973)
 texture = ExtResource("10_2ye4j")
 
 [node name="CaveTileTallNoGrass3" type="Sprite2D" parent="."]
-z_index = 1000
+z_index = 5
 position = Vector2(1472, 920)
 texture = ExtResource("10_2ye4j")
 
 [node name="CaveTileTallNoGrass4" type="Sprite2D" parent="."]
-z_index = 1000
+z_index = 5
 position = Vector2(1472, 846)
 texture = ExtResource("10_2ye4j")
 

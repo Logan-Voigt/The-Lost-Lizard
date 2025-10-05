@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs38ofxnoud3q"]
+[gd_scene load_steps=10 format=3 uid="uid://cs38ofxnoud3q"]
 
 [ext_resource type="PackedScene" uid="uid://o3b3mx0y2584" path="res://src/menus/title_screen.tscn" id="1_gtg6f"]
 [ext_resource type="Script" uid="uid://cgwreuckvw1cs" path="res://src/globals/main.gd" id="1_srjgd"]
@@ -6,6 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://d2ags0jdfamtg" path="res://src/menus/win_screen.tscn" id="4_phl76"]
 [ext_resource type="AudioStream" uid="uid://ol6mg17gxw64" path="res://sounds/tutorial_sfx.mp3" id="4_srjgd"]
 [ext_resource type="PackedScene" uid="uid://dlap7tbtfwx1u" path="res://src/menus/level_select_screen.tscn" id="4_weie5"]
+[ext_resource type="AudioStream" uid="uid://cayejxy5trim1" path="res://sounds/level_sfx.mp3" id="7_ahik8"]
+
+[sub_resource type="Gradient" id="Gradient_ahik8"]
+offsets = PackedFloat32Array(0.63253)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d3b7p"]
+gradient = SubResource("Gradient_ahik8")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_srjgd")
@@ -24,3 +32,32 @@ script = ExtResource("3_gtg6f")
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_srjgd")
+volume_db = 10.0
+
+[node name="CaveMusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ahik8")
+volume_db = 10.0
+
+[node name="IntermissionScreen" type="Node2D" parent="."]
+visible = false
+z_index = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="IntermissionScreen"]
+position = Vector2(957.5, 540.5)
+scale = Vector2(7.51172, 1085)
+texture = SubResource("GradientTexture1D_d3b7p")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="IntermissionScreen"]
+offset_right = 1918.0
+offset_bottom = 1083.0
+bbcode_enabled = true
+text = "[font_size=50]
+
+
+The lost lizard went [shake rate=20.0 level=5 connected=1]deep[/shake] into a cave to look for his home
+
+
+
+
+[i]press [b]E[/b] to continue"
+horizontal_alignment = 1

@@ -116,7 +116,7 @@ func start_playing():
 	change_state(PLAYING)
 
 
-func _on_start_game() -> void:
+func _on_start_game(level : int) -> void:
 	adaptation_type = PLAIN
 	start_playing()
 	call_deferred("respawn_player")

@@ -4,7 +4,9 @@ extends Node
 
 signal respawn_player
 signal type_changed
-signal start_game
+signal start_game(level : int)
 signal exit_to_menu
 signal start_level(number : int)
 signal clear_player
+signal show_intermission
+signal hide_intermission

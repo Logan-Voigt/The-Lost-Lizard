@@ -7,6 +7,7 @@ func level_complete() -> void:
 		GameState.completed_levels[GameState.current_level + 1] = true
 	
 	if GameState.current_level == 7:
+		EventBus.show_intermission.emit()
 		GameState.setup_wait_state(start_cave_levels)
 		EventBus.clear_player.emit()
 		just_completed_tutorial = true
@@ -14,7 +15,9 @@ func level_complete() -> void:
 		EventBus.start_level.emit(GameState.current_level + 1)
 
 func start_cave_levels() -> void:
-	EventBus.start_level.emit(GameState.current_level + 1)
+	EventBus.hide_intermission.emit()
+	EventBus.start_game.emit(GameState.current_level + 1)
+	EventBus.respawn_player.emit()
 
 
 func _on_egg_zone_body_entered(body: Node2D) -> void:

@@ -1,7 +1,7 @@
 extends Node2D
 
 func _on_level_button_pressed(level_number : int) -> void:
-	EventBus.start_level.emit(level_number)
+	EventBus.start_game.emit(level_number)
 
 
 func _process(_delta: float) -> void:

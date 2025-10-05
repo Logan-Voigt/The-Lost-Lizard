@@ -18,7 +18,7 @@ func _on_start_button_pressed() -> void:
 	GameState.change_state(GameState.PLAYING)
 	start_button.disabled = true
 	level_select_button.disabled = true
-	EventBus.start_game.emit()
+	EventBus.start_game.emit(0)
 
 
 func _on_level_select_button_pressed() -> void:

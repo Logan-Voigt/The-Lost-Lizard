@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2ags0jdfamtg"]
+[gd_scene load_steps=4 format=3 uid="uid://d2ags0jdfamtg"]
 
 [ext_resource type="Script" uid="uid://dxhjth1sxwujt" path="res://src/menus/win_screen.gd" id="1_xbcte"]
+[ext_resource type="AudioStream" uid="uid://cmopse2wufo64" path="res://sounds/voice lines/congrats.mp3" id="2_bdod1"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xbcte"]
 size = Vector2(1920, 1080)
@@ -24,3 +25,6 @@ bbcode_enabled = true
 text = "[font_size=100]well done, you won![/font_size]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="win_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_bdod1")
