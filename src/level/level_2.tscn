@@ -1,0 +1,69 @@
+[gd_scene load_steps=14 format=4 uid="uid://dxkamo85ji7gn"]
+
+[ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_uuwma"]
+[ext_resource type="AudioStream" uid="uid://cq8m7h4l3c5sk" path="res://sounds/voice lines/level 1.mp3" id="2_7637d"]
+[ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="3_0j22y"]
+[ext_resource type="Texture2D" uid="uid://ijjlyft7gbfg" path="res://assets/environment/backgrounds/cave-layer-0.png" id="4_5vdjf"]
+[ext_resource type="Texture2D" uid="uid://dmddn1jm3qsvm" path="res://assets/environment/backgrounds/cave-layer-1.png" id="5_66b86"]
+[ext_resource type="Texture2D" uid="uid://b3msx3d04834u" path="res://assets/environment/backgrounds/cave-layer-2.png" id="6_bboj5"]
+[ext_resource type="Texture2D" uid="uid://djn8rlmxv4eue" path="res://assets/environment/backgrounds/cave-layer-3.png" id="7_2ujpt"]
+[ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="8_tp26p"]
+[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="9_ysjgs"]
+[ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="10_ca64c"]
+[ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="11_57oj7"]
+[ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="12_8vkhf"]
+[ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="13_q01y7"]
+
+[node name="TutorialLevel_6" type="Node2D"]
+script = ExtResource("1_uuwma")
+level_max = Vector2(1920, 1080)
+level_spawn = Vector2(75, 900)
+
+[node name="TutorialVoice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_7637d")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 2
+position = Vector2(0, 62)
+tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcABAAAAAAAAAAGAAcABAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcAAAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAALAAYAAAAAAAAAAAAKAAcABAAAAAAAAAA=")
+tile_set = ExtResource("3_0j22y")
+
+[node name="BackgroundCave" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(960, 540)
+texture = ExtResource("4_5vdjf")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCave"]
+texture = ExtResource("5_66b86")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCave/Sprite2D"]
+texture = ExtResource("6_bboj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCave/Sprite2D/Sprite2D"]
+texture = ExtResource("7_2ujpt")
+
+[node name="FireVent2" parent="." instance=ExtResource("8_tp26p")]
+position = Vector2(1117, 992)
+
+[node name="NestGoal" parent="." instance=ExtResource("9_ysjgs")]
+position = Vector2(82, 925)
+
+[node name="IcySpikes" parent="." instance=ExtResource("10_ca64c")]
+position = Vector2(1727, 986)
+
+[node name="IcySpikes2" parent="." instance=ExtResource("10_ca64c")]
+position = Vector2(267, 986)
+
+[node name="FireFloor" parent="." instance=ExtResource("11_57oj7")]
+position = Vector2(773, 988)
+
+[node name="icy_wall" parent="." instance=ExtResource("12_8vkhf")]
+position = Vector2(515, 989)
+
+[node name="CaveTileTallNoGrass2" type="Sprite2D" parent="."]
+position = Vector2(1472, 1017)
+texture = ExtResource("13_q01y7")
+
+[node name="CaveTileTallNoGrass" type="Sprite2D" parent="."]
+position = Vector2(1472, 973)
+texture = ExtResource("13_q01y7")
