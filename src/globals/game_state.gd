@@ -63,6 +63,8 @@ var wait_timer : float
 var time_to_wait : float = -1.0
 var function_call_after_wait : Callable
 
+var player_freeze : bool
+
 func is_playing() -> bool:
 	return current_state == PLAYING
 
@@ -70,6 +72,8 @@ func is_playing() -> bool:
 func is_in_game() -> bool:
 	return current_state == PLAYING or current_state == PLAYER_WAIT or current_state == PAUSE_MENU
 
+func is_paused() -> bool:
+	return current_state == PAUSE_MENU
 
 func get_adaptation_type() -> int:
 	return adaptation_type
@@ -129,11 +133,15 @@ func _on_start_level(_number : int) -> void:
 func _on_player_respawn() -> void:
 	setup_wait_state(respawn_player, RESPAWN_TIME)
 
-
+func restart() -> void:
+	if respawn_egg:
+		respawn_egg.queue_free()
+	EventBus.start_level.emit(current_level)
+	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("exit"):
-		change_state(START_SCREEN)
-		EventBus.exit_to_menu.emit()
+	if event.is_action_pressed("exit") and is_playing():
+		change_state(PAUSE_MENU)
+
 	if event.is_action_pressed("set_egg") and is_playing():
 		if respawn_egg:
 			respawn_egg.queue_free()
@@ -141,9 +149,7 @@ func _input(event: InputEvent) -> void:
 		get_tree().root.get_node("Main").add_child(respawn_egg)
 		respawn_egg.global_position = player_location
 	if event.is_action_pressed("restart") and is_playing():
-		if respawn_egg:
-			respawn_egg.queue_free()
-		EventBus.start_level.emit(current_level)
+		restart()
 
 func _physics_process(delta: float) -> void:
 	if current_state == PLAYER_WAIT and time_to_wait > 0:

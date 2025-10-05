@@ -5,6 +5,7 @@ extends Node2D
 @onready var cave_music_player: AudioStreamPlayer2D = $CaveMusicPlayer
 @onready var intermission_screen: Node2D = $IntermissionScreen
 
+
 var current_level : Level
 
 func delete_level() -> void:
@@ -53,8 +54,7 @@ func _on_show_intermission() -> void:
 
 func _on_hide_intermission() -> void:
 	intermission_screen.visible = false
-
-
+	
 func _ready() -> void:
 	EventBus.exit_to_menu.connect(_on_exit_to_menu)
 	EventBus.start_game.connect(_on_game_start)

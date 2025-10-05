@@ -34,7 +34,7 @@ offset_bottom = 741.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size=100]Congrats lil lizard
+text = "[outline_size=40][font_size=100]Congrats lil lizard
   you've made it home [/font_size]"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -52,7 +52,7 @@ offset_bottom = 1067.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size=75]Programers[/font_size]
+text = "[outline_size=20][font_size=75]Programers[/font_size]
 [font_size=35]
 Ashpacattack
 Logan Voigt[/font_size]"
@@ -70,7 +70,7 @@ offset_bottom = 1067.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size=75]Level Design[/font_size]
+text = "[outline_size=20][font_size=75]Level Design[/font_size]
 [font_size=35]
 Ashpacattack
 Logan Voigt[/font_size]"
@@ -89,7 +89,7 @@ offset_bottom = 1317.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size=75]Art[/font_size]
+text = "[outline_size=20][font_size=75]Art[/font_size]
 [font_size=35]
 Logan Voigt
 Copper Meril[/font_size]"
@@ -108,7 +108,7 @@ offset_bottom = 1317.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size=75]Voice acting[/font_size]
+text = "[outline_size=20][font_size=75]Voice acting[/font_size]
 [font_size=35]
 Mia Alves[/font_size]"
 horizontal_alignment = 1

@@ -98,12 +98,13 @@ func _on_delete_self() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	handle_movement()
-	apply_forces(delta)
-	handle_jumping(delta)
-	limit_velocity()
-	handle_graphics()
-	move_and_slide()
+	if GameState.player_freeze != true:
+		handle_movement()
+		apply_forces(delta)
+		handle_jumping(delta)
+		limit_velocity()
+		handle_graphics()
+		move_and_slide()
 	GameState.set_player_location(global_position)
 
 
