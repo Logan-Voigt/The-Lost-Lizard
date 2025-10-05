@@ -342,6 +342,7 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 scale = Vector2(0.5, 0.5)
+safe_margin = 0.001
 script = ExtResource("1_onrkg")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
@@ -354,4 +355,3 @@ texture_filter = 1
 position = Vector2(0, -100)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_h2yge")
-animation = &"fire_jump"

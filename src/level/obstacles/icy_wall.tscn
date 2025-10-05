@@ -6,16 +6,16 @@
 [ext_resource type="AudioStream" uid="uid://b8p4s3pe45n1w" path="res://sounds/stab_death.mp3" id="4_gh03b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xysco"]
-size = Vector2(49, 206)
+size = Vector2(64, 206)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh03b"]
-size = Vector2(78, 14)
+size = Vector2(78, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56dje"]
-size = Vector2(48, 206)
+size = Vector2(63, 206)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plbtg"]
-size = Vector2(78, 14)
+size = Vector2(78, 54)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uatf8"]
 animations = [{
@@ -40,7 +40,7 @@ position = Vector2(1.5, -104)
 shape = SubResource("RectangleShape2D_xysco")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EffectArea"]
-position = Vector2(0, -8)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_gh03b")
 
 [node name="EffectStaticbody" type="StaticBody2D" parent="."]
@@ -52,7 +52,7 @@ position = Vector2(2, -104)
 shape = SubResource("RectangleShape2D_56dje")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EffectStaticbody"]
-position = Vector2(0, -8)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_plbtg")
 
 [node name="Main_Texture" type="AnimatedSprite2D" parent="."]

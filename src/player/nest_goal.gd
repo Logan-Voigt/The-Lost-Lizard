@@ -1,7 +1,8 @@
 extends Node2D
 
 func level_complete() -> void:
-	GameState.completed_levels[GameState.current_level] = true
+	if GameState.current_level + 1 < GameState.completed_levels.size():
+		GameState.completed_levels[GameState.current_level + 1] = true
 	EventBus.start_level.emit(GameState.current_level + 1)
 
 

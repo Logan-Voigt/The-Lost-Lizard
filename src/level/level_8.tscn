@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=4 uid="uid://b1ak5bx8ila45"]
+
+[ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_y6b0a"]
+[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_3axis"]
+[ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="3_7dlr5"]
+[ext_resource type="Texture2D" uid="uid://ijjlyft7gbfg" path="res://assets/environment/backgrounds/cave-layer-0.png" id="4_ircsi"]
+[ext_resource type="Texture2D" uid="uid://dmddn1jm3qsvm" path="res://assets/environment/backgrounds/cave-layer-1.png" id="5_nh0ca"]
+[ext_resource type="Texture2D" uid="uid://b3msx3d04834u" path="res://assets/environment/backgrounds/cave-layer-2.png" id="6_ilgj7"]
+[ext_resource type="Texture2D" uid="uid://djn8rlmxv4eue" path="res://assets/environment/backgrounds/cave-layer-3.png" id="7_vm6wp"]
+[ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="8_vdeao"]
+[ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="9_w8esi"]
+[ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="10_gj65b"]
+[ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="11_ugsy1"]
+[ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="12_3axis"]
+
+[node name="Level_8" type="Node2D"]
+script = ExtResource("1_y6b0a")
+level_max = Vector2(1920, 1080)
+level_spawn = Vector2(520, 400)
+
+[node name="NestGoal" parent="." instance=ExtResource("2_3axis")]
+position = Vector2(1415, 535)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 2
+position = Vector2(0, 62)
+tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcAAAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAcABAAAAAAAAAALAAcAAAAAAAAAAAALAAQABAAAAAAAAAAKAAQABAAAAAAAAAAJAAQABAAAAAAAAAAIAAQABAAAAAAAAAAEAAQAAAAAAAAAAAADAAQABAAAAAAAAAACAAQAAAAAAAAAAAAFAAQABAAAAAAAAAABAAQABAAAAAAAAAAMAAQAAAAAAAAAAAANAAQABAAAAAAAAAAMAAMABAAAAAAAAAAMAAIABAAAAAAAAAAMAAEABAAAAAAAAAALAAEABAAAAAAAAAAKAAEABAAAAAAAAAAJAAEABAAAAAAAAAAIAAEABAAAAAAAAAAHAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEABAAAAAAAAAABAAEABAAAAAAAAAAAAAEAAAAAAAAAAAA=")
+tile_set = ExtResource("3_7dlr5")
+
+[node name="BackgroundCave" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(960, 540)
+texture = ExtResource("4_ircsi")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCave"]
+texture = ExtResource("5_nh0ca")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCave/Sprite2D"]
+texture = ExtResource("6_ilgj7")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCave/Sprite2D/Sprite2D"]
+texture = ExtResource("7_vm6wp")
+
+[node name="FireVent" parent="." instance=ExtResource("8_vdeao")]
+position = Vector2(1079, 601)
+
+[node name="CollisionShape2D" parent="FireVent/EffectArea" index="0"]
+position = Vector2(-19, -116)
+
+[node name="EffectStaticbody" parent="FireVent" index="1"]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" parent="FireVent/EffectStaticbody" index="0"]
+position = Vector2(-20, -116)
+
+[node name="IcySpikes" parent="." instance=ExtResource("9_w8esi")]
+position = Vector2(708, 601)
+
+[node name="IcySpikes2" parent="." instance=ExtResource("9_w8esi")]
+position = Vector2(1080, 985)
+
+[node name="IcyVent" parent="." instance=ExtResource("10_gj65b")]
+position = Vector2(1874, 985)
+
+[node name="IcyVent2" parent="." instance=ExtResource("10_gj65b")]
+position = Vector2(1756, 603)
+
+[node name="IcyVent3" parent="." instance=ExtResource("10_gj65b")]
+position = Vector2(79, 985)
+
+[node name="FireVent2" parent="." instance=ExtResource("8_vdeao")]
+position = Vector2(720, 986)
+
+[node name="FireFloor" parent="." instance=ExtResource("11_ugsy1")]
+position = Vector2(55, 220)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1600, 556)
+texture = ExtResource("12_3axis")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1600, 433)
+texture = ExtResource("12_3axis")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1600, 318)
+texture = ExtResource("12_3axis")
+
+[editable path="FireVent"]

@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://btp0cw7577gey" path="res://sounds/fire_death.mp3" id="5_dhupb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eurba"]
-size = Vector2(56, 230)
+size = Vector2(74, 230)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhupb"]
 atlas = ExtResource("3_hpadw")

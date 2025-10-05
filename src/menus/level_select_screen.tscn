@@ -1,3 +1,124 @@
-[gd_scene format=3 uid="uid://dlap7tbtfwx1u"]
+[gd_scene load_steps=3 format=3 uid="uid://dlap7tbtfwx1u"]
+
+[ext_resource type="Script" uid="uid://bw2sldxqpmdx" path="res://src/menus/level_select_screen.gd" id="1_8edhd"]
+[ext_resource type="Texture2D" uid="uid://k38607ixpa2f" path="res://assets/environment/backgrounds/Title Background.png" id="2_nkdma"]
 
 [node name="LevelSelectScreen" type="Node2D"]
+script = ExtResource("1_8edhd")
+
+[node name="LevelButton_0" type="Button" parent="."]
+offset_left = 527.0
+offset_top = 175.0
+offset_right = 707.0
+offset_bottom = 310.0
+text = "Tutorial 1"
+
+[node name="LevelButton_1" type="Button" parent="."]
+offset_left = 749.0
+offset_top = 175.0
+offset_right = 929.0
+offset_bottom = 310.0
+text = "Tutorial 2"
+
+[node name="LevelButton_2" type="Button" parent="."]
+offset_left = 975.0
+offset_top = 175.0
+offset_right = 1155.0
+offset_bottom = 310.0
+text = "Tutorial 3"
+
+[node name="LevelButton_3" type="Button" parent="."]
+offset_left = 1197.0
+offset_top = 175.0
+offset_right = 1377.0
+offset_bottom = 310.0
+text = "Tutorial 4"
+
+[node name="LevelButton_4" type="Button" parent="."]
+offset_left = 527.0
+offset_top = 343.0
+offset_right = 707.0
+offset_bottom = 478.0
+text = "Tutorial 5"
+
+[node name="LevelButton_5" type="Button" parent="."]
+offset_left = 749.0
+offset_top = 343.0
+offset_right = 929.0
+offset_bottom = 478.0
+text = "Tutorial 6"
+
+[node name="LevelButton_6" type="Button" parent="."]
+offset_left = 975.0
+offset_top = 343.0
+offset_right = 1155.0
+offset_bottom = 478.0
+text = "Tutorial 7"
+
+[node name="LevelButton_7" type="Button" parent="."]
+offset_left = 1197.0
+offset_top = 343.0
+offset_right = 1377.0
+offset_bottom = 478.0
+text = "Tutorial 8"
+
+[node name="LevelButton_8" type="Button" parent="."]
+offset_left = 527.0
+offset_top = 516.0
+offset_right = 707.0
+offset_bottom = 651.0
+text = "Level 1"
+
+[node name="LevelButton_9" type="Button" parent="."]
+offset_left = 749.0
+offset_top = 516.0
+offset_right = 929.0
+offset_bottom = 651.0
+text = "Level 2"
+
+[node name="LevelButton_10" type="Button" parent="."]
+offset_left = 975.0
+offset_top = 516.0
+offset_right = 1155.0
+offset_bottom = 651.0
+text = "Level 3"
+
+[node name="LevelButton_11" type="Button" parent="."]
+offset_left = 1197.0
+offset_top = 516.0
+offset_right = 1377.0
+offset_bottom = 651.0
+text = "Level 4"
+
+[node name="LevelButton_12" type="Button" parent="."]
+offset_left = 527.0
+offset_top = 684.0
+offset_right = 707.0
+offset_bottom = 819.0
+text = "Level 5"
+
+[node name="LevelButton_13" type="Button" parent="."]
+offset_left = 749.0
+offset_top = 684.0
+offset_right = 929.0
+offset_bottom = 819.0
+text = "Level 6"
+
+[node name="LevelButton_14" type="Button" parent="."]
+offset_left = 975.0
+offset_top = 684.0
+offset_right = 1155.0
+offset_bottom = 819.0
+text = "Level 7"
+
+[node name="LevelButton_15" type="Button" parent="."]
+offset_left = 1197.0
+offset_top = 682.0
+offset_right = 1377.0
+offset_bottom = 817.0
+text = "Level 8"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(958.5, 538)
+texture = ExtResource("2_nkdma")

@@ -12,7 +12,13 @@ extends Node
 	load("res://src/level/tutorial_level_6.tscn"),
 	load("res://src/level/tutorial_level_7.tscn"),
 	load("res://src/level/level_1.tscn"),
-	load("res://src/level/level_2.tscn")]
+	load("res://src/level/level_2.tscn"),
+	load("res://src/level/level_3.tscn"),
+	load("res://src/level/level_4.tscn"),
+	load("res://src/level/level_3.tscn"),
+	load("res://src/level/level_3.tscn"),
+	load("res://src/level/level_3.tscn"),
+	load("res://src/level/level_8.tscn")]
 
 const START_SCREEN : int = 0
 const PAUSE_MENU : int = 1
@@ -29,6 +35,8 @@ const TOXIC : int = 3
 const RESPAWN_TIME : float = 0.5
 
 var completed_levels : Array[bool] = [
+	true,
+	true,
 	true,
 	true,
 	true,
@@ -132,6 +140,10 @@ func _input(event: InputEvent) -> void:
 		respawn_egg = egg_scene.instantiate()
 		get_tree().root.get_node("Main").add_child(respawn_egg)
 		respawn_egg.global_position = player_location
+	if event.is_action_pressed("restart") and is_playing():
+		if respawn_egg:
+			respawn_egg.queue_free()
+		EventBus.start_level.emit(current_level)
 
 func _physics_process(delta: float) -> void:
 	if current_state == PLAYER_WAIT and time_to_wait > 0:
