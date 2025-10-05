@@ -40,6 +40,7 @@ script = ExtResource("3_gtg6f")
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_d3b7p")
+volume_db = -10.0
 parameters/looping = true
 
 [node name="TutorialSfx" type="AudioStreamPlayer2D" parent="."]
@@ -48,6 +49,7 @@ volume_db = 10.0
 
 [node name="CaveMusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_3p8ds")
+volume_db = -10.0
 parameters/looping = true
 
 [node name="LevelSfx" type="AudioStreamPlayer2D" parent="."]

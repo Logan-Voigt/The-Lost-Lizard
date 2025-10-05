@@ -4,6 +4,8 @@ extends Node2D
 @onready var music_player: AudioStreamPlayer2D = $MusicPlayer
 @onready var cave_music_player: AudioStreamPlayer2D = $CaveMusicPlayer
 @onready var intermission_screen: Node2D = $IntermissionScreen
+@onready var tutorial_sfx: AudioStreamPlayer2D = $TutorialSfx
+@onready var level_sfx: AudioStreamPlayer2D = $LevelSfx
 
 
 var current_level : Level
@@ -18,9 +20,13 @@ func _on_game_start(level : int) -> void:
 	if level < 8:
 		music_player.play()
 		cave_music_player.stop()
+		tutorial_sfx.play()
+		level_sfx.stop()
 	else:
 		cave_music_player.play()
 		music_player.stop()
+		tutorial_sfx.stop()
+		level_sfx.play()
 	GameState.current_level = level
 	current_level = GameState.levels[GameState.current_level].instantiate()
 	GameState.level_respawn_location = current_level.level_spawn
@@ -46,6 +52,8 @@ func _on_exit_to_menu() -> void:
 	delete_level()
 	music_player.stop()
 	cave_music_player.stop()
+	tutorial_sfx.stop()
+	level_sfx.stop()
 
 
 func _on_show_intermission() -> void:
