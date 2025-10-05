@@ -1,15 +1,19 @@
-[gd_scene load_steps=11 format=4 uid="uid://d03o2c5sn7g5w"]
+[gd_scene load_steps=13 format=4 uid="uid://d03o2c5sn7g5w"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_iopg2"]
 [ext_resource type="AudioStream" uid="uid://brjvacr67bvoe" path="res://sounds/voice lines/tutorial 5.mp3" id="2_iopg2"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_ltdih"]
 [ext_resource type="Texture2D" uid="uid://dko8bqhvjwy1k" path="res://assets/environment/backgrounds/forest-layer-0.png" id="4_gflrf"]
-[ext_resource type="Texture2D" uid="uid://d2544pqh5r1fk" path="res://assets/environment/backgrounds/forest-layer-1.png" id="5_0cftc"]
+[ext_resource type="Texture2D" uid="uid://bc0eqw71gkomd" path="res://assets/environment/backgrounds/forest-layer-1.png" id="5_0cftc"]
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="6_6kncq"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="6_e0w8u"]
-[ext_resource type="Texture2D" uid="uid://cjd3jhxcb4r2r" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_o5jlq"]
+[ext_resource type="Texture2D" uid="uid://dptmnp652sq43" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_o5jlq"]
 [ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="7_iopg2"]
-[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="8_f6w7u"]
+[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="8_f6w7u"]
+[ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="11_0cftc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5jlq"]
+size = Vector2(856, 216)
 
 [node name="TutorialLevel_4" type="Node2D"]
 script = ExtResource("1_iopg2")
@@ -26,15 +30,15 @@ position = Vector2(0, 56)
 tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAJAAcAAgAAAAAAAAAKAAcAAgAAAAAAAAALAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAQAAQAAAAAAAAALAAQAAQAAAAAAAAA=")
 tile_set = ExtResource("2_ltdih")
 
-[node name="BackgroundGrasslands2" type="Sprite2D" parent="."]
+[node name="BackgroundGrasslands3" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("4_gflrf")
 
-[node name="Sprite2D" type="Sprite2D" parent="BackgroundGrasslands2"]
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundGrasslands3"]
 texture = ExtResource("5_0cftc")
 
-[node name="Sprite2D" type="Sprite2D" parent="BackgroundGrasslands2/Sprite2D"]
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundGrasslands3/Sprite2D"]
 texture = ExtResource("6_o5jlq")
 
 [node name="IcySpikes" parent="." instance=ExtResource("6_e0w8u")]
@@ -48,3 +52,17 @@ position = Vector2(762, 984)
 
 [node name="IcyVent" parent="." instance=ExtResource("7_iopg2")]
 position = Vector2(1106, 982)
+
+[node name="TutorialLabel" parent="." instance=ExtResource("11_0cftc")]
+offset_left = 1231.0
+offset_top = 696.0
+offset_right = 1657.0
+offset_bottom = 889.0
+text = "[outline_size=20][font_size=40]Become an ice lizard to be launched by the vent[/font_size][/outline_size]"
+
+[node name="Area2D" type="Area2D" parent="TutorialLabel"]
+position = Vector2(181, 140)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialLabel/Area2D"]
+position = Vector2(-164, 46)
+shape = SubResource("RectangleShape2D_o5jlq")

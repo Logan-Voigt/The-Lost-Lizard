@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=4 uid="uid://c2yhwiu4lg52u"]
+[gd_scene load_steps=12 format=4 uid="uid://c2yhwiu4lg52u"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_dgc67"]
 [ext_resource type="AudioStream" uid="uid://tvbg0vnr7qam" path="res://sounds/voice lines/tutorial 2.mp3" id="2_mhyc3"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_v17rn"]
 [ext_resource type="Texture2D" uid="uid://dko8bqhvjwy1k" path="res://assets/environment/backgrounds/forest-layer-0.png" id="4_sjwdp"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="4_vpekx"]
-[ext_resource type="Texture2D" uid="uid://d2544pqh5r1fk" path="res://assets/environment/backgrounds/forest-layer-1.png" id="5_6r3ly"]
+[ext_resource type="Texture2D" uid="uid://bc0eqw71gkomd" path="res://assets/environment/backgrounds/forest-layer-1.png" id="5_6r3ly"]
 [ext_resource type="Texture2D" uid="uid://berm451jbpwfh" path="res://assets/environment/vents/grass_vent.png" id="5_sjwdp"]
-[ext_resource type="Texture2D" uid="uid://cjd3jhxcb4r2r" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_q4mkc"]
-[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_v17rn"]
+[ext_resource type="Texture2D" uid="uid://dptmnp652sq43" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_q4mkc"]
+[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_v17rn"]
+[ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="10_6r3ly"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4mkc"]
+size = Vector2(876, 184)
 
 [node name="TutorialLevel_1" type="Node2D"]
 script = ExtResource("1_dgc67")
@@ -25,15 +29,15 @@ position = Vector2(0, 56)
 tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAJAAcAAgAAAAAAAAAKAAcAAgAAAAAAAAALAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAA=")
 tile_set = ExtResource("2_v17rn")
 
-[node name="BackgroundGrasslands2" type="Sprite2D" parent="."]
+[node name="BackgroundGrasslands3" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("4_sjwdp")
 
-[node name="Sprite2D" type="Sprite2D" parent="BackgroundGrasslands2"]
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundGrasslands3"]
 texture = ExtResource("5_6r3ly")
 
-[node name="Sprite2D" type="Sprite2D" parent="BackgroundGrasslands2/Sprite2D"]
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundGrasslands3/Sprite2D"]
 texture = ExtResource("6_q4mkc")
 
 [node name="FireVent" parent="." instance=ExtResource("4_vpekx")]
@@ -44,5 +48,19 @@ texture = ExtResource("5_sjwdp")
 
 [node name="NestGoal" parent="." instance=ExtResource("6_v17rn")]
 position = Vector2(1721, 918)
+
+[node name="TutorialLabel" parent="." instance=ExtResource("10_6r3ly")]
+offset_left = 469.0
+offset_top = 679.0
+offset_right = 859.0
+offset_bottom = 854.0
+text = "[outline_size=20][font_size=40]By dying to fire you will become a fire lizard[/font_size][/outline_size]"
+
+[node name="Area2D" type="Area2D" parent="TutorialLabel"]
+position = Vector2(143, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialLabel/Area2D"]
+position = Vector2(78, 98)
+shape = SubResource("RectangleShape2D_q4mkc")
 
 [editable path="FireVent"]
