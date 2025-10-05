@@ -121,3 +121,9 @@ offset_top = 760.0
 offset_right = 1395.0
 offset_bottom = 858.0
 text = "level 8"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(958.5, 538)
+scale = Vector2(29.9531, 16.8125)
+texture = SubResource("GradientTexture2D_8edhd")
