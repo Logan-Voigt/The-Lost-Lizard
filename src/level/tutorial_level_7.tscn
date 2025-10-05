@@ -105,9 +105,9 @@ position = Vector2(1789, 986)
 [node name="TutorialLabel" parent="." instance=ExtResource("13_cxxtp")]
 offset_left = 815.0
 offset_top = 271.0
-offset_right = 1131.0
-offset_bottom = 408.0
-text = "[outline_size=20][font_size=40]press [b] R [/b] if you get stuck[/font_size][/outline_size]"
+offset_right = 1232.0
+offset_bottom = 468.0
+text = "[outline_size=20][font_size=40]press [b] Tab [/b] and reset if you get stuck[/font_size][/outline_size]"
 
 [node name="Area2D" type="Area2D" parent="TutorialLabel"]
 

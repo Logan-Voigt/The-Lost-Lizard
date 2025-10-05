@@ -148,8 +148,7 @@ func _input(event: InputEvent) -> void:
 		respawn_egg = egg_scene.instantiate()
 		get_tree().root.get_node("Main").add_child(respawn_egg)
 		respawn_egg.global_position = player_location
-	if event.is_action_pressed("restart") and is_playing():
-		restart()
+
 
 func _physics_process(delta: float) -> void:
 	if current_state == PLAYER_WAIT and time_to_wait > 0:
