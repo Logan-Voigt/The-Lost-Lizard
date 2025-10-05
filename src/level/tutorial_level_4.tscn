@@ -1,15 +1,19 @@
-[gd_scene load_steps=13 format=4 uid="uid://d03o2c5sn7g5w"]
+[gd_scene load_steps=17 format=4 uid="uid://d03o2c5sn7g5w"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_iopg2"]
 [ext_resource type="AudioStream" uid="uid://brjvacr67bvoe" path="res://sounds/voice lines/tutorial 5.mp3" id="2_iopg2"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_ltdih"]
+[ext_resource type="Texture2D" uid="uid://cqd0lekdklm0q" path="res://assets/environment/backgrounds/forest_background/pixil-layer-0.png" id="4_f6w7u"]
 [ext_resource type="Texture2D" uid="uid://dko8bqhvjwy1k" path="res://assets/environment/backgrounds/forest-layer-0.png" id="4_gflrf"]
 [ext_resource type="Texture2D" uid="uid://bc0eqw71gkomd" path="res://assets/environment/backgrounds/forest-layer-1.png" id="5_0cftc"]
+[ext_resource type="Texture2D" uid="uid://chv4jue6ty4np" path="res://assets/environment/backgrounds/forest_background/pixil-layer-1.png" id="5_ouh7d"]
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="6_6kncq"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="6_e0w8u"]
 [ext_resource type="Texture2D" uid="uid://dptmnp652sq43" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_o5jlq"]
+[ext_resource type="Texture2D" uid="uid://csmuvb5frx6vk" path="res://assets/environment/backgrounds/forest_background/pixil-layer-3.png" id="6_r4eau"]
 [ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="7_iopg2"]
-[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="8_f6w7u"]
+[ext_resource type="Texture2D" uid="uid://bhwkovcmr2chm" path="res://assets/environment/backgrounds/forest_background/pixil-layer-2.png" id="7_yma8r"]
+[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="8_f6w7u"]
 [ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="11_0cftc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5jlq"]
@@ -30,7 +34,22 @@ position = Vector2(0, 56)
 tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAJAAcAAgAAAAAAAAAKAAcAAgAAAAAAAAALAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAQAAQAAAAAAAAALAAQAAQAAAAAAAAA=")
 tile_set = ExtResource("2_ltdih")
 
+[node name="Backgroundforest" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(960, 541)
+texture = ExtResource("4_f6w7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgroundforest"]
+texture = ExtResource("5_ouh7d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgroundforest/Sprite2D"]
+texture = ExtResource("6_r4eau")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgroundforest/Sprite2D/Sprite2D"]
+texture = ExtResource("7_yma8r")
+
 [node name="BackgroundGrasslands3" type="Sprite2D" parent="."]
+visible = false
 z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("4_gflrf")
