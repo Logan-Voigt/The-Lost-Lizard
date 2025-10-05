@@ -11,7 +11,8 @@ extends Node
 	load("res://src/level/tutorial_level_5.tscn"),
 	load("res://src/level/tutorial_level_6.tscn"),
 	load("res://src/level/tutorial_level_7.tscn"),
-	load("res://src/level/level_1.tscn")]
+	load("res://src/level/level_1.tscn"),
+	load("res://src/level/level_2.tscn")]
 
 const START_SCREEN : int = 0
 const PAUSE_MENU : int = 1
@@ -25,6 +26,22 @@ const ICE : int = 2
 const TOXIC : int = 3
 
 const RESPAWN_TIME : float = 0.5
+
+var completed_levels : Array[bool] = [
+	true,
+	true,
+	true,
+	true,
+	true,
+	true,
+	true,
+	true,
+	true,
+	true,
+	true,
+	true,
+	true,
+	true]
 
 var current_level : int
 var current_state : int

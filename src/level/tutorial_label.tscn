@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://xbudkosp0k78"]
 
-[ext_resource type="Script" path="res://src/level/tutorial_label.gd" id="1_on5xc"]
+[ext_resource type="Script" uid="uid://dybtaybf0wc8d" path="res://src/level/tutorial_label.gd" id="1_on5xc"]
 
 [node name="TutorialLabel" type="RichTextLabel"]
 offset_right = 316.0
