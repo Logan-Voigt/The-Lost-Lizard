@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bkiskalvy1hy0"]
+[gd_scene load_steps=17 format=4 uid="uid://bkiskalvy1hy0"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_ljrn7"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_4fm2i"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://7yil56a2cuvf" path="res://src/level/obstacles/fire_wall.tscn" id="11_oqje8"]
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="12_jp5rq"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="13_ixamw"]
+[ext_resource type="Texture2D" uid="uid://bi62nlomx3kh7" path="res://assets/environment/building_blocks/Cave_tile_tall.png" id="15_jp5rq"]
+[ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="16_yuue3"]
 
 [node name="Level_7" type="Node2D"]
 script = ExtResource("1_ljrn7")
@@ -34,7 +36,7 @@ position = Vector2(78, 928)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
 position = Vector2(0, 62)
-tile_map_data = PackedByteArray("AAAAAAcABAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcABAAAAAAAAAAGAAcABAAAAAAAAAAHAAcABAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAcABAAAAAAAAAALAAcABAAAAAAAAAD/////BAAAAAAAAAAPAP//BAAAAAAAAAACAAYABAAAAAAAAAAAAAQABAAAAAAAAAABAAQABAAAAAAAAAACAAQABAAAAAAAAAAEAAQABAAAAAAAAAADAAQABAAAAAAAAAAFAAQABAAAAAAAAAAGAAQABAAAAAAAAAACAAMABAAAAAAAAAADAAMABAAAAAAAAAADAAIABAAAAAAAAAAHAAQABAAAAAAAAAAIAAQABAAAAAAAAAAJAAQABAAAAAAAAAAKAAQABAAAAAAAAAALAAQABAAAAAAAAAAMAAQABAAAAAAAAAAOAAUABAAAAAAAAAAOAAYABAAAAAAAAAAFAAIABAAAAAAAAAAGAAAABAAAAAAAAAAGAAEABAAAAAAAAAAGAP//BAAAAAAAAAAGAAIABAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcABAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcABAAAAAAAAAAFAAcABAAAAAAAAAAGAAcABAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAMAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAcABAAAAAAAAAALAAcABAAAAAAAAAD/////BAAAAAAAAAAPAP//BAAAAAAAAAACAAYABAAAAAAAAAAAAAQABAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAAEAAQABAAAAAAAAAADAAQABAAAAAAAAAAFAAQABAAAAAAAAAAGAAQAAAAAAAAAAAACAAMABAAAAAAAAAADAAMAAAAAAAAAAAADAAIABAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQABAAAAAAAAAAKAAQABAAAAAAAAAALAAQABAAAAAAAAAAMAAQAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAYABAAAAAAAAAAFAAIAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEABAAAAAAAAAAGAP//BAAAAAAAAAAGAAIABAAAAAAAAAA=")
 tile_set = ExtResource("3_17ufo")
 
 [node name="BackgroundCave" type="Sprite2D" parent="."]
@@ -116,5 +118,44 @@ position = Vector2(1066, 986)
 
 [node name="IcySpikes8" parent="." instance=ExtResource("9_ixamw")]
 position = Vector2(1509, 983)
+
+[node name="CaveTileTall" type="Sprite2D" parent="."]
+position = Vector2(320, 583)
+texture = ExtResource("15_jp5rq")
+
+[node name="CaveTileTall2" type="Sprite2D" parent="."]
+position = Vector2(447, 588)
+texture = ExtResource("15_jp5rq")
+
+[node name="CaveTileTall3" type="Sprite2D" parent="."]
+position = Vector2(448, 462)
+texture = ExtResource("15_jp5rq")
+
+[node name="CaveTileTall4" type="Sprite2D" parent="."]
+position = Vector2(833, 317)
+texture = ExtResource("15_jp5rq")
+
+[node name="CaveTileTallNoGrass" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(833, 189)
+texture = ExtResource("16_yuue3")
+
+[node name="CaveTileTallNoGrass2" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(831, 60)
+texture = ExtResource("16_yuue3")
+
+[node name="CaveTileTallNoGrass3" type="Sprite2D" parent="."]
+position = Vector2(1856, 943)
+texture = ExtResource("16_yuue3")
+
+[node name="CaveTileTall5" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(1857, 833)
+texture = ExtResource("15_jp5rq")
+
+[node name="CaveTileTall6" type="Sprite2D" parent="."]
+position = Vector2(320, 961)
+texture = ExtResource("15_jp5rq")
 
 [editable path="IcyVent2"]
