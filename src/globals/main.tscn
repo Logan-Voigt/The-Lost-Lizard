@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cs38ofxnoud3q"]
+[gd_scene load_steps=13 format=3 uid="uid://cs38ofxnoud3q"]
 
 [ext_resource type="PackedScene" uid="uid://o3b3mx0y2584" path="res://src/menus/title_screen.tscn" id="1_gtg6f"]
 [ext_resource type="Script" uid="uid://cgwreuckvw1cs" path="res://src/globals/main.gd" id="1_srjgd"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://rtat0yaiq0ge" path="res://src/menus/level_select_screen.tscn" id="4_weie5"]
 [ext_resource type="PackedScene" uid="uid://bokxqr4nxvvrx" path="res://src/menus/pause_screen.tscn" id="5_3p8ds"]
 [ext_resource type="AudioStream" uid="uid://cayejxy5trim1" path="res://sounds/level_sfx.mp3" id="7_ahik8"]
+[ext_resource type="AudioStream" uid="uid://c6bo51pia0ajk" path="res://sounds/tutorial_music.mp3" id="7_d3b7p"]
+[ext_resource type="AudioStream" uid="uid://biv1r7u3hahgy" path="res://sounds/level_music.mp3" id="8_3p8ds"]
 
 [sub_resource type="Gradient" id="Gradient_ahik8"]
 offsets = PackedFloat32Array(0.63253)
@@ -37,10 +39,18 @@ position = Vector2(960, 539)
 script = ExtResource("3_gtg6f")
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_d3b7p")
+parameters/looping = true
+
+[node name="TutorialSfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_srjgd")
 volume_db = 10.0
 
 [node name="CaveMusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_3p8ds")
+parameters/looping = true
+
+[node name="LevelSfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ahik8")
 volume_db = 10.0
 
