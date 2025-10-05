@@ -1,12 +1,16 @@
-[gd_scene load_steps=11 format=4 uid="uid://d027c41rys4jm"]
+[gd_scene load_steps=15 format=4 uid="uid://d027c41rys4jm"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_ys8wr"]
 [ext_resource type="AudioStream" uid="uid://bw11xagw122hi" path="res://sounds/voice lines/tutorial 7.mp3" id="2_0p7hl"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_pvcfr"]
+[ext_resource type="Texture2D" uid="uid://cqd0lekdklm0q" path="res://assets/environment/backgrounds/forest_background/pixil-layer-0.png" id="4_85m7y"]
 [ext_resource type="Texture2D" uid="uid://dko8bqhvjwy1k" path="res://assets/environment/backgrounds/forest-layer-0.png" id="4_mkm0x"]
+[ext_resource type="Texture2D" uid="uid://chv4jue6ty4np" path="res://assets/environment/backgrounds/forest_background/pixil-layer-1.png" id="5_hu2ej"]
 [ext_resource type="Texture2D" uid="uid://bc0eqw71gkomd" path="res://assets/environment/backgrounds/forest-layer-1.png" id="5_y78vp"]
+[ext_resource type="Texture2D" uid="uid://csmuvb5frx6vk" path="res://assets/environment/backgrounds/forest_background/pixil-layer-3.png" id="6_hmdtr"]
 [ext_resource type="Texture2D" uid="uid://dptmnp652sq43" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_kdmq8"]
-[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_y78vp"]
+[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_y78vp"]
+[ext_resource type="Texture2D" uid="uid://bhwkovcmr2chm" path="res://assets/environment/backgrounds/forest_background/pixil-layer-2.png" id="7_364fl"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="8_f4d81"]
 [ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="10_mkm0x"]
 [ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="10_y78vp"]
@@ -26,7 +30,22 @@ position = Vector2(0, 62)
 tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAJAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAALAAYAAQAAAAAAAAAKAAcAAgAAAAAAAAA=")
 tile_set = ExtResource("2_pvcfr")
 
+[node name="Backgroundforest" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(960, 541)
+texture = ExtResource("4_85m7y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgroundforest"]
+texture = ExtResource("5_hu2ej")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgroundforest/Sprite2D"]
+texture = ExtResource("6_hmdtr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgroundforest/Sprite2D/Sprite2D"]
+texture = ExtResource("7_364fl")
+
 [node name="BackgroundGrasslands3" type="Sprite2D" parent="."]
+visible = false
 z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("4_mkm0x")

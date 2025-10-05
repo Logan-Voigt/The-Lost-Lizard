@@ -1,13 +1,17 @@
-[gd_scene load_steps=11 format=4 uid="uid://c3khuqq7wfcpq"]
+[gd_scene load_steps=15 format=4 uid="uid://c3khuqq7wfcpq"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_7tw55"]
 [ext_resource type="AudioStream" uid="uid://bq1upuamlx5eg" path="res://sounds/voice lines/tutorial 1.mp3" id="2_7tw55"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_dnmu3"]
 [ext_resource type="Texture2D" uid="uid://dko8bqhvjwy1k" path="res://assets/environment/backgrounds/forest-layer-0.png" id="4_uekti"]
+[ext_resource type="Texture2D" uid="uid://cqd0lekdklm0q" path="res://assets/environment/backgrounds/forest_background/pixil-layer-0.png" id="5_5y23w"]
 [ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="5_hd6qb"]
 [ext_resource type="Texture2D" uid="uid://bc0eqw71gkomd" path="res://assets/environment/backgrounds/forest-layer-1.png" id="5_xq8xk"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_nhpje"]
 [ext_resource type="Texture2D" uid="uid://dptmnp652sq43" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_p6a61"]
+[ext_resource type="Texture2D" uid="uid://chv4jue6ty4np" path="res://assets/environment/backgrounds/forest_background/pixil-layer-1.png" id="6_qpfbp"]
+[ext_resource type="Texture2D" uid="uid://csmuvb5frx6vk" path="res://assets/environment/backgrounds/forest_background/pixil-layer-3.png" id="7_hmfc6"]
+[ext_resource type="Texture2D" uid="uid://bhwkovcmr2chm" path="res://assets/environment/backgrounds/forest_background/pixil-layer-2.png" id="8_hpala"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd6qb"]
 size = Vector2(1074, 200)
@@ -30,7 +34,25 @@ position = Vector2(0, 56)
 tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAJAAcAAgAAAAAAAAAKAAcAAgAAAAAAAAALAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAA=")
 tile_set = ExtResource("2_dnmu3")
 
+[node name="NestGoal" parent="." instance=ExtResource("6_nhpje")]
+position = Vector2(1721, 918)
+
+[node name="Backgroundforest" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(960, 541)
+texture = ExtResource("5_5y23w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgroundforest"]
+texture = ExtResource("6_qpfbp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgroundforest/Sprite2D"]
+texture = ExtResource("7_hmfc6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgroundforest/Sprite2D/Sprite2D"]
+texture = ExtResource("8_hpala")
+
 [node name="BackgroundGrasslands2" type="Sprite2D" parent="."]
+visible = false
 z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("4_uekti")
@@ -40,9 +62,6 @@ texture = ExtResource("5_xq8xk")
 
 [node name="Sprite2D" type="Sprite2D" parent="BackgroundGrasslands2/Sprite2D"]
 texture = ExtResource("6_p6a61")
-
-[node name="NestGoal" parent="." instance=ExtResource("6_nhpje")]
-position = Vector2(1721, 918)
 
 [node name="EForEgg" parent="." instance=ExtResource("5_hd6qb")]
 offset_left = 1559.0
