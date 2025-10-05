@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dbi2pojrp8rhx"]
+[gd_scene load_steps=15 format=4 uid="uid://m7jd8uyb4riv"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_6n2x6"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_pckp4"]
@@ -13,19 +13,20 @@
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="11_t2nol"]
 [ext_resource type="PackedScene" uid="uid://cdfitb1vcfv3w" path="res://src/level/obstacles/icy_floor.tscn" id="12_2pywn"]
 [ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="13_6n2x6"]
+[ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="13_xutsc"]
 
 [node name="Level_4" type="Node2D"]
 script = ExtResource("1_6n2x6")
 level_max = Vector2(1920, 1080)
-level_spawn = Vector2(450, 185)
+level_spawn = Vector2(200, 500)
 
 [node name="NestGoal" parent="." instance=ExtResource("2_pckp4")]
-position = Vector2(1858, 667)
+position = Vector2(78, 925)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
 position = Vector2(0, 62)
-tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcAAAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAcABAAAAAAAAAALAAcAAAAAAAAAAAAFAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAADAAUABAAAAAAAAAACAAUABAAAAAAAAAABAAUABAAAAAAAAAAAAAUAAAAAAAAAAAAGAAUABAAAAAAAAAAOAAUABAAAAAAAAAACAAIAAAAAAAAAAAD/////BAAAAAAAAAAPAP//BAAAAAAAAAAEAAEABAAAAAAAAAAEAAAABAAAAAAAAAAEAP//BAAAAAAAAAADAAEABAAAAAAAAAABAAMAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcAAAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAcABAAAAAAAAAALAAcAAAAAAAAAAAAFAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAADAAUABAAAAAAAAAACAAUABAAAAAAAAAABAAUABAAAAAAAAAAAAAUABAAAAAAAAAAKAAUABAAAAAAAAAAKAAQABAAAAAAAAAAKAAMABAAAAAAAAAALAAQABAAAAAAAAAAMAAUABAAAAAAAAAAJAAIABAAAAAAAAAAJAAMABAAAAAAAAAALAAUAAAAAAAAAAAA=")
 tile_set = ExtResource("3_gpm23")
 
 [node name="BackgroundCave" type="Sprite2D" parent="."]
@@ -43,63 +44,63 @@ texture = ExtResource("6_ukfen")
 texture = ExtResource("7_05dws")
 
 [node name="FireWall" parent="." instance=ExtResource("8_ispvk")]
-z_index = 2
-position = Vector2(1291, 833)
+position = Vector2(831, 626)
 
-[node name="Main_Texture" parent="FireWall" index="2"]
-rotation = 2.63196
+[node name="FireWall2" parent="." instance=ExtResource("8_ispvk")]
+position = Vector2(639, 906)
 
-[node name="IcySpikes" parent="." instance=ExtResource("10_b33hc")]
-position = Vector2(319, 349)
+[node name="icy_wall" parent="." instance=ExtResource("9_f5lhx")]
+position = Vector2(735, 774)
+rotation = 1.5708
 
 [node name="FireFloor" parent="." instance=ExtResource("11_t2nol")]
-position = Vector2(195, 474)
+position = Vector2(86, 729)
 
-[node name="FireFloor3" parent="." instance=ExtResource("11_t2nol")]
-position = Vector2(449, 729)
-
-[node name="FireFloor5" parent="." instance=ExtResource("11_t2nol")]
-position = Vector2(830, 729)
+[node name="FireFloor2" parent="." instance=ExtResource("11_t2nol")]
+position = Vector2(579, 475)
 
 [node name="IcyFloor" parent="." instance=ExtResource("12_2pywn")]
-position = Vector2(191, 719)
-
-[node name="IcyFloor6" parent="." instance=ExtResource("12_2pywn")]
-position = Vector2(63, 719)
+position = Vector2(703, 719)
 
 [node name="IcyFloor2" parent="." instance=ExtResource("12_2pywn")]
-position = Vector2(697, 719)
-
-[node name="IcyFloor4" parent="." instance=ExtResource("12_2pywn")]
-position = Vector2(569, 719)
+position = Vector2(575, 719)
 
 [node name="IcyFloor3" parent="." instance=ExtResource("12_2pywn")]
+position = Vector2(447, 719)
+
+[node name="IcyFloor4" parent="." instance=ExtResource("12_2pywn")]
 position = Vector2(319, 719)
 
 [node name="IcyFloor5" parent="." instance=ExtResource("12_2pywn")]
 position = Vector2(959, 719)
 
+[node name="IcyFloor6" parent="." instance=ExtResource("12_2pywn")]
+position = Vector2(1086, 719)
+
 [node name="IcyFloor7" parent="." instance=ExtResource("12_2pywn")]
-position = Vector2(1087, 719)
+position = Vector2(1214, 719)
+
+[node name="IcyVent2" parent="." instance=ExtResource("13_xutsc")]
+position = Vector2(1765, 991)
+
+[node name="IcySpikes" parent="." instance=ExtResource("10_b33hc")]
+position = Vector2(1218, 723)
+
+[node name="icy_wall2" parent="." instance=ExtResource("9_f5lhx")]
+position = Vector2(950, 986)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1344, 695)
+texture = ExtResource("13_6n2x6")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(576, 176)
+position = Vector2(1344, 569)
 texture = ExtResource("13_6n2x6")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(576, 54)
+position = Vector2(1216, 463)
 texture = ExtResource("13_6n2x6")
 
-[node name="icy_wall" parent="." instance=ExtResource("9_f5lhx")]
-position = Vector2(1676, 990)
-
-[node name="icy_wall2" parent="." instance=ExtResource("9_f5lhx")]
-position = Vector2(1750, 990)
-
-[node name="Main_Texture" parent="icy_wall2" index="2"]
-flip_h = true
-
-[editable path="FireWall"]
-[editable path="icy_wall2"]
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(1472, 706)
+texture = ExtResource("13_6n2x6")

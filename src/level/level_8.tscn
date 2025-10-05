@@ -56,6 +56,9 @@ position = Vector2(-20, -116)
 [node name="IcySpikes" parent="." instance=ExtResource("9_w8esi")]
 position = Vector2(708, 601)
 
+[node name="IcySpikes3" parent="." instance=ExtResource("9_w8esi")]
+position = Vector2(658, 601)
+
 [node name="IcySpikes2" parent="." instance=ExtResource("9_w8esi")]
 position = Vector2(1080, 985)
 

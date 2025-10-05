@@ -15,9 +15,9 @@ extends Node
 	load("res://src/level/level_2.tscn"),
 	load("res://src/level/level_3.tscn"),
 	load("res://src/level/level_4.tscn"),
-	load("res://src/level/level_3.tscn"),
-	load("res://src/level/level_3.tscn"),
-	load("res://src/level/level_3.tscn"),
+	load("res://src/level/level_5.tscn"),
+	load("res://src/level/level_6.tscn"),
+	load("res://src/level/level_7.tscn"),
 	load("res://src/level/level_8.tscn")]
 
 const START_SCREEN : int = 0

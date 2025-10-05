@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://m7jd8uyb4riv"]
+[gd_scene load_steps=13 format=4 uid="uid://b5kkjn12j1p5o"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_rr1o5"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_q4bkx"]
@@ -8,25 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://b3msx3d04834u" path="res://assets/environment/backgrounds/cave-layer-2.png" id="7_qdnop"]
 [ext_resource type="Texture2D" uid="uid://djn8rlmxv4eue" path="res://assets/environment/backgrounds/cave-layer-3.png" id="8_1221k"]
 [ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="9_pnesq"]
-[ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="10_7kh15"]
 [ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="12_i23sl"]
-[ext_resource type="PackedScene" uid="uid://cdfitb1vcfv3w" path="res://src/level/obstacles/icy_floor.tscn" id="12_yrsmy"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="13_xy7ee"]
-[ext_resource type="PackedScene" uid="uid://7yil56a2cuvf" path="res://src/level/obstacles/fire_wall.tscn" id="15_3mwcw"]
+[ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="14_vvga8"]
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="16_8q3gl"]
 
 [node name="Level_3" type="Node2D"]
 script = ExtResource("1_rr1o5")
 level_max = Vector2(1920, 1080)
-level_spawn = Vector2(200, 500)
-
-[node name="NestGoal" parent="." instance=ExtResource("2_q4bkx")]
-position = Vector2(78, 925)
+level_spawn = Vector2(960, 900)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
 position = Vector2(0, 62)
-tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcAAAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAcABAAAAAAAAAALAAcAAAAAAAAAAAAFAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAADAAUABAAAAAAAAAACAAUABAAAAAAAAAABAAUABAAAAAAAAAAAAAUABAAAAAAAAAAKAAUABAAAAAAAAAAKAAQABAAAAAAAAAAKAAMABAAAAAAAAAALAAQABAAAAAAAAAAMAAUABAAAAAAAAAAJAAIABAAAAAAAAAAJAAMABAAAAAAAAAALAAUAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcABAAAAAAAAAAGAAcABAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcAAAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAALAAYAAAAAAAAAAAAKAAcABAAAAAAAAAA=")
 tile_set = ExtResource("4_shdhh")
 
 [node name="BackgroundCave" type="Sprite2D" parent="."]
@@ -43,64 +38,28 @@ texture = ExtResource("7_qdnop")
 [node name="Sprite2D" type="Sprite2D" parent="BackgroundCave/Sprite2D/Sprite2D"]
 texture = ExtResource("8_1221k")
 
-[node name="FireWall" parent="." instance=ExtResource("15_3mwcw")]
-position = Vector2(831, 626)
+[node name="FireVent2" parent="." instance=ExtResource("14_vvga8")]
+position = Vector2(1117, 992)
 
-[node name="FireWall2" parent="." instance=ExtResource("15_3mwcw")]
-position = Vector2(639, 906)
-
-[node name="icy_wall" parent="." instance=ExtResource("12_i23sl")]
-position = Vector2(735, 774)
-rotation = 1.5708
-
-[node name="FireFloor" parent="." instance=ExtResource("16_8q3gl")]
-position = Vector2(86, 729)
-
-[node name="FireFloor2" parent="." instance=ExtResource("16_8q3gl")]
-position = Vector2(579, 475)
-
-[node name="IcyFloor" parent="." instance=ExtResource("12_yrsmy")]
-position = Vector2(703, 719)
-
-[node name="IcyFloor2" parent="." instance=ExtResource("12_yrsmy")]
-position = Vector2(575, 719)
-
-[node name="IcyFloor3" parent="." instance=ExtResource("12_yrsmy")]
-position = Vector2(447, 719)
-
-[node name="IcyFloor4" parent="." instance=ExtResource("12_yrsmy")]
-position = Vector2(319, 719)
-
-[node name="IcyFloor5" parent="." instance=ExtResource("12_yrsmy")]
-position = Vector2(959, 719)
-
-[node name="IcyFloor6" parent="." instance=ExtResource("12_yrsmy")]
-position = Vector2(1086, 719)
-
-[node name="IcyFloor7" parent="." instance=ExtResource("12_yrsmy")]
-position = Vector2(1214, 719)
-
-[node name="IcyVent2" parent="." instance=ExtResource("10_7kh15")]
-position = Vector2(1765, 991)
+[node name="NestGoal" parent="." instance=ExtResource("2_q4bkx")]
+position = Vector2(82, 925)
 
 [node name="IcySpikes" parent="." instance=ExtResource("13_xy7ee")]
-position = Vector2(1218, 723)
+position = Vector2(1727, 986)
 
-[node name="icy_wall2" parent="." instance=ExtResource("12_i23sl")]
-position = Vector2(950, 986)
+[node name="IcySpikes2" parent="." instance=ExtResource("13_xy7ee")]
+position = Vector2(267, 986)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1344, 695)
+[node name="FireFloor" parent="." instance=ExtResource("16_8q3gl")]
+position = Vector2(773, 988)
+
+[node name="icy_wall" parent="." instance=ExtResource("12_i23sl")]
+position = Vector2(515, 989)
+
+[node name="CaveTileTallNoGrass2" type="Sprite2D" parent="."]
+position = Vector2(1472, 1017)
 texture = ExtResource("9_pnesq")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1344, 569)
-texture = ExtResource("9_pnesq")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(1216, 463)
-texture = ExtResource("9_pnesq")
-
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(1472, 706)
+[node name="CaveTileTallNoGrass" type="Sprite2D" parent="."]
+position = Vector2(1472, 973)
 texture = ExtResource("9_pnesq")

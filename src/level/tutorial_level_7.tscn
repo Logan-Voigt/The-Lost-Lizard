@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="13_cxxtp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3thp"]
-size = Vector2(401, 179)
+size = Vector2(808, 784)
 
 [node name="TutorialLevel_7" type="Node2D"]
 script = ExtResource("1_1qfoq")
@@ -88,5 +88,5 @@ text = "[outline_size=20][font_size=40]press [b] R [/b] if you get stuck[/font_s
 [node name="Area2D" type="Area2D" parent="TutorialLabel"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialLabel/Area2D"]
-position = Vector2(912.5, 632.5)
+position = Vector2(709, 330)
 shape = SubResource("RectangleShape2D_l3thp")

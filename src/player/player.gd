@@ -8,7 +8,7 @@ const GRAVITY_MULTIPLIER : float = 4
 const JUMPING_GRAVITY_MULTIPLIER : float = 2
 const STORED_JUMP_MAX_TIME : float = 0.5
 const SLIDE_AMOUNT : float = 10
-const MAX_VELOCITY : Vector2 = Vector2(600, 1200)
+const MAX_VELOCITY : Vector2 = Vector2(1200, 1200)
 
 var stored_jump : bool = false
 var stored_jump_timer : float = 0.0
@@ -110,3 +110,4 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	EventBus.respawn_player.connect(_on_delete_self)
 	EventBus.exit_to_menu.connect(_on_delete_self)
+	EventBus.clear_player.connect(_on_delete_self)

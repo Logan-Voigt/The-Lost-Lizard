@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=4 uid="uid://b0im2li2j7puo"]
+
+[ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_ljrn7"]
+[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_4fm2i"]
+[ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="3_17ufo"]
+[ext_resource type="Texture2D" uid="uid://ijjlyft7gbfg" path="res://assets/environment/backgrounds/cave-layer-0.png" id="4_fwr7n"]
+[ext_resource type="Texture2D" uid="uid://dmddn1jm3qsvm" path="res://assets/environment/backgrounds/cave-layer-1.png" id="5_g8npy"]
+[ext_resource type="Texture2D" uid="uid://b3msx3d04834u" path="res://assets/environment/backgrounds/cave-layer-2.png" id="6_daow0"]
+[ext_resource type="Texture2D" uid="uid://djn8rlmxv4eue" path="res://assets/environment/backgrounds/cave-layer-3.png" id="7_ixamw"]
+
+[node name="Level_7" type="Node2D"]
+script = ExtResource("1_ljrn7")
+level_max = Vector2(1920, 1080)
+level_spawn = Vector2(1090, 180)
+
+[node name="NestGoal" parent="." instance=ExtResource("2_4fm2i")]
+position = Vector2(987, 925)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 2
+position = Vector2(0, 62)
+tile_map_data = PackedByteArray("AAAAAAcABAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcABAAAAAAAAAAGAAcABAAAAAAAAAAHAAcABAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAcABAAAAAAAAAALAAcABAAAAAAAAAD/////BAAAAAAAAAAPAP//BAAAAAAAAAA=")
+tile_set = ExtResource("3_17ufo")
+
+[node name="BackgroundCave" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(960, 540)
+texture = ExtResource("4_fwr7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCave"]
+texture = ExtResource("5_g8npy")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCave/Sprite2D"]
+texture = ExtResource("6_daow0")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCave/Sprite2D/Sprite2D"]
+texture = ExtResource("7_ixamw")
