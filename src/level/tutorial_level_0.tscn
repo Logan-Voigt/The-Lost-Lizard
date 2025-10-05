@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c3khuqq7wfcpq"]
+[gd_scene load_steps=16 format=4 uid="uid://c3khuqq7wfcpq"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_7tw55"]
 [ext_resource type="AudioStream" uid="uid://bq1upuamlx5eg" path="res://sounds/voice lines/tutorial 1.mp3" id="2_7tw55"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dptmnp652sq43" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_p6a61"]
 [ext_resource type="Texture2D" uid="uid://chv4jue6ty4np" path="res://assets/environment/backgrounds/forest_background/pixil-layer-1.png" id="6_qpfbp"]
 [ext_resource type="Texture2D" uid="uid://csmuvb5frx6vk" path="res://assets/environment/backgrounds/forest_background/pixil-layer-3.png" id="7_hmfc6"]
+[ext_resource type="Texture2D" uid="uid://br7obeqbqqrt0" path="res://assets/sam.png" id="7_qpfbp"]
 [ext_resource type="Texture2D" uid="uid://bhwkovcmr2chm" path="res://assets/environment/backgrounds/forest_background/pixil-layer-2.png" id="8_hpala"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd6qb"]
@@ -44,6 +45,11 @@ texture = ExtResource("5_5y23w")
 
 [node name="Sprite2D" type="Sprite2D" parent="Backgroundforest"]
 texture = ExtResource("6_qpfbp")
+
+[node name="Sam" type="Sprite2D" parent="Backgroundforest/Sprite2D"]
+position = Vector2(531, 368)
+rotation = 0.305433
+texture = ExtResource("7_qpfbp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Backgroundforest/Sprite2D"]
 texture = ExtResource("7_hmfc6")

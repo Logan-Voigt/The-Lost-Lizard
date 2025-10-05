@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dj353jon6potb"]
+[gd_scene load_steps=19 format=4 uid="uid://dj353jon6potb"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_uq2p4"]
 [ext_resource type="AudioStream" uid="uid://0f6q2trsukkt" path="res://sounds/voice lines/tutorial 4.mp3" id="2_ums4i"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://csmuvb5frx6vk" path="res://assets/environment/backgrounds/forest_background/pixil-layer-3.png" id="6_0ue7q"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_b6dkn"]
 [ext_resource type="Texture2D" uid="uid://dptmnp652sq43" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_nepay"]
+[ext_resource type="Texture2D" uid="uid://br7obeqbqqrt0" path="res://assets/sam.png" id="6_xsk51"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="7_2euk5"]
 [ext_resource type="Texture2D" uid="uid://bhwkovcmr2chm" path="res://assets/environment/backgrounds/forest_background/pixil-layer-2.png" id="7_q865i"]
 [ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="7_x27bx"]
@@ -47,6 +48,12 @@ tile_set = ExtResource("2_x27bx")
 z_index = -3
 position = Vector2(960, 541)
 texture = ExtResource("4_7mppp")
+
+[node name="Sam" type="Sprite2D" parent="Backgroundforest"]
+position = Vector2(851, 185)
+rotation = 1.05418
+texture = ExtResource("6_xsk51")
+flip_h = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Backgroundforest"]
 texture = ExtResource("5_xsk51")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c5mr5chw63ug8"]
+[gd_scene load_steps=15 format=4 uid="uid://c5mr5chw63ug8"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_y6b0a"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_3axis"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dmddn1jm3qsvm" path="res://assets/environment/backgrounds/cave-layer-1.png" id="5_nh0ca"]
 [ext_resource type="Texture2D" uid="uid://b3msx3d04834u" path="res://assets/environment/backgrounds/cave-layer-2.png" id="6_ilgj7"]
 [ext_resource type="Texture2D" uid="uid://djn8rlmxv4eue" path="res://assets/environment/backgrounds/cave-layer-3.png" id="7_vm6wp"]
+[ext_resource type="Texture2D" uid="uid://br7obeqbqqrt0" path="res://assets/sam.png" id="8_ircsi"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="8_vdeao"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="9_w8esi"]
 [ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="10_gj65b"]
@@ -41,6 +42,11 @@ texture = ExtResource("6_ilgj7")
 
 [node name="Sprite2D" type="Sprite2D" parent="BackgroundCave/Sprite2D/Sprite2D"]
 texture = ExtResource("7_vm6wp")
+
+[node name="Sam" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(16, 968)
+texture = ExtResource("8_ircsi")
 
 [node name="FireVent" parent="." instance=ExtResource("8_vdeao")]
 position = Vector2(1079, 601)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://c2yhwiu4lg52u"]
+[gd_scene load_steps=17 format=4 uid="uid://c2yhwiu4lg52u"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_dgc67"]
 [ext_resource type="AudioStream" uid="uid://tvbg0vnr7qam" path="res://sounds/voice lines/tutorial 2.mp3" id="2_mhyc3"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dptmnp652sq43" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_q4mkc"]
 [ext_resource type="Texture2D" uid="uid://csmuvb5frx6vk" path="res://assets/environment/backgrounds/forest_background/pixil-layer-3.png" id="6_s6hme"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_v17rn"]
+[ext_resource type="Texture2D" uid="uid://br7obeqbqqrt0" path="res://assets/sam.png" id="6_wcpxe"]
 [ext_resource type="Texture2D" uid="uid://bhwkovcmr2chm" path="res://assets/environment/backgrounds/forest_background/pixil-layer-2.png" id="7_ui1im"]
 [ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="10_6r3ly"]
 
@@ -40,6 +41,10 @@ texture = ExtResource("4_y8grx")
 
 [node name="Sprite2D" type="Sprite2D" parent="Backgroundforest"]
 texture = ExtResource("5_wcpxe")
+
+[node name="Sam" type="Sprite2D" parent="Backgroundforest/Sprite2D"]
+position = Vector2(-617, -381)
+texture = ExtResource("6_wcpxe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Backgroundforest/Sprite2D"]
 texture = ExtResource("6_s6hme")

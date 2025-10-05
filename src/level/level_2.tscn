@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dxkamo85ji7gn"]
+[gd_scene load_steps=19 format=4 uid="uid://dxkamo85ji7gn"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_uuwma"]
 [ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="2_66b86"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="12_8vkhf"]
 [ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="13_q01y7"]
 [ext_resource type="PackedScene" uid="uid://7yil56a2cuvf" path="res://src/level/obstacles/fire_wall.tscn" id="14_5vdjf"]
+[ext_resource type="Texture2D" uid="uid://br7obeqbqqrt0" path="res://assets/sam.png" id="18_bboj5"]
 
 [node name="Level_2" type="Node2D"]
 script = ExtResource("1_uuwma")
@@ -110,3 +111,7 @@ position = Vector2(1912, 731)
 z_index = 2
 position = Vector2(1855, 847)
 texture = ExtResource("13_q01y7")
+
+[node name="Sam" type="Sprite2D" parent="."]
+position = Vector2(18, 971)
+texture = ExtResource("18_bboj5")
