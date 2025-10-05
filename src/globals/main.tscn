@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://crdymhu1481r7" path="res://src/player/main_camera.gd" id="3_gtg6f"]
 [ext_resource type="PackedScene" uid="uid://d2ags0jdfamtg" path="res://src/menus/win_screen.tscn" id="4_phl76"]
 [ext_resource type="AudioStream" uid="uid://ol6mg17gxw64" path="res://sounds/tutorial_sfx.mp3" id="4_srjgd"]
-[ext_resource type="PackedScene" uid="uid://ya8qtu532orw" path="res://src/menus/level_select_screen.tscn" id="4_weie5"]
+[ext_resource type="PackedScene" uid="uid://rtat0yaiq0ge" path="res://src/menus/level_select_screen.tscn" id="4_weie5"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_srjgd")

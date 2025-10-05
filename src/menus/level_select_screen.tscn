@@ -1,19 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://ya8qtu532orw"]
+[gd_scene load_steps=3 format=3 uid="uid://rtat0yaiq0ge"]
 
-[ext_resource type="Script" uid="uid://bw2sldxqpmdx" path="res://src/menus/level_select_screen.gd" id="1_8edhd"]
-
-[sub_resource type="Gradient" id="Gradient_ok4yg"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8edhd"]
-gradient = SubResource("Gradient_ok4yg")
+[ext_resource type="Script" path="res://src/menus/level_select_screen.gd" id="1_8edhd"]
+[ext_resource type="Texture2D" uid="uid://k38607ixpa2f" path="res://assets/environment/backgrounds/Title Background.png" id="2_nkdma"]
 
 [node name="LevelSelectScreen" type="Node2D"]
 script = ExtResource("1_8edhd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(958.5, 538)
-scale = Vector2(29.9531, 16.8125)
-texture = SubResource("GradientTexture2D_8edhd")
+texture = ExtResource("2_nkdma")
 
 [node name="level_0" type="Button" parent="."]
 offset_left = 526.0
