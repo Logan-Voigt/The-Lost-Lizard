@@ -7,10 +7,6 @@
 [node name="LevelSelectScreen" type="Node2D"]
 script = ExtResource("1_8edhd")
 
-[node name="Sam" type="Sprite2D" parent="."]
-position = Vector2(712, 672)
-texture = ExtResource("2_732nx")
-
 [node name="LevelButton_0" type="Button" parent="."]
 offset_left = 527.0
 offset_top = 175.0
@@ -127,3 +123,8 @@ text = "Level 8"
 z_index = -1
 position = Vector2(958.5, 538)
 texture = ExtResource("2_nkdma")
+
+[node name="Sam" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(712, 672)
+texture = ExtResource("2_732nx")

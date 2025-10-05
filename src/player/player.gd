@@ -1,6 +1,8 @@
 class_name Player extends CharacterBody2D
 
 @onready var player_sprite : AnimatedSprite2D = $Visuals
+@onready var jump_sfx: AudioStreamPlayer2D = $JumpSfx
+@onready var landing_sfx: AudioStreamPlayer2D = $LandingSfx
 
 const SPEED : float = 500.0
 const JUMP_VELOCITY : float = -680.0
@@ -14,6 +16,7 @@ var stored_jump : bool = false
 var stored_jump_timer : float = 0.0
 var is_sliding : bool
 var external_forces : Array[Vector2]
+var was_on_ground_last_frame : bool
 
 const PLAIN : int = 0
 const FIRE : int = 1
@@ -51,6 +54,7 @@ func handle_jumping(delta: float) -> void:
 			stored_jump = false
 	
 	if (Input.is_action_just_pressed("move_jump") or stored_jump) and is_on_floor():
+		jump_sfx.play(0.32)
 		velocity.y = JUMP_VELOCITY
 
 
@@ -93,6 +97,14 @@ func limit_velocity() -> void:
 	velocity = velocity.clamp(-MAX_VELOCITY, MAX_VELOCITY)
 
 
+func check_for_landing_sound() -> void:
+	if not was_on_ground_last_frame and is_on_floor():
+		was_on_ground_last_frame = true
+		landing_sfx.play(0.32)
+	if not is_on_floor():
+		was_on_ground_last_frame = false
+
+
 func _on_delete_self() -> void:
 	queue_free()
 
@@ -102,6 +114,7 @@ func _physics_process(delta: float) -> void:
 		handle_movement()
 		apply_forces(delta)
 		handle_jumping(delta)
+		check_for_landing_sound()
 		limit_velocity()
 		handle_graphics()
 		move_and_slide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://csutreqqsgur"]
+[gd_scene load_steps=53 format=3 uid="uid://csutreqqsgur"]
 
 [ext_resource type="Script" uid="uid://hp01iv1kclsc" path="res://src/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://q43n07q0658o" path="res://assets/player/lizard.png" id="2_rxibo"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://yojcsn6q63m3" path="res://assets/player/fire_lizard_jumping.png" id="4_cwolq"]
 [ext_resource type="Texture2D" uid="uid://b78v5s4nah7ux" path="res://assets/player/lizard_jumping.png" id="4_jiejy"]
 [ext_resource type="Texture2D" uid="uid://cxvm6u887bs1d" path="res://assets/player/icy_lizard_jumping.png" id="4_x42xx"]
+[ext_resource type="AudioStream" uid="uid://yf7pyve6aw38" path="res://sounds/jump.mp3" id="12_2smqc"]
+[ext_resource type="AudioStream" uid="uid://bw8m58lb20vx2" path="res://sounds/land.mp3" id="13_rl62b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(130, 58)
@@ -355,3 +357,11 @@ texture_filter = 1
 position = Vector2(0, -100)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_h2yge")
+
+[node name="JumpSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_2smqc")
+volume_db = 5.0
+
+[node name="LandingSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_rl62b")
+volume_db = -10.0
