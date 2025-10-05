@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c5mr5chw63ug8"]
+[gd_scene load_steps=14 format=4 uid="uid://c5mr5chw63ug8"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_y6b0a"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_3axis"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="10_gj65b"]
 [ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="11_ugsy1"]
 [ext_resource type="Texture2D" uid="uid://cbmlwwpftcefj" path="res://assets/environment/building_blocks/Cave_tile_tall_no_grass.png" id="12_3axis"]
+[ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="13_7dlr5"]
 
 [node name="Level_8" type="Node2D"]
 script = ExtResource("1_y6b0a")
@@ -91,5 +92,13 @@ texture = ExtResource("12_3axis")
 z_index = 2
 position = Vector2(1600, 318)
 texture = ExtResource("12_3axis")
+
+[node name="Level Number" parent="." instance=ExtResource("13_7dlr5")]
+z_index = 11
+offset_left = 791.0
+offset_top = 2.0
+offset_right = 1107.0
+offset_bottom = 139.0
+text = "[outline_size=20][font_size=40]Level 8[/font_size][/outline_size]"
 
 [editable path="FireVent"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://6okuspg7gj0e"]
+[gd_scene load_steps=15 format=4 uid="uid://6okuspg7gj0e"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_7hryl"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="2_7kj2j"]
 [ext_resource type="AudioStream" uid="uid://cq8m7h4l3c5sk" path="res://sounds/voice lines/level 1.mp3" id="2_d7cde"]
+[ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="2_xst5w"]
 [ext_resource type="Texture2D" uid="uid://ijjlyft7gbfg" path="res://assets/environment/backgrounds/cave-layer-0.png" id="3_d7cde"]
 [ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="4_d7cde"]
 [ext_resource type="Texture2D" uid="uid://dmddn1jm3qsvm" path="res://assets/environment/backgrounds/cave-layer-1.png" id="4_xst5w"]
@@ -18,6 +19,14 @@
 script = ExtResource("1_7hryl")
 level_max = Vector2(1920, 1080)
 level_spawn = Vector2(960, 900)
+
+[node name="Level Number" parent="." instance=ExtResource("2_xst5w")]
+z_index = 11
+offset_left = 791.0
+offset_top = 2.0
+offset_right = 1107.0
+offset_bottom = 139.0
+text = "[outline_size=20][font_size=40]Level 1[/font_size][/outline_size]"
 
 [node name="TutorialVoice" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_d7cde")

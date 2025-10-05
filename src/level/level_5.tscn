@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://ba6sxvfb5373h"]
+[gd_scene load_steps=15 format=4 uid="uid://ba6sxvfb5373h"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_ome0x"]
+[ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="2_ome0x"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_wuc3i"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="3_qq5fg"]
 [ext_resource type="Texture2D" uid="uid://ijjlyft7gbfg" path="res://assets/environment/backgrounds/cave-layer-0.png" id="4_8uvbh"]
@@ -18,6 +19,14 @@
 script = ExtResource("1_ome0x")
 level_max = Vector2(1920, 1080)
 level_spawn = Vector2(450, 185)
+
+[node name="Level Number" parent="." instance=ExtResource("2_ome0x")]
+z_index = 11
+offset_left = 791.0
+offset_top = 2.0
+offset_right = 1107.0
+offset_bottom = 139.0
+text = "[outline_size=20][font_size=40]Level 5[/font_size][/outline_size]"
 
 [node name="NestGoal" parent="." instance=ExtResource("2_wuc3i")]
 position = Vector2(1858, 667)

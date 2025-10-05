@@ -5,7 +5,7 @@ var text_zone : Area2D
 func _ready() -> void:
 	visible = false
 	if get_child_count() != 1:
-		print("label needs one area2D child on level ", GameState.current_level)
+		visible = true
 		return
 	text_zone = get_child(0)
 	text_zone.body_entered.connect(_on_area_2d_body_entered)

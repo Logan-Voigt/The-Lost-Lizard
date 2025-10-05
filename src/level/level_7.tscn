@@ -1,25 +1,40 @@
-[gd_scene load_steps=8 format=4 uid="uid://bkiskalvy1hy0"]
+[gd_scene load_steps=15 format=4 uid="uid://bkiskalvy1hy0"]
 
 [ext_resource type="Script" uid="uid://xyd124pimcic" path="res://src/level/level.gd" id="1_ljrn7"]
 [ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="2_4fm2i"]
+[ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="2_c67n4"]
 [ext_resource type="TileSet" uid="uid://56dmgab1ecny" path="res://resources/level_tiles.tres" id="3_17ufo"]
 [ext_resource type="Texture2D" uid="uid://ijjlyft7gbfg" path="res://assets/environment/backgrounds/cave-layer-0.png" id="4_fwr7n"]
 [ext_resource type="Texture2D" uid="uid://dmddn1jm3qsvm" path="res://assets/environment/backgrounds/cave-layer-1.png" id="5_g8npy"]
 [ext_resource type="Texture2D" uid="uid://b3msx3d04834u" path="res://assets/environment/backgrounds/cave-layer-2.png" id="6_daow0"]
 [ext_resource type="Texture2D" uid="uid://djn8rlmxv4eue" path="res://assets/environment/backgrounds/cave-layer-3.png" id="7_ixamw"]
+[ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="8_daow0"]
+[ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="9_ixamw"]
+[ext_resource type="PackedScene" uid="uid://dijhacptwhqfb" path="res://src/level/obstacles/icy_wall.tscn" id="10_c67n4"]
+[ext_resource type="PackedScene" uid="uid://7yil56a2cuvf" path="res://src/level/obstacles/fire_wall.tscn" id="11_oqje8"]
+[ext_resource type="PackedScene" uid="uid://ghjyu24i2aqy" path="res://src/level/obstacles/fire_floor.tscn" id="12_jp5rq"]
+[ext_resource type="PackedScene" uid="uid://bbjc1gbuh5l30" path="res://src/level/obstacles/fire_vent.tscn" id="13_ixamw"]
 
 [node name="Level_7" type="Node2D"]
 script = ExtResource("1_ljrn7")
 level_max = Vector2(1920, 1080)
-level_spawn = Vector2(1090, 180)
+level_spawn = Vector2(100, 550)
+
+[node name="Level Number" parent="." instance=ExtResource("2_c67n4")]
+z_index = 11
+offset_left = 791.0
+offset_top = 2.0
+offset_right = 1107.0
+offset_bottom = 139.0
+text = "[outline_size=20][font_size=40]Level 7[/font_size][/outline_size]"
 
 [node name="NestGoal" parent="." instance=ExtResource("2_4fm2i")]
-position = Vector2(987, 925)
+position = Vector2(78, 928)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
 position = Vector2(0, 62)
-tile_map_data = PackedByteArray("AAAAAAcABAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcABAAAAAAAAAAGAAcABAAAAAAAAAAHAAcABAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAcABAAAAAAAAAALAAcABAAAAAAAAAD/////BAAAAAAAAAAPAP//BAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcABAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcABAAAAAAAAAAGAAcABAAAAAAAAAAHAAcABAAAAAAAAAAIAAcABAAAAAAAAAAJAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAD//wgABAAAAAAAAAD//wcABAAAAAAAAAD//wYABAAAAAAAAAD//wUABAAAAAAAAAD//wQABAAAAAAAAAD//wMABAAAAAAAAAD//wIABAAAAAAAAAD//wEABAAAAAAAAAD//wAABAAAAAAAAAAPAAAABAAAAAAAAAAPAAEABAAAAAAAAAAPAAIABAAAAAAAAAAPAAMABAAAAAAAAAAPAAQABAAAAAAAAAAPAAUABAAAAAAAAAAPAAYABAAAAAAAAAAPAAcABAAAAAAAAAAPAAgABAAAAAAAAAAKAAcABAAAAAAAAAALAAcABAAAAAAAAAD/////BAAAAAAAAAAPAP//BAAAAAAAAAACAAYABAAAAAAAAAAAAAQABAAAAAAAAAABAAQABAAAAAAAAAACAAQABAAAAAAAAAAEAAQABAAAAAAAAAADAAQABAAAAAAAAAAFAAQABAAAAAAAAAAGAAQABAAAAAAAAAACAAMABAAAAAAAAAADAAMABAAAAAAAAAADAAIABAAAAAAAAAAHAAQABAAAAAAAAAAIAAQABAAAAAAAAAAJAAQABAAAAAAAAAAKAAQABAAAAAAAAAALAAQABAAAAAAAAAAMAAQABAAAAAAAAAAOAAUABAAAAAAAAAAOAAYABAAAAAAAAAAFAAIABAAAAAAAAAAGAAAABAAAAAAAAAAGAAEABAAAAAAAAAAGAP//BAAAAAAAAAAGAAIABAAAAAAAAAA=")
 tile_set = ExtResource("3_17ufo")
 
 [node name="BackgroundCave" type="Sprite2D" parent="."]
@@ -35,3 +50,71 @@ texture = ExtResource("6_daow0")
 
 [node name="Sprite2D" type="Sprite2D" parent="BackgroundCave/Sprite2D/Sprite2D"]
 texture = ExtResource("7_ixamw")
+
+[node name="IcyVent" parent="." instance=ExtResource("8_daow0")]
+position = Vector2(376, 902)
+rotation = 1.5708
+
+[node name="IcyVent2" parent="." instance=ExtResource("8_daow0")]
+position = Vector2(378, 968)
+rotation = 1.5708
+
+[node name="Main_Texture" parent="IcyVent2" index="2"]
+position = Vector2(-22, -128)
+flip_h = true
+
+[node name="IcySpikes" parent="." instance=ExtResource("9_ixamw")]
+position = Vector2(642, 984)
+
+[node name="IcySpikes2" parent="." instance=ExtResource("9_ixamw")]
+position = Vector2(189, 984)
+
+[node name="IcySpikes3" parent="." instance=ExtResource("9_ixamw")]
+position = Vector2(263, 909)
+rotation = -1.5708
+
+[node name="icy_wall" parent="." instance=ExtResource("10_c67n4")]
+position = Vector2(123, 700)
+rotation = 3.14159
+
+[node name="IcySpikes4" parent="." instance=ExtResource("9_ixamw")]
+position = Vector2(600, 596)
+
+[node name="IcySpikes5" parent="." instance=ExtResource("9_ixamw")]
+position = Vector2(528, 604)
+
+[node name="FireWall" parent="." instance=ExtResource("11_oqje8")]
+position = Vector2(586, 443)
+
+[node name="FireFloor" parent="." instance=ExtResource("12_jp5rq")]
+position = Vector2(741, 339)
+
+[node name="icy_wall2" parent="." instance=ExtResource("10_c67n4")]
+position = Vector2(1176, 607)
+
+[node name="icy_wall3" parent="." instance=ExtResource("10_c67n4")]
+position = Vector2(844, 989)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(100, 550)
+
+[node name="FireFloor3" parent="." instance=ExtResource("12_jp5rq")]
+position = Vector2(383, 470)
+
+[node name="IcyVent3" parent="." instance=ExtResource("8_daow0")]
+position = Vector2(1764, 990)
+
+[node name="FireVent" parent="." instance=ExtResource("13_ixamw")]
+position = Vector2(1661, 658)
+rotation = 1.5708
+
+[node name="IcySpikes6" parent="." instance=ExtResource("9_ixamw")]
+position = Vector2(1290, 987)
+
+[node name="IcySpikes7" parent="." instance=ExtResource("9_ixamw")]
+position = Vector2(1066, 986)
+
+[node name="IcySpikes8" parent="." instance=ExtResource("9_ixamw")]
+position = Vector2(1509, 983)
+
+[editable path="IcyVent2"]
