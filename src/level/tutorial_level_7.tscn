@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://2c387dt7cqj5" path="res://sounds/voice lines/tutorial 8.mp3" id="2_ep5ml"]
 [ext_resource type="Texture2D" uid="uid://dko8bqhvjwy1k" path="res://assets/environment/backgrounds/forest-layer-0.png" id="4_d8e51"]
 [ext_resource type="Texture2D" uid="uid://bc0eqw71gkomd" path="res://assets/environment/backgrounds/forest-layer-1.png" id="5_ep5ml"]
-[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_3uiav"]
+[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_3uiav"]
 [ext_resource type="Texture2D" uid="uid://dptmnp652sq43" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_cxxtp"]
 [ext_resource type="PackedScene" uid="uid://24ugimcm8yus" path="res://src/level/obstacles/icy_vent.tscn" id="6_qpvnk"]
 [ext_resource type="PackedScene" uid="uid://dl6titabhua5s" path="res://src/level/obstacles/icy_spikes.tscn" id="7_mxp22"]

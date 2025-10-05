@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dko8bqhvjwy1k" path="res://assets/environment/backgrounds/forest-layer-0.png" id="4_uekti"]
 [ext_resource type="PackedScene" uid="uid://xbudkosp0k78" path="res://src/level/tutorial_label.tscn" id="5_hd6qb"]
 [ext_resource type="Texture2D" uid="uid://bc0eqw71gkomd" path="res://assets/environment/backgrounds/forest-layer-1.png" id="5_xq8xk"]
-[ext_resource type="PackedScene" path="res://src/player/nest_goal.tscn" id="6_nhpje"]
+[ext_resource type="PackedScene" uid="uid://b8ukqebiwob5k" path="res://src/player/nest_goal.tscn" id="6_nhpje"]
 [ext_resource type="Texture2D" uid="uid://dptmnp652sq43" path="res://assets/environment/backgrounds/forest-layer-2.png" id="6_p6a61"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd6qb"]
