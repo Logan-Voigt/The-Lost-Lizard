@@ -17,9 +17,17 @@ texture = SubResource("GradientTexture2D_r6esh")
 
 [node name="StartButton" type="Button" parent="."]
 offset_left = 816.0
-offset_top = 564.0
+offset_top = 568.0
 offset_right = 1051.0
-offset_bottom = 675.0
+offset_bottom = 679.0
 text = "Start Game"
 
+[node name="LevelSelectButton" type="Button" parent="."]
+offset_left = 818.0
+offset_top = 700.0
+offset_right = 1053.0
+offset_bottom = 811.0
+text = "Select Level"
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="LevelSelectButton" to="." method="_on_level_select_button_pressed"]

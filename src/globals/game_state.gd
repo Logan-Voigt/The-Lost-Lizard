@@ -19,6 +19,7 @@ const PAUSE_MENU : int = 1
 const PLAYER_WAIT : int = 2
 const PLAYING : int = 3
 const WIN_SCREEN : int = 4
+const LEVEL_SELECT : int = 5
 
 const PLAIN : int = 0
 const FIRE : int = 1

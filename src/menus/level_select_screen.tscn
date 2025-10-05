@@ -1,0 +1,128 @@
+[gd_scene load_steps=4 format=3 uid="uid://ya8qtu532orw"]
+
+[ext_resource type="Script" uid="uid://bw2sldxqpmdx" path="res://src/menus/level_select_screen.gd" id="1_8edhd"]
+
+[sub_resource type="Gradient" id="Gradient_ok4yg"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8edhd"]
+gradient = SubResource("Gradient_ok4yg")
+
+[node name="LevelSelectScreen" type="Node2D"]
+script = ExtResource("1_8edhd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(958.5, 538)
+scale = Vector2(29.9531, 16.8125)
+texture = SubResource("GradientTexture2D_8edhd")
+
+[node name="level_0" type="Button" parent="."]
+offset_left = 526.0
+offset_top = 228.0
+offset_right = 649.0
+offset_bottom = 326.0
+text = "tutorial 1"
+
+[node name="level_1" type="Button" parent="."]
+offset_left = 778.0
+offset_top = 228.0
+offset_right = 901.0
+offset_bottom = 326.0
+text = "tutorial 2"
+
+[node name="level_2" type="Button" parent="."]
+offset_left = 1026.0
+offset_top = 228.0
+offset_right = 1149.0
+offset_bottom = 326.0
+text = "tutorial 3"
+
+[node name="level_3" type="Button" parent="."]
+offset_left = 1272.0
+offset_top = 228.0
+offset_right = 1395.0
+offset_bottom = 326.0
+text = "tutorial 4"
+
+[node name="level_4" type="Button" parent="."]
+offset_left = 526.0
+offset_top = 407.0
+offset_right = 649.0
+offset_bottom = 505.0
+text = "tutorial 5"
+
+[node name="level_5" type="Button" parent="."]
+offset_left = 778.0
+offset_top = 407.0
+offset_right = 901.0
+offset_bottom = 505.0
+text = "tutorial 6"
+
+[node name="level_6" type="Button" parent="."]
+offset_left = 1026.0
+offset_top = 407.0
+offset_right = 1149.0
+offset_bottom = 505.0
+text = "tutorial 7"
+
+[node name="level_7" type="Button" parent="."]
+offset_left = 1272.0
+offset_top = 407.0
+offset_right = 1395.0
+offset_bottom = 505.0
+text = "tutorial 8"
+
+[node name="level_8" type="Button" parent="."]
+offset_left = 526.0
+offset_top = 586.0
+offset_right = 649.0
+offset_bottom = 684.0
+text = "level 1"
+
+[node name="level_9" type="Button" parent="."]
+offset_left = 778.0
+offset_top = 586.0
+offset_right = 901.0
+offset_bottom = 684.0
+text = "level 2"
+
+[node name="level_10" type="Button" parent="."]
+offset_left = 1026.0
+offset_top = 586.0
+offset_right = 1149.0
+offset_bottom = 684.0
+text = "level 3"
+
+[node name="level_11" type="Button" parent="."]
+offset_left = 1272.0
+offset_top = 586.0
+offset_right = 1395.0
+offset_bottom = 684.0
+text = "level 4"
+
+[node name="level_12" type="Button" parent="."]
+offset_left = 526.0
+offset_top = 760.0
+offset_right = 649.0
+offset_bottom = 858.0
+text = "level 5"
+
+[node name="level_13" type="Button" parent="."]
+offset_left = 778.0
+offset_top = 760.0
+offset_right = 901.0
+offset_bottom = 858.0
+text = "level 6"
+
+[node name="level_14" type="Button" parent="."]
+offset_left = 1026.0
+offset_top = 760.0
+offset_right = 1149.0
+offset_bottom = 858.0
+text = "level 7"
+
+[node name="level_15" type="Button" parent="."]
+offset_left = 1272.0
+offset_top = 760.0
+offset_right = 1395.0
+offset_bottom = 858.0
+text = "level 8"
